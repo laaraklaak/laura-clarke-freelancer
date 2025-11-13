@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura Clarke - Remote Operations & Admin Portfolio</title>
+    
+    <!-- 1. Loads Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. Loads the "Inter" font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* This sets the font for the whole page and enables smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* Light Gray background */
+        }
+        /* Custom styles for your brand colors (easier to read in the code) */
+        .bg-primary-green { background-color: #16A34A; }
+        .hover-bg-primary-green-dark { background-color: #15803d; }
+        .text-primary-green { color: #16A34A; }
+        
+        .bg-primary-dark-green { background-color: #2F4F4F; }
+        
+        /* A subtle shadow for the portfolio cards */
+        .portfolio-card {
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <!-- ======================================= -->
+    <!-- HEADER & NAVIGATION -->
+    <!-- ======================================= -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo / Name -->
+            <a href="#" class="text-2xl font-bold text-gray-900">Laura Clarke</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-700 hover:text-primary-green font-medium">About</a>
+                <a href="#portfolio" class="text-gray-700 hover:text-primary-green font-medium">Portfolio</a>
+                <a href="#contact" class="text-gray-700 hover:text-primary-green font-medium">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#about" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">About</a>
+            <a href="#portfolio" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Portfolio</a>
+            <a href="#contact" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <!-- ======================================= -->
+    <!-- HERO SECTION (THE "ABOUT ME") -->
+    <!-- ======================================= -->
+    <section id="about" class="bg-white pt-24 pb-32 px-6">
+        <div class="container mx-auto max-w-4xl text-center">
+            <!-- Your professional headshot -->
+            <img src="https://i.imgur.com/gY8v1Lq.png" alt="Laura Clarke" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
+            
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
+                Laura Clarke
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 mt-4">
+                Remote Operations & Administrative Specialist
+            </p>
+            <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
+                Leveraging 15+ years of experience in high-compliance environments (OEC, NCB) to provide expert remote operations, financial admin, and project coordination.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+                <!-- NOTE: Upload your CV to your GitHub and update this link -->
+                <a href="LAURA CLARKE-CV.pdf" target="_blank" 
+                   class="bg-primary-green hover:bg-primary-green-dark text-white px-8 py-3 rounded-lg font-medium text-lg transition-colors">
+                    Download CV (PDF)
+                </a>
+                <a href="#portfolio" 
+                   class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium text-lg transition-colors">
+                    View My Work
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================= -->
+    <!-- PORTFOLIO SECTION (THE "WHAT I CAN DO") -->
+    <!-- ======================================= -->
+    <section id="portfolio" class="py-24 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
+                My Portfolio
+            </h2>
+            
+            <!-- --- ARTIFACT 1: CASE STUDY --- -->
+            <div class="portfolio-card grid grid-cols-1 md:grid-cols-2 gap-8 items-center overflow-hidden mb-16">
+                <!-- Image Column -->
+                <div class="overflow-hidden">
+                    <!-- NOTE: Screenshot your Case Study's title page and link it here -->
+                    <img src="https://placehold.co/600x450/e0e7ff/333333?text=Case+Study+Screenshot" alt="Exam Supervision Case Study" class="w-full h-auto object-cover">
+                </div>
+                <!-- Text Column -->
+                <div class="p-8 md:p-10">
+                    <h3 class="text-sm font-bold text-primary-green mb-2">PROJECT 1: LOGISTICS & COMPLIANCE</h3>
+                    <h4 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">Exam Supervision Case Study (2025)</h4>
+                    <p class="text-lg text-gray-700 mb-6">
+                        An in-depth analysis of the 2025 exam supervision process, demonstrating my expertise in high-stakes logistics, risk management, resource scheduling, and regulatory adherence.
+                    </p>
+                    <!-- NOTE: Upload your Case Study PDF and update this link -->
+                    <a href="Title_ Case Study_ High-Stakes Exam Administration & Data Integrity (1).pdf" target="_blank" 
+                       class="text-primary-green font-medium text-lg hover:underline">
+                        View Case Study (PDF) &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- --- ARTIFACT 2: FINANCIAL DASHBOARD --- -->
+            <div class="portfolio-card grid grid-cols-1 md:grid-cols-2 gap-8 items-center overflow-hidden mb-16">
+                <!-- Text Column (Order swapped for visual flow) -->
+                <div class="p-8 md:p-10 md:order-2">
+                    <h3 class="text-sm font-bold text-primary-green mb-2">PROJECT 2: FINANCIAL ADMINISTRATION</h3>
+                    <h4 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">DIY Project Budget Tracker</h4>
+                    <p class="text-lg text-gray-700 mb-6">
+                        A comprehensive dashboard used to manage a $150k DIY project budget. This tool tracks total funds, project spending by category (materials, labor), and reports the real-time net position.
+                    </p>
+                    <!-- NOTE: Upload your Dashboard PDF and update this link -->
+                    <a href="Laura's DIY_Projects - Dashboard.pdf" target="_blank" 
+                       class="text-primary-green font-medium text-lg hover:underline">
+                        View Dashboard (PDF) &rarr;
+                    </a>
+                </div>
+                <!-- Image Column -->
+                <div class="overflow-hidden md:order-1">
+                    <!-- NOTE: Screenshot your Dashboard and link it here -->
+                    <img src="https://placehold.co/600x450/dbead5/333333?text=Project+Dashboard+Screenshot" alt="DIY Project Budget Tracker" class="w-full h-auto object-cover">
+                </div>
+            </div>
+
+            <!-- --- ARTIFACT 3: DIGITAL MANAGEMENT (UPDATED) --- -->
+            <div class="portfolio-card grid grid-cols-1 md:grid-cols-2 gap-8 items-center overflow-hidden">
+                <!-- Image Column -->
+                <div class="overflow-hidden">
+                    <!-- NOTE: Screenshot your blogs and link it here -->
+                    <img src="https://placehold.co/600x450/fffbe6/333333?text=Blog+Projects+Screenshot" alt="Digital Content Management" class="w-full h-auto object-cover">
+                </div>
+                <!-- Text Column -->
+                <div class="p-8 md:p-10">
+                    <h3 class="text-sm font-bold text-primary-green mb-2">PROJECT 3: DIGITAL CONTENT MANAGEMENT</h3>
+                    <h4 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">Digital Content & Platform Management</h4>
+                    <p class="text-lg text-gray-700 mb-6">
+                        Managed two distinct content platforms: a WordPress blog (HairSkinHaven) for user-facing content, and a GitHub-based project (Jamaican Language Blog) for technical documentation and curriculum.
+                    </p>
+                    <!-- LINKS TO YOUR LIVE BLOGS HERE -->
+                    <a href="https://hairskinhaven.wordpress.com" target="_blank" 
+                       class="text-primary-green font-medium text-lg hover:underline">
+                        View HairSkinHaven (WordPress) &rarr;
+                    </a>
+                    <!-- NOTE: Update this link to your GitHub blog -->
+                    <a href="https://laaraklaak.github.io/learn-jamaican" target="_blank" class="ml-6 text-primary-green font-medium text-lg hover:underline">
+                        View Language Blog (GitHub) &rarr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ======================================= -->
+    <!-- CONTACT / FOOTER (THE "WHAT'S NEXT") -->
+    <!-- ======================================= -->
+    <footer id="contact" class="bg-primary-dark-green text-white py-20 px-6">
+        <div class="container mx-auto max-w-3xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
+            <p class="text-lg text-gray-300 max-w-lg mx-auto mb-10">
+                I am actively seeking remote opportunities in operations, administration, and project coordination. I'm ready to bring my skills to your team.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="mailto:lauraclarke.jw@gmail.com" 
+                   class="bg-white text-gray-900 px-8 py-3 rounded-lg font-medium text-lg hover:bg-gray-200 transition-colors">
+                    Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/lauraclarke-freelancer" target="_blank" 
+                   class="bg-white text-gray-900 px-8 py-3 rounded-lg font-medium text-lg hover:bg-gray-200 transition-colors">
+                    LinkedIn Profile
+                </a>
+            </div>
+            <p class="text-gray-400 mt-16 text-sm">
+                &copy; 2025 Laura Clarke. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
