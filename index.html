@@ -1,228 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laura Clarke - Remote Operations & Admin Portfolio</title>
-    
-    <!-- 1. Loads Tailwind CSS for styling -->
+    <title>Laura Clarke - Remote Operations & Administrative Specialist</title>
+    <!-- 1. Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- 2. Loads the "Inter" font -->
+    <!-- 2. Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 3. Premium Google Font ("Inter") -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        /* This sets the font for the whole page and enables smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+        /* 4. Use the "Inter" font for a sleek, modern look */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f9fafb; /* Light Gray background */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
-        /* Custom styles for your brand colors (easier to read in the code) */
-        .bg-primary-green { background-color: #16A34A; }
-        .hover-bg-primary-green-dark { background-color: #15803d; }
-        .text-primary-green { color: #16A34A; }
         
-        .bg-primary-dark-green { background-color: #2F4F4F; }
-        
-        /* A subtle shadow for the portfolio cards */
-        .portfolio-card {
-            background-color: #ffffff;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* 5. Custom Color Palette */
+        .hero-bg {
+            /* Subtle gradient for a less "flat" look */
+            background-color: #F8F9FA;
+            background-image: linear-gradient(to bottom right, #F8F9FA, #F1F5F9);
         }
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        .brand-green {
+            color: #16A34A;
+        }
+        .brand-green-bg {
+            background-color: #16A34A;
+        }
+        .brand-green-bg-hover:hover {
+            background-color: #148C40;
+        }
+        .brand-dark-green-bg {
+            background-color: #2F4F4F;
+        }
+        .brand-outline-btn {
+            border: 2px solid #16A34A;
+            color: #16A34A;
+            transition: all 0.3s ease;
+        }
+        .brand-outline-btn:hover {
+            background-color: #16A34A;
+            color: #FFFFFF;
+        }
+        
+        /* 6. Zig-zag layout */
+        .portfolio-item:nth-child(even) .portfolio-layout {
+            flex-direction: row-reverse;
+        }
+
+        /* 7. Animation Classes */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .scroll-reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body class="text-gray-900">
+<body class="text-gray-800 antialiased bg-gray-50">
 
-    <!-- ======================================= -->
-    <!-- HEADER & NAVIGATION -->
-    <!-- ======================================= -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <!-- Header / Navigation -->
+    <header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo / Name -->
-            <a href="#" class="text-2xl font-bold text-gray-900">Laura Clarke</a>
-            
-            <!-- Desktop Menu -->
+            <div class="text-2xl font-bold text-gray-900">Laura Clarke</div>
             <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-700 hover:text-primary-green font-medium">About</a>
-                <a href="#portfolio" class="text-gray-700 hover:text-primary-green font-medium">Portfolio</a>
-                <a href="#contact" class="text-gray-700 hover:text-primary-green font-medium">Contact</a>
+                <a href="#about" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">About</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Portfolio</a>
+                <a href="#contact" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Contact</a>
             </div>
-
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
+            <!-- Mobile Menu Button (Optional, but good practice) -->
+            <div class="md:hidden">
+                <button class="text-gray-600 hover:text-gray-900">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
         </nav>
-
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <a href="#about" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">About</a>
-            <a href="#portfolio" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Portfolio</a>
-            <a href="#contact" class="block py-3 px-6 text-gray-700 hover:bg-gray-100">Contact</a>
-        </div>
     </header>
 
-    <!-- ======================================= -->
-    <!-- HERO SECTION (THE "ABOUT ME") -->
-    <!-- ======================================= -->
-    <section id="about" class="bg-white pt-24 pb-32 px-6">
-        <div class="container mx-auto max-w-4xl text-center">
-            <!-- 
-                BEFORE: 
-                <img src="https://i.imgur.com/gY8v1Lq.png" ... >
-            -->
-            <!-- AFTER: Link to your local profile picture -->
-            <img src="images/profile-picture.png" alt="Laura Clarke" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-white shadow-lg object-cover">
-            
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">
-                Laura Clarke
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-700 mt-4">
-                Remote Operations & Administrative Specialist
-            </p>
-            <p class="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
-                Leveraging 15+ years of experience in high-compliance environments (OEC, NCB) to provide expert remote operations, financial admin, and project coordination.
-            </p>
-            
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
-                <!-- NOTE: Upload your CV to your GitHub and update this link -->
-                <a href="PDF/Laura Clarke_CV.pdf" target="_blank" 
-                   class="bg-primary-green hover:bg-primary-green-dark text-white px-8 py-3 rounded-lg font-medium text-lg transition-colors">
-                    Download CV (PDF)
-                </a>
-                <a href="#portfolio" 
-                   class="bg-white text-gray-800 border border-gray-300 hover:bg-gray-100 px-8 py-3 rounded-lg font-medium text-lg transition-colors">
-                    View My Work
-                </a>
+    <!-- Hero Section -->
+    <section id="about" class="hero-bg py-24 md:py-32 overflow-hidden">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <!-- Text Content -->
+            <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">Laura Clarke</h1>
+                <h2 class="text-2xl md:text-3xl font-light text-gray-700 mb-8">Remote Operations & Administrative Specialist</h2>
+                <p class="text-lg text-gray-600 mb-10 max-w-xl">
+                    Leveraging 15+ years of experience in high-compliance environments (OEC, NCB) to provide expert remote operations, financial admin, and project coordination.
+                </p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#portfolio" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        View My Work
+                    </a>
+                    <a href="laura-clarke-cv-public.pdf" target="_blank" class="brand-outline-btn font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        Download CV (PDF)
+                    </a>
+                </div>
+            </div>
+            <!-- Profile Picture -->
+            <div class="md:w-2/5 flex justify-center">
+                <!-- Added a "glow" effect to the shadow for a premium look -->
+                <img src="images/profile-picture.jpg" alt="Laura Clarke" class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white shadow-lg" style="box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.1), 0 10px 10px -5px rgba(22, 163, 74, 0.04);">
             </div>
         </div>
     </section>
 
-    <!-- ======================================= -->
-    <!-- PORTFOLIO SECTION (THE "WHAT I CAN DO") -->
-    <!-- ======================================= -->
-    <section id="portfolio" class="py-24 px-6">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-16">
-                My Portfolio
-            </h2>
+    <!-- Portfolio Section - REFRAMED -->
+    <section id="portfolio" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
             
-            <!-- --- ARTIFACT 1: CASE STUDY --- -->
-            <div class="portfolio-card grid grid-cols-1 md:grid-cols-2 gap-8 items-center overflow-hidden mb-16">
-                <!-- Image Column -->
-                <div class="overflow-hidden">
-                    <!-- 
-                        BEFORE: 
-                        <img src="https://placehold.co/600x450/e0e7ff/333333?text=Case+Study+Screenshot" ... >
-                    -->
-                    <!-- AFTER: Link to your local image -->
-                    <img src="images/case-study-screenshot.jpg" alt="Exam Supervision Case Study" class="w-full h-auto object-cover">
-                </div>
-                <!-- Text Column -->
-                <div class="p-8 md:p-10">
-                    <h3 class="text-sm font-bold text-primary-green mb-2">PROJECT 1: LOGISTICS & COMPLIANCE</h3>
-                    <h4 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">Exam Supervision Case Study (2025)</h4>
-                    <p class="text-lg text-gray-700 mb-6">
-                        An in-depth analysis of the 2025 exam supervision process, demonstrating my expertise in high-stakes logistics, risk management, resource scheduling, and regulatory adherence.
-                    </p>
-                    <!-- NOTE: Upload your Case Study PDF and update this link -->
-                    <a href="PDF/Case Study_High-Stakes Exam Administration & Data Integrity.pdf" target="_blank" 
-                       class="text-primary-green font-medium text-lg hover:underline">
-                        View Case Study (PDF) &rarr;
-                    </a>
+            <!-- Section Heading -->
+            <div class="text-center mb-20 scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">A 360-Degree View of My Work</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    My portfolio is proof of my three core pillars: professional competence, personal resilience, and modern initiative.
+                </p>
+            </div>
+
+            <!-- Portfolio Item 1: Professional Competence (OEC) -->
+            <div class="portfolio-item scroll-reveal mb-24">
+                <div class="portfolio-layout flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                    <!-- Image -->
+                    <div class="md:w-1/2">
+                        <img src="images/case-study-screenshot.jpg" alt="Exam Administration Case Study" class="object-cover w-full h-64 md:h-96">
+                    </div>
+                    <!-- Text -->
+                    <div class="md:w-1/2 p-10 md:p-16">
+                        <h3 class="text-sm font-bold uppercase text-gray-500 mb-2 tracking-wider">Pillar 1: Professional Competence</h3>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-5">High-Stakes Logistics & Compliance</h2>
+                        <p class="text-gray-600 mb-8 text-lg">
+                            This case study of my work with the OEC proves my ability to manage complex, high-stakes logistics, sensitive data, and large teams with 100% compliance.
+                        </p>
+                        <a href="case-study-logistics.pdf" target="_blank" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center text-lg">
+                            View Case Study &nbsp; <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- --- ARTIFACT 2: FINANCIAL DASHBOARD --- -->
-            <div class="portfolio-card grid grid-cols-1 md:grid-cols-2 gap-8 items-center overflow-hidden mb-16">
-                <!-- Text Column (Order swapped for visual flow) -->
-                <div class="p-8 md:p-10 md:order-2">
-                    <h3 class="text-sm font-bold text-primary-green mb-2">PROJECT 2: FINANCIAL ADMINISTRATION</h3>
-                    <h4 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">DIY Project Budget Tracker</h4>
-                    <p class="text-lg text-gray-700 mb-6">
-                        A comprehensive dashboard used to manage a $150k DIY project budget. This tool tracks total funds, project spending by category (materials, labor), and reports the real-time net position.
-                    </p>
-                    <!-- NOTE: Upload your Dashboard PDF and update this link -->
-                    <a href="PDF/project-dashboard.pdf" target="_blank" 
-                       class="text-primary-green font-medium text-lg hover:underline">
-                        View Dashboard (PDF) &rarr;
-                    </a>
-                </div>
-                <!-- Image Column -->
-                <div class="overflow-hidden md:order-1">
-                    <!-- 
-                        BEFORE: 
-                        <img src="https://placehold.co/600x450/dbead5/333333?text=Project+Dashboard+Screenshot" ... >
-                    -->
-                    <!-- AFTER: Link to your local image -->
-                    <img src="images/dashboard-screenshot.jpg" alt="DIY Project Budget Tracker" class="w-full h-auto object-cover">
+            <!-- Portfolio Item 2: Character & Resilience (Crisis) -->
+            <div class="portfolio-item scroll-reveal mb-24">
+                <div class="portfolio-layout flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                    <!-- Image -->
+                    <div class="md:w-1/2">
+                        <img src="images/crisis-management-screenshot.jpg" alt="Crisis Project Management" class="object-cover w-full h-64 md:h-96">
+                    </div>
+                    <!-- Text -->
+                    <div class="md:w-1/2 p-10 md:p-16">
+                        <h3 class="text-sm font-bold uppercase text-gray-500 mb-2 tracking-wider">Pillar 2: Character & Resilience</h3>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-5">Crisis Project Management</h2>
+                        <p class="text-gray-600 mb-8 text-lg">
+                            A breakdown of how I managed a 5-month medical crisis, using meticulous data analysis and financial control to navigate the challenge and emerge with zero debt.
+                        </p>
+                        <a href="case-study-crisis.pdf" target="_blank" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center text-lg">
+                            View Case Study &nbsp; <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <!-- --- ARTIFACT 3: DIGITAL MANAGEMENT (UPDATED) --- -->
-            <div class="portfolio-card grid grid-cols-1 md:grid-cols-2 gap-8 items-center overflow-hidden">
-                <!-- Image Column -->
-                <div class="overflow-hidden">
-                    <!-- 
-                        BEFORE: 
-                        <img src="https://placehold.co/600x450/fffbe6/333333?text=Blog+Projects+Screenshot" ... >
-                    -->
-                    <!-- AFTER: Link to your local image -->
-                    <img src="images/blog1-screenshot.jpg" alt="Digital Content Management" class="w-full h-auto object-cover">
-                </div>
-                <!-- Text Column -->
-                <div class="p-8 md:p-10">
-                    <h3 class="text-sm font-bold text-primary-green mb-2">PROJECT 3: DIGITAL CONTENT MANAGEMENT</h3>
-                    <h4 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">Digital Content & Platform Management</h4>
-                    <p class="text-lg text-gray-700 mb-6">
-                        Managed two distinct content platforms: a WordPress blog (HairSkinHaven) for user-facing content, and a GitHub-based project (Jamaican Language Blog) for technical documentation and curriculum.
-                    </p>
-                    <!-- LINKS TO YOUR LIVE BLOGS HERE -->
-                    <a href="https://hairskinhaven.wordpress.com" target="_blank" 
-                       class="text-primary-green font-medium text-lg hover:underline">
-                        View HairSkinHaven (WordPress) &rarr;
-                    </a>
-                    <!-- NOTE: Update this link to your GitHub blog -->
-                    <a href="#" target="_blank" class="ml-6 text-primary-green font-medium text-lg hover:underline">
-                        View Language Blog (GitHub) &rarr;
-                    </a>
+            <!-- Portfolio Item 3: Modern Initiative (Digital) -->
+            <div class="portfolio-item scroll-reveal">
+                <div class="portfolio-layout flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+                    <!-- Image -->
+                    <div class="md:w-1/2">
+                        <img src="images/blogs-screenshot.jpg" alt="Digital Content Management Projects" class="object-cover w-full h-64 md:h-96">
+                    </div>
+                    <!-- Text -->
+                    <div class="md:w-1/2 p-10 md:p-16">
+                        <h3 class="text-sm font-bold uppercase text-gray-500 mb-2 tracking-wider">Pillar 3: Modern Initiative</h3>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-5">Digital Transformation & E-Learning</h2>
+                        <p class="text-gray-600 mb-8 text-lg">
+                            This case study shows how I taught myself a new tech stack (GitHub, Google Suite) and transformed from an online student into a digital curriculum builder.
+                        </p>
+                        <a href="https://lauraclarke-freelancer.github.io/JALC/" target="_blank" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center text-lg">
+                            View Language Blog &nbsp; <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-
+            
         </div>
     </section>
 
-    <!-- ======================================= -->
-    <!-- CONTACT / FOOTER (THE "WHAT'S NEXT") -->
-    <!-- ======================================= -->
-    <footer id="contact" class="bg-primary-dark-green text-white py-20 px-6">
-        <div class="container mx-auto max-w-3xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Connect</h2>
-            <p class="text-lg text-gray-300 max-w-lg mx-auto mb-10">
+    <!-- Contact Section / Footer -->
+    <footer id="contact" class="brand-dark-green-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-xl mx-auto">
                 I am actively seeking remote opportunities in operations, administration, and project coordination. I'm ready to bring my skills to your team.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="mailto:lauraclarke.jw@gmail.com" 
-                   class="bg-white text-gray-900 px-8 py-3 rounded-lg font-medium text-lg hover:bg-gray-200 transition-colors">
-                    Email Me
+            </I>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <!-- Refined "Glass" Button Style -->
+                <a href="mailto:lauraclarke.jw@gmail.com" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
+                    <i class="fas fa-envelope mr-3"></i> Email Me
                 </a>
-                <a href="https://www.linkedin.com/in/lauraclarke-freelancer" target="_blank" 
-                   class="bg-white text-gray-900 px-8 py-3 rounded-lg font-medium text-lg hover:bg-gray-200 transition-colors">
-                    LinkedIn Profile
+                <a href="https://www.linkedin.com/in/lauraclarke-freelancer/" target="_blank" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
+                    <i class="fab fa-linkedin mr-3"></i> LinkedIn
                 </a>
             </div>
             <p class="text-gray-400 mt-16 text-sm">
@@ -231,37 +211,26 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Mobile Menu Toggle -->
+    <!-- 8. JavaScript for Animations -->
     <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('scroll-reveal-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Triggers when 10% of the item is visible
+            });
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
+            const elements = document.querySelectorAll('.scroll-reveal');
+            elements.forEach(el => {
+                observer.observe(el);
             });
         });
     </script>
 
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
