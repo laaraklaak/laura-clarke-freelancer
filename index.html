@@ -46,6 +46,22 @@
             background-color: #16A34A;
             color: #FFFFFF;
         }
+        /* This is the new "secondary" button style for Pillar 3 */
+        .brand-outline-btn-sm {
+            border: 1px solid #16A34A;
+            color: #16A34A;
+            transition: all 0.3s ease;
+            font-size: 0.875rem; /* text-sm */
+            padding: 0.5rem 1rem; /* py-2 px-4 */
+            border-radius: 0.5rem; /* rounded-lg */
+            font-weight: 500; /* font-medium */
+            display: inline-flex;
+            align-items: center;
+        }
+        .brand-outline-btn-sm:hover {
+            background-color: #16A34A;
+            color: #FFFFFF;
+        }
         
         /* 6. Zig-zag layout */
         .portfolio-item:nth-child(even) .portfolio-layout {
@@ -72,10 +88,10 @@
             <div class="text-2xl font-bold text-gray-900">Laura Clarke</div>
             <div class="hidden md:flex space-x-6">
                 <a href="#about" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">About</a>
+                <a href="#services" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Services</a>
                 <a href="#portfolio" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Portfolio</a>
                 <a href="#contact" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Contact</a>
             </div>
-            <!-- Mobile Menu Button (Optional, but good practice) -->
             <div class="md:hidden">
                 <button class="text-gray-600 hover:text-gray-900">
                     <i class="fas fa-bars text-xl"></i>
@@ -92,27 +108,58 @@
                 <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">Laura Clarke</h1>
                 <h2 class="text-2xl md:text-3xl font-light text-gray-700 mb-8">Freelance Operations Specialist | Logistics, Compliance & Admin</h2>
                 <p class="text-lg text-gray-600 mb-10 max-w-xl">
-                   I am available for project-based contracts, bringing 15+ years of high-compliance experience (OEC, NCB) to your specific project needs in logistics, compliance, and financial administration.
+                    I am available for project-based contracts, bringing 15+ years of high-compliance experience (OEC, NCB) to your specific project needs in logistics, compliance, and financial administration.
                 </p>
                 <div class="flex justify-center md:justify-start space-x-4">
                     <a href="#portfolio" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
                         View My Work
                     </a>
-                    <a href="PDF/laura_clarke_cv_public.pdf" target="_blank" class="brand-outline-btn font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <!-- NOTE: Portfolio links must be accurate -->
+                    <a href="laura_clarke_cv_public.pdf" target="_blank" class="brand-outline-btn font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
                         Download CV (PDF)
                     </a>
                 </div>
             </div>
             <!-- Profile Picture -->
             <div class="md:w-2/5 flex justify-center">
-                <!-- Added a "glow" effect to the shadow for a premium look -->
-                <img src="images/profile-picture.png" alt="Laura Clarke" class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white shadow-lg" style="box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.1), 0 10px 10px -5px rgba(22, 163, 74, 0.04);">
+                <!-- Placeholder for image -->
+                <img src="profile-picture.png" alt="Laura Clarke" class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white shadow-lg" style="box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.1), 0 10px 10px -5px rgba(22, 163, 74, 0.04);" onerror="this.onerror=null;this.src='https://placehold.co/400x400/16A34A/FFFFFF?text=Laura+Clarke'">
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section - REFRAMED -->
-    <section id="portfolio" class="py-24 bg-white">
+    <!-- Services Section (REVISED) -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How I Can Help You</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">My specialized services are designed for teams facing high-stakes deadlines, backlogs, or compliance audits.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1: Seasonal & Surge Support -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition duration-300">
+                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-calendar-check"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Seasonal & Surge Support</h3>
+                    <p class="text-gray-600">Logistics and administrative management for peak periods (Tax Season, Exams, Audits). I hit the ground running to clear backlogs and manage deadlines.</p>
+                </div>
+                <!-- Service 2: Compliance & Audit Prep -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition duration-300">
+                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-clipboard-list"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Compliance & Audit Prep</h3>
+                    <p class="text-gray-600">Meticulous review of records, financial claim forms, and operational data to ensure 100% audit readiness and regulatory adherence.</p>
+                </div>
+                <!-- Service 3: Team Job Aids & Guides -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition duration-300">
+                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-chalkboard-user"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Team Job Aids & Guides</h3>
+                    <p class="text-gray-600">Creation of clear, printed, or digital "How-To" guides and manuals to standardize processes for temporary or support staff.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-gray-50">
         <div class="container mx-auto px-6">
             
             <!-- Section Heading -->
@@ -128,7 +175,8 @@
                 <div class="portfolio-layout flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
                     <!-- Image -->
                     <div class="md:w-1/2">
-                        <img src="images/exam-logistics-screenshot.jpg" alt="Exam Administration Case Study" class="object-cover w-full h-64 md:h-96">
+                        <!-- Placeholder image URL -->
+                        <img src="exam-logistics-screenshot.jpg" alt="Exam Administration Case Study" class="object-cover w-full h-64 md:h-96" onerror="this.onerror=null;this.src='https://placehold.co/800x600/16A34A/FFFFFF?text=High-Stakes+Logistics'">
                     </div>
                     <!-- Text -->
                     <div class="md:w-1/2 p-10 md:p-16">
@@ -137,7 +185,7 @@
                         <p class="text-gray-600 mb-8 text-lg">
                             This case study of my work with the OEC proves my ability to manage complex, high-stakes logistics, sensitive data, and large teams with 100% compliance.
                         </p>
-                        <a href="PDF/case-study-logistics.pdf" target="_blank" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center text-lg">
+                        <a href="case-study-logistics.pdf" target="_blank" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center text-lg">
                             View Case Study &nbsp; <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -149,7 +197,8 @@
                 <div class="portfolio-layout flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
                     <!-- Image -->
                     <div class="md:w-1/2">
-                        <img src="images/case-study-crisis.png" alt="Crisis Project Management" class="object-cover w-full h-64 md:h-96">
+                        <!-- Placeholder image URL -->
+                        <img src="case-study-crisis.png" alt="Crisis Project Management" class="object-cover w-full h-64 md:h-96" onerror="this.onerror=null;this.src='https://placehold.co/800x600/2F4F4F/FFFFFF?text=Crisis+Management+&amp;+Finance'">
                     </div>
                     <!-- Text -->
                     <div class="md:w-1/2 p-10 md:p-16">
@@ -158,7 +207,7 @@
                         <p class="text-gray-600 mb-8 text-lg">
                             A breakdown of how I managed a 5-month medical crisis, using meticulous data analysis and financial control to navigate the challenge and emerge with zero debt.
                         </p>
-                        <a href="PDF/case-study-crisis.pdf" target="_blank" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center text-lg">
+                        <a href="case-study-crisis.pdf" target="_blank" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center text-lg">
                             View Case Study &nbsp; <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
@@ -166,13 +215,12 @@
             </div>
 
             <!-- Portfolio Item 3: Modern Initiative (Digital) -->
-         <!-- Portfolio Item 3: Modern Initiative (Digital) -->
             <div class="portfolio-item scroll-reveal">
                 <div class="portfolio-layout flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
                     <!-- Image -->
-                    <div class="md:w/1/2">
-                        <!-- Use your composite 'blogs-screenshot.jpg' here -->
-                        <img src="images/digital-products-composite.png" alt="Digital Content Management Projects" class="object-cover w-full h-64 md:h-96">
+                    <div class="md:w-1/2">
+                        <!-- Placeholder image URL -->
+                        <img src="digital-products-composite.png" alt="Digital Content Management Projects" class="object-cover w-full h-64 md:h-96" onerror="this.onerror=null;this.src='https://placehold.co/800x600/A8A29E/FFFFFF?text=Digital+E-Learning+and+Tech+Training'">
                     </div>
                     <!-- Text -->
                     <div class="md:w-1/2 p-10 md:p-16">
@@ -181,17 +229,16 @@
                         <p class="text-gray-600 mb-8 text-lg">
                            This case study shows my self-taught digital transformation. These projects are the live results: a GitHub e-learning site and a WordPress research blog.
                         </p>
-                        
-                        <!-- This is the container for all three links -->
+                        <!-- UPDATED: Three links now -->
                         <div class="flex flex-col gap-4">
                             <!-- Link 1: The Case Study PDF (Main Button) -->
-                            <a href="PDF/case-study-digital.pdf" target="_blank" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center justify-center text-lg">
+                            <a href="case-study-digital.pdf" target="_blank" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center justify-center text-lg">
                                 Read Case Study &nbsp; <i class="fas fa-arrow-right"></i>
                             </a>
                             
                             <!-- Links 2 & 3: The Live Blogs (Secondary Buttons) -->
                             <div class="flex flex-wrap gap-4">
-                                <a href="https://laaraklaak.github.io/learn-jamaican/" target="_blank" class="brand-outline-btn-sm">
+                                <a href="https://laaraklaak.github.io/learn-jamaican" target="_blank" class="brand-outline-btn-sm">
                                     Language Blog (GitHub) &nbsp; <i class="fas fa-external-link-alt"></i>
                                 </a>
                                  <a href="https://hairskinhaven.wordpress.com" target="_blank" class="brand-outline-btn-sm">
@@ -199,7 +246,6 @@
                                 </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -213,7 +259,7 @@
             <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
             <p class="text-xl text-gray-300 mb-10 max-w-xl mx-auto">
                 I am available for project-based contracts in operations, administration, and project coordination.
-            </I>
+            </p>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
                 <!-- Refined "Glass" Button Style -->
                 <a href="mailto:lauraclarke.jw@gmail.com" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
@@ -252,14 +298,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
