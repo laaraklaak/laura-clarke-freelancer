@@ -26,13 +26,16 @@
             background-image: linear-gradient(to bottom right, #F8F9FA, #F1F5F9);
         }
         .brand-green {
-            color: #16A34A;
+            color: #16A34A; /* Primary Accent Color */
         }
         .brand-green-bg {
             background-color: #16A34A;
         }
         .brand-green-bg-hover:hover {
             background-color: #148C40;
+        }
+        .brand-dark-green {
+            color: #2F4F4F; /* Professional Anchor Color */
         }
         .brand-dark-green-bg {
             background-color: #2F4F4F;
@@ -58,15 +61,36 @@
             transform: translateY(-2px);
         }
         
-        /* New service grid styling */
+        /* New service grid styling (Step Visuals) */
         .solution-card {
-            border-left: 4px solid #16A34A;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
             transition: all 0.3s ease;
+            position: relative;
+            padding-left: 5rem; /* Space for the Step Number */
         }
         .solution-card:hover {
-            background-color: #e6ffec; /* Light green on hover */
-            border-left-color: #10b981; /* Darker green for emphasis */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transform: translateY(-3px);
+            border-color: #16A34A;
+        }
+        
+        /* Step Number Circle */
+        .step-number {
+            position: absolute;
+            left: 1rem;
+            top: 1.5rem;
+            height: 2.5rem;
+            width: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #16A34A; /* Brand Green */
+            color: white;
+            font-weight: 800;
+            font-size: 1.25rem;
         }
 
         /* 6. Animation Classes */
@@ -86,10 +110,10 @@
     <!-- Header / Navigation -->
     <header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-gray-900">DOCU-HUB SERVICES</div>
+            <div class="text-2xl font-bold brand-dark-green">DOCU-HUB SERVICES</div>
             <div class="hidden md:flex space-x-6">
                 <a href="#about" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">About</a>
-                <a href="#services" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Services</a>
+                <a href="#services" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Solutions</a>
                 <a href="#portfolio" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Experience</a>
                 <a href="#contact" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Contact</a>
             </div>
@@ -108,7 +132,7 @@
             <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0">
                 <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">Laura Clarke</h1>
                 <!-- Simplified Business Name and Title -->
-                <h2 class="text-2xl md:text-3xl font-light text-gray-700 mb-8">DOCU-HUB OPERATIONS SERVICES | Compliance & Systems Expert</h2>
+                <h2 class="text-2xl md:text-3xl font-light brand-dark-green mb-8">DOCU-HUB OPERATIONS SERVICES | Compliance & Systems Expert</h2>
                 <!-- About Me Portfolio Overview -->
                 <p class="text-lg text-gray-600 mb-10 max-w-xl">
                     I offer dedicated, project-based administrative solutions. I bring 15+ years of high-compliance experience to organize your records, manage complex documents, and ensure everything is audit-ready.
@@ -138,46 +162,50 @@
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How I Deliver Peace of Mind</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">I specialize in **Digital Compliance & Submission**—solving your most frustrating administrative challenges.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 
-                <!-- 1. TAJ & Tax Portal Submissions -->
-                <div class="solution-card bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-3">
+                <!-- 1. TAJ & Long Line Solution (STEP 1) -->
+                <div class="solution-card p-6 rounded-xl">
+                    <div class="step-number">1</div>
+                    <div class="flex items-center mb-3 ml-4">
                         <i class="fas fa-file-invoice text-2xl brand-green mr-3"></i>
-                        <h3 class="text-lg font-bold text-gray-900">TAJ & Tax Portal Submissions</h3>
+                        <h3 class="text-xl font-bold text-gray-900">TAJ & Tax Portal Submissions</h3>
                     </div>
-                    <p class="text-gray-700 mb-2">**THE PAIN:** Spending hours in line or getting rejected due to online errors on tax payments or filings.</p>
-                    <p class="font-semibold text-gray-800">**THE SOLUTION:** Guaranteed error-free filing and timely payment of Property Tax and other statutory obligations via the TAJ portal.</p>
+                    <p class="text-gray-700 mb-2 ml-4">**THE PAIN:** Spending hours in line or getting rejected due to online errors on tax payments or filings.</p>
+                    <p class="font-semibold text-gray-800 ml-4">**THE SOLUTION:** Guaranteed error-free filing and timely payment of Property Tax and other statutory obligations via the TAJ portal.</p>
                 </div>
 
-                <!-- 2. PICA Passport & Citizenship Applications -->
-                <div class="solution-card bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-3">
+                <!-- 2. PICA Passport & Citizenship Applications (STEP 2) -->
+                <div class="solution-card p-6 rounded-xl">
+                    <div class="step-number">2</div>
+                    <div class="flex items-center mb-3 ml-4">
                         <i class="fas fa-passport text-2xl brand-green mr-3"></i>
-                        <h3 class="text-lg font-bold text-gray-900">PICA Passport & Citizenship Applications</h3>
+                        <h3 class="text-xl font-bold text-gray-900">PICA Passport & Citizenship Applications</h3>
                     </div>
-                    <p class="text-gray-700 mb-2">**THE PAIN:** The PICA online application process is notoriously complex, leading to delays and costly rejections on passports or citizenship forms.</p>
-                    <p class="font-semibold text-gray-800">**THE SOLUTION:** Meticulous completion and submission of all PICA applications, ensuring 100% document compliance to secure approval the first time.</p>
+                    <p class="text-gray-700 mb-2 ml-4">**THE PAIN:** The PICA online application process is notoriously complex, leading to delays and costly rejections on passports or citizenship forms.</p>
+                    <p class="font-semibold text-gray-800 ml-4">**THE SOLUTION:** Meticulous completion and submission of all PICA applications, ensuring 100% document compliance to secure approval the first time.</p>
                 </div>
 
-                <!-- 3. Motor Vehicle & Licensing Solution -->
-                <div class="solution-card bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-3">
+                <!-- 3. Motor Vehicle & Licensing Solution (STEP 3) -->
+                <div class="solution-card p-6 rounded-xl">
+                    <div class="step-number">3</div>
+                    <div class="flex items-center mb-3 ml-4">
                         <i class="fas fa-car-side text-2xl brand-green mr-3"></i>
-                        <h3 class="text-lg font-bold text-gray-900">Motor Vehicle License & Renewal</h3>
+                        <h3 class="text-xl font-bold text-gray-900">Motor Vehicle License & Renewal</h3>
                     </div>
-                    <p class="text-gray-700 mb-2">**THE PAIN:** Hassle and lost time renewing licenses, paying traffic tickets, or completing other motor vehicle payments online.</p>
-                    <p class="font-semibold text-gray-800">**THE SOLUTION:** Fast, accurate, and completely online handling of all necessary motor vehicle payments and licensing procedures.</p>
+                    <p class="text-gray-700 mb-2 ml-4">**THE PAIN:** Hassle and lost time renewing licenses, paying traffic tickets, or completing other motor vehicle payments online.</p>
+                    <p class="font-semibold text-gray-800 ml-4">**THE SOLUTION:** Fast, accurate, and completely online handling of all necessary motor vehicle payments and licensing procedures.</p>
                 </div>
 
-                <!-- 4. Online Banking & Complex Apps Solution -->
-                <div class="solution-card bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-3">
+                <!-- 4. Online Banking & Complex Apps Solution (STEP 4) -->
+                <div class="solution-card p-6 rounded-xl">
+                    <div class="step-number">4</div>
+                    <div class="flex items-center mb-3 ml-4">
                         <i class="fas fa-lock text-2xl brand-green mr-3"></i>
-                        <h3 class="text-lg font-bold text-gray-900">Sensitive Financial Applications</h3>
+                        <h3 class="text-xl font-bold text-gray-900">Sensitive Financial Applications</h3>
                     </div>
-                    <p class="text-gray-700 mb-2">**THE PAIN:** Older family members or individuals struggle with new online banking, loan, or complex visa applications.</p>
-                    <p class="font-semibold text-gray-800">**THE SOLUTION:** Secure, error-free completion of complex banking, loan, or visa applications, ensuring all supporting documents are correctly compiled and vetted for submission.</p>
+                    <p class="text-gray-700 mb-2 ml-4">**THE PAIN:** Older family members or individuals struggle with new online banking, loan, or complex visa applications.</p>
+                    <p class="font-semibold text-gray-800 ml-4">**THE SOLUTION:** Secure, error-free completion of complex banking, loan, or visa applications, ensuring all supporting documents are correctly compiled and vetted for submission.</p>
                 </div>
             </div>
         </div>
@@ -223,15 +251,16 @@
 
             <!-- Client Testimonials (Future Proofing) -->
             <div class="text-center mb-10 mt-16 scroll-reveal">
-                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Clients Say</h2>
-                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">My best work is proven through word-of-mouth. Client reviews will be posted here as they become available.</p>
+                 <!-- REWRITE HERE -->
+                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
+                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">See how I eliminate confusion and deliver guaranteed administrative peace of mind.</p>
              </div>
              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto scroll-reveal">
                  <!-- Placeholder 1 (UPDATED REVIEW) -->
                  <div class="review-card p-6 rounded-lg">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Thanks for simplifying the passport application process, it's my first one and I didn't know where to start."</p>
-                     <p class="font-bold text-gray-800">- Danielle</p>
+                     <p class="font-bold text-gray-800">- Danielle, Private Client</p>
                  </div>
                  <!-- Placeholder 2 (EXISTING REVIEW) -->
                  <div class="review-card p-6 rounded-lg">
@@ -242,8 +271,8 @@
                  <!-- Placeholder 3 -->
                  <div class="review-card p-6 rounded-lg">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
-                     <p class="text-gray-700 italic mb-4">"Outstanding. Navigated the online portal for me and avoided a major error. Highly recommend for any complex form submission."</p>
-                     <p class="font-bold text-gray-800">- S. Williams, Individual Client</p>
+                     <p class="text-gray-700 italic mb-4">"Outstanding. She navigated the online portal for me and avoided a major error. Highly recommend for any complex form submission."</p>
+                     <p class="font-bold text-gray-800">- U. Clarke, Individual Client</p>
                  </div>
              </div>
 
@@ -296,4 +325,3 @@
 
 </body>
 </html>
-
