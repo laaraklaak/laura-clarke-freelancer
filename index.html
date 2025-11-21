@@ -58,6 +58,17 @@
             transform: translateY(-2px);
         }
         
+        /* New service grid styling */
+        .solution-card {
+            border-left: 4px solid #16A34A;
+            transition: all 0.3s ease;
+        }
+        .solution-card:hover {
+            background-color: #e6ffec; /* Light green on hover */
+            border-left-color: #10b981; /* Darker green for emphasis */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
         /* 6. Animation Classes */
         .scroll-reveal {
             opacity: 0;
@@ -98,46 +109,75 @@
                 <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">Laura Clarke</h1>
                 <!-- Simplified Business Name and Title -->
                 <h2 class="text-2xl md:text-3xl font-light text-gray-700 mb-8">DOCU-HUB OPERATIONS SERVICES | Compliance & Systems Expert</h2>
-                <!-- Simplified Tagline for One-on-One Solutions -->
+                <!-- About Me Portfolio Overview -->
                 <p class="text-lg text-gray-600 mb-10 max-w-xl">
-                    I am available for project-based contracts—from single form submissions to comprehensive records setup—bringing 15+ years of high-compliance experience (NCB, OEC) to your specific challenge.
+                    I offer dedicated, project-based administrative solutions. I bring 15+ years of high-compliance experience to organize your records, manage complex documents, and ensure everything is audit-ready.
                 </p>
                 <div class="flex justify-center md:justify-start space-x-4">
                     <a href="#services" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
-                        View Services
+                        View Solutions
                     </a>
                     <!-- Portfolio links must be accurate -->
-                    <a href="PDF/laura-clarke-cv-public.pdf" target="_blank" class="brand-outline-btn font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
-    Download CV (PDF)
-</a>
+                    <a href="laura-clarke-cv-public.pdf" target="_blank" class="brand-outline-btn font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        Download CV (PDF)
+                    </a>
                 </div>
             </div>
             <!-- Profile Picture - PATH FOR YOUR IMAGE -->
             <div class="md:w-2/5 flex justify-center">
-                <img src="images/profile-picture.png" onerror="this.onerror=null; this.src='https://placehold.co/384x384/2F4F4F/FFFFFF?text=LC+Photo'" alt="Laura Clarke" class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white shadow-lg" style="box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.1), 0 10px 10px -5px rgba(22, 163, 74, 0.04);">
+                <img src="images/profile_photo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/384x384/2F4F4F/FFFFFF?text=LC+Photo'" alt="Laura Clarke" class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white shadow-lg" style="box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.1), 0 10px 10px -5px rgba(22, 163, 74, 0.04);">
             </div>
         </div>
     </section>
 
-    <!-- Services Section (TWO FOCUSED SERVICES) -->
+    <!-- Services Section (PROBLEM -> SOLUTION FOCUSED - FOCUSED ON HIGH PAIN POINTS) -->
     <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How I Can Help You (Solutions for Peace of Mind)</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">I take the stress out of complex forms and messy records, focusing on accuracy and compliance so you don't have to.</p>
+                <!-- Refined Title -->
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How I Deliver Peace of Mind</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">I specialize in **Digital Compliance & Submission**—solving your most frustrating administrative challenges.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Service 1: Digital Compliance & Submission -->
-                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition duration-300 flex flex-col items-start">
-                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-file-invoice"></i></div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Digital Compliance & Submission</h3>
-                    <p class="text-gray-600">Expert, error-free completion and submission of complex forms (e.g., RGD, COJ, TAJ) and sensitive online financial applications.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                
+                <!-- 1. TAJ & Tax Portal Submissions -->
+                <div class="solution-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-file-invoice text-2xl brand-green mr-3"></i>
+                        <h3 class="text-lg font-bold text-gray-900">TAJ & Tax Portal Submissions</h3>
+                    </div>
+                    <p class="text-gray-700 mb-2">**THE PAIN:** Spending hours in line or getting rejected due to online errors on tax payments or filings.</p>
+                    <p class="font-semibold text-gray-800">**THE SOLUTION:** Guaranteed error-free filing and timely payment of Property Tax and other statutory obligations via the TAJ portal.</p>
                 </div>
-                <!-- Service 2: Administrative Systems & Audit Readiness -->
-                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition duration-300 flex flex-col items-start">
-                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-folder-open"></i></div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Administrative Systems & Audit Readiness</h3>
-                    <p class="text-gray-600">Structuring disorganized personal or business records into secure, indexed, and compliant digital filing systems for easy auditing or loan applications.</p>
+
+                <!-- 2. PICA Passport & Citizenship Applications -->
+                <div class="solution-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-passport text-2xl brand-green mr-3"></i>
+                        <h3 class="text-lg font-bold text-gray-900">PICA Passport & Citizenship Applications</h3>
+                    </div>
+                    <p class="text-gray-700 mb-2">**THE PAIN:** The PICA online application process is notoriously complex, leading to delays and costly rejections on passports or citizenship forms.</p>
+                    <p class="font-semibold text-gray-800">**THE SOLUTION:** Meticulous completion and submission of all PICA applications, ensuring 100% document compliance to secure approval the first time.</p>
+                </div>
+
+                <!-- 3. Motor Vehicle & Licensing Solution -->
+                <div class="solution-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-car-side text-2xl brand-green mr-3"></i>
+                        <h3 class="text-lg font-bold text-gray-900">Motor Vehicle License & Renewal</h3>
+                    </div>
+                    <p class="text-gray-700 mb-2">**THE PAIN:** Hassle and lost time renewing licenses, paying traffic tickets, or completing other motor vehicle payments online.</p>
+                    <p class="font-semibold text-gray-800">**THE SOLUTION:** Fast, accurate, and completely online handling of all necessary motor vehicle payments and licensing procedures.</p>
+                </div>
+
+                <!-- 4. Online Banking & Complex Apps Solution -->
+                <div class="solution-card bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-lock text-2xl brand-green mr-3"></i>
+                        <h3 class="text-lg font-bold text-gray-900">Sensitive Financial Applications</h3>
+                    </div>
+                    <p class="text-gray-700 mb-2">**THE PAIN:** Older family members or individuals struggle with new online banking, loan, or complex visa applications.</p>
+                    <p class="font-semibold text-gray-800">**THE SOLUTION:** Secure, error-free completion of complex banking, loan, or visa applications, ensuring all supporting documents are correctly compiled and vetted for submission.</p>
                 </div>
             </div>
         </div>
@@ -187,14 +227,14 @@
                  <p class="text-lg text-gray-600 max-w-2xl mx-auto">My best work is proven through word-of-mouth. Client reviews will be posted here as they become available.</p>
              </div>
              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto scroll-reveal">
-                 <!-- Placeholder 1 -->
+                 <!-- Placeholder 1 (UPDATED REVIEW) -->
                  <div class="review-card p-6 rounded-lg">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Thanks for simplifying the passport application process, it's my first one and I didn't know where to start."</p>
                      <p class="font-bold text-gray-800">- Danielle</p>
                  </div>
-                 <!-- Placeholder 2 -->
-                <div class="review-card p-6 rounded-lg">
+                 <!-- Placeholder 2 (EXISTING REVIEW) -->
+                 <div class="review-card p-6 rounded-lg">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Laura helped renew my motor vehicle license online, which took the hassle out of joining long lines. I will certainly spread the word to my friends."</p>
                      <p class="font-bold text-gray-800">- Claude, Private Client</p>
@@ -203,7 +243,7 @@
                  <div class="review-card p-6 rounded-lg">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Outstanding. Navigated the online portal for me and avoided a major error. Highly recommend for any complex form submission."</p>
-                     <p class="font-bold text-gray-800">- U. Clarke, Individual Client</p>
+                     <p class="font-bold text-gray-800">- S. Williams, Individual Client</p>
                  </div>
              </div>
 
@@ -256,5 +296,3 @@
 
 </body>
 </html>
-
-
