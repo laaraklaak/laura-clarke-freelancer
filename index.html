@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laura Clarke - Freelance Operations Specialist</title>
+    <title>DOCU-HUB OPERATIONS SERVICES | Laura Clarke</title>
     <!-- 1. Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 2. Font Awesome Icons -->
@@ -46,29 +46,19 @@
             background-color: #16A34A;
             color: #FFFFFF;
         }
-        /* This is the new "secondary" button style for Pillar 3 */
-        .brand-outline-btn-sm {
-            border: 1px solid #16A34A;
-            color: #16A34A;
+        /* New review card styling */
+        .review-card {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
-            font-size: 0.875rem; /* text-sm */
-            padding: 0.5rem 1rem; /* py-2 px-4 */
-            border-radius: 0.5rem; /* rounded-lg */
-            font-weight: 500; /* font-medium */
-            display: inline-flex;
-            align-items: center;
         }
-        .brand-outline-btn-sm:hover {
-            background-color: #16A34A;
-            color: #FFFFFF;
+        .review-card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
         }
         
-        /* 6. Zig-zag layout */
-        .portfolio-item:nth-child(even) .portfolio-layout {
-            flex-direction: row-reverse;
-        }
-
-        /* 7. Animation Classes */
+        /* 6. Animation Classes */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -85,11 +75,11 @@
     <!-- Header / Navigation -->
     <header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-gray-900">Laura Clarke</div>
+            <div class="text-2xl font-bold text-gray-900">DOCU-HUB SERVICES</div>
             <div class="hidden md:flex space-x-6">
                 <a href="#about" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">About</a>
                 <a href="#services" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Services</a>
-                <a href="#portfolio" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Portfolio</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Experience</a>
                 <a href="#contact" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Contact</a>
             </div>
             <div class="md:hidden">
@@ -106,147 +96,117 @@
             <!-- Text Content -->
             <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0">
                 <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">Laura Clarke</h1>
-                <h2 class="text-2xl md:text-3xl font-light text-gray-700 mb-8">Freelance Operations Specialist | Logistics, Compliance & Admin</h2>
+                <!-- Simplified Business Name and Title -->
+                <h2 class="text-2xl md:text-3xl font-light text-gray-700 mb-8">DOCU-HUB OPERATIONS SERVICES | Compliance & Systems Expert</h2>
+                <!-- Simplified Tagline for One-on-One Solutions -->
                 <p class="text-lg text-gray-600 mb-10 max-w-xl">
-                    I am available for project-based contracts, bringing 15+ years of high-compliance experience (OEC, NCB) to your specific project needs in logistics, compliance, and financial administration.
+                    I offer dedicated, project-based administrative solutions. I bring 15+ years of high-compliance experience to organize your records, manage complex documents, and ensure everything is audit-ready.
                 </p>
                 <div class="flex justify-center md:justify-start space-x-4">
-                    <a href="#portfolio" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
-                        View My Work
+                    <a href="#services" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                        View Services
                     </a>
                     <!-- Portfolio links must be accurate -->
                     <a href="PDF/laura-clarke-cv-public.pdf" target="_blank" class="brand-outline-btn font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
-                        Download CV (PDF)
-                    </a>
+    Download CV (PDF)
+</a>
                 </div>
             </div>
             <!-- Profile Picture - PATH FOR YOUR IMAGE -->
             <div class="md:w-2/5 flex justify-center">
-                <img src="images/profile-picture.png" alt="Laura Clarke" class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white shadow-lg" style="box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.1), 0 10px 10px -5px rgba(22, 163, 74, 0.04);">
+                <img src="images/profile-picture.png" onerror="this.onerror=null; this.src='https://placehold.co/384x384/2F4F4F/FFFFFF?text=LC+Photo'" alt="Laura Clarke" class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white shadow-lg" style="box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.1), 0 10px 10px -5px rgba(22, 163, 74, 0.04);">
             </div>
         </div>
     </section>
 
-    <!-- Services Section (REVISED) -->
+    <!-- Services Section (TWO FOCUSED SERVICES) -->
     <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How I Can Help You</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">My specialized services are designed for teams facing high-stakes deadlines, backlogs, or compliance audits.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How I Can Help You (Solutions for Peace of Mind)</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">I take the stress out of complex forms and messy records, focusing on accuracy and compliance so you don't have to.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Service 1: Seasonal & Surge Support -->
-                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition duration-300">
-                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-calendar-check"></i></div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Seasonal & Surge Support</h3>
-                    <p class="text-gray-600">Logistics and administrative management for peak periods (Tax Season, Exams, Audits). I hit the ground running to clear backlogs and manage deadlines.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Service 1: Digital Compliance & Submission -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition duration-300 flex flex-col items-start">
+                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-file-invoice"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Digital Compliance & Submission</h3>
+                    <p class="text-gray-600">Expert, error-free completion and submission of complex forms (e.g., RGD, COJ, TAJ) and sensitive online financial applications.</p>
                 </div>
-                <!-- Service 2: Compliance & Audit Prep -->
-                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition duration-300">
-                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-clipboard-list"></i></div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Compliance & Audit Prep</h3>
-                    <p class="text-gray-600">Meticulous review of records, financial claim forms, and operational data to ensure 100% audit readiness and regulatory adherence.</p>
-                </div>
-                <!-- Service 3: Team Job Aids & Guides -->
-                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition duration-300">
-                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-chalkboard-user"></i></div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Team Job Aids & Guides</h3>
-                    <p class="text-gray-600">Creation of clear, printed, or digital "How-To" guides and manuals to standardize processes for temporary or support staff.</p>
+                <!-- Service 2: Administrative Systems & Audit Readiness -->
+                <div class="bg-gray-50 p-8 rounded-xl border border-gray-100 hover:shadow-lg transition duration-300 flex flex-col items-start">
+                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-folder-open"></i></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Administrative Systems & Audit Readiness</h3>
+                    <p class="text-gray-600">Structuring disorganized personal or business records into secure, indexed, and compliant digital filing systems for easy auditing or loan applications.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Portfolio Section (Simplified to TWO Experience Paragraphs + Reviews) -->
     <section id="portfolio" class="py-24 bg-gray-50">
         <div class="container mx-auto px-6">
             
             <!-- Section Heading -->
-            <div class="text-center mb-20 scroll-reveal">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">A 360-Degree View of My Work</h2>
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">Experience & Proof of Competence</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    My portfolio is proof of my three core pillars: professional competence, personal resilience, and modern initiative.
+                    My service is backed by institutional experience in high-compliance, audited environments.
                 </p>
             </div>
 
-            <!-- Portfolio Item 1: Professional Competence (OEC) -->
-            <div class="portfolio-item scroll-reveal mb-24">
-                <div class="portfolio-layout flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
-                    <!-- Image - PATH FOR YOUR IMAGE -->
-                    <div class="md:w-1/2">
-                        <img src="images/exam-logistics-screenshot.jpg" alt="Exam Administration Case Study" class="object-cover w-full h-64 md:h-96">
-                    </div>
-                    <!-- Text -->
-                    <div class="md:w-1/2 p-10 md:p-16">
-                        <h3 class="text-sm font-bold uppercase text-gray-500 mb-2 tracking-wider">Pillar 1: Professional Competence</h3>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-5">High-Stakes Logistics & Compliance</h2>
-                        <p class="text-gray-600 mb-8 text-lg">
-                            This case study of my work with the OEC proves my ability to manage complex, high-stakes logistics, sensitive data, and large teams with 100% compliance.
+            <!-- Experience Content -->
+            <div class="max-w-4xl mx-auto space-y-12 mb-20 scroll-reveal">
+                
+                <!-- Pillar 1: Financial Integrity & Auditing (NCB Focus) -->
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-md border-l-4 border-yellow-600">
+                    <div class="flex-shrink-0 text-3xl text-yellow-600 mt-1"><i class="fas fa-sack-dollar"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Financial Integrity & Audit Readiness</h3>
+                        <p class="text-gray-600">
+                            My background as a Team Leader and Financial Officer at **NCB** instilled a non-negotiable standard for accurate financial processing and regulatory balancing. This expertise is applied to every client project, ensuring your personal or small business records are **clean, verified, and 100% ready for tax filing or external review**, protecting you from future audit complications.
                         </p>
-                        <!-- PDF FILE NAME -->
-                        <a href="PDF/case-study-logistics.pdf" target="_blank" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center text-lg">
-                            View Case Study &nbsp; <i class="fas fa-arrow-right"></i>
-                        </a>
+                    </div>
+                </div>
+
+                <!-- Pillar 2: Operational Systems & Compliance (OEC Focus) -->
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-md border-l-4 border-blue-600">
+                    <div class="flex-shrink-0 text-3xl text-blue-600 mt-1"><i class="fas fa-tasks"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Operational Systems & Compliance Management</h3>
+                        <p class="text-gray-600">
+                            The successful administration of complex, simultaneous exams at the **OEC** required strategic planning, meticulous logistical coordination, and absolute compliance enforcement. I use this operational mindset to design simple, scalable administrative systems for your home or business, guaranteeing that documentation is correctly organized from the start, avoiding clutter and compliance gaps.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <!-- Portfolio Item 2: Character & Resilience (Crisis) -->
-            <div class="portfolio-item scroll-reveal mb-24">
-                <div class="portfolio-layout flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
-                    <!-- Image - PATH FOR YOUR IMAGE -->
-                    <div class="md:w-1/2">
-                        <img src="images/case-study-crisis.png" alt="Crisis Project Management" class="object-cover w-full h-64 md:h-96">
-                    </div>
-                    <!-- Text -->
-                    <div class="md:w-1/2 p-10 md:p-16">
-                        <h3 class="text-sm font-bold uppercase text-gray-500 mb-2 tracking-wider">Pillar 2: Character & Resilience</h3>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-5">Crisis Project Management</h2>
-                        <p class="text-gray-600 mb-8 text-lg">
-                            A breakdown of how I managed a 5-month medical crisis, using meticulous data analysis and financial control to navigate the challenge and emerge with zero debt.
-                        </p>
-                        <!-- PDF FILE NAME -->
-                        <a href="PDF/case-study-crisis.pdf" target="_blank" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center text-lg">
-                            View Case Study &nbsp; <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <!-- Client Testimonials (Future Proofing) -->
+            <div class="text-center mb-10 mt-16 scroll-reveal">
+                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Clients Say</h2>
+                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">My best work is proven through word-of-mouth. Client reviews will be posted here as they become available.</p>
+             </div>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto scroll-reveal">
+                 <!-- Placeholder 1 -->
+                 <div class="review-card p-6 rounded-lg">
+                     <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
+                     <p class="text-gray-700 italic mb-4">"Laura helped me secure my business registration quickly and accurately. The attention to detail was exceptional."</p>
+                     <p class="font-bold text-gray-800">- Jane D., Small Business Owner</p>
+                 </div>
+                 <!-- Placeholder 2 -->
+                <div class="review-card p-6 rounded-lg">
+                     <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
+                     <p class="text-gray-700 italic mb-4">"Laura helped renew my motor vehicle license online, which took the hassle out of joining long lines. I will certainly spread the word to my friends."</p>
+                     <p class="font-bold text-gray-800">- Claude, Private Client</p>
+                 </div>
+                 <!-- Placeholder 3 -->
+                 <div class="review-card p-6 rounded-lg">
+                     <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
+                     <p class="text-gray-700 italic mb-4">"Outstanding. Navigated the online portal for me and avoided a major error. Highly recommend for any complex form submission."</p>
+                     <p class="font-bold text-gray-800">- U. Clarke, Individual Client</p>
+                 </div>
+             </div>
 
-            <!-- Portfolio Item 3: Modern Initiative (Digital) -->
-            <div class="portfolio-item scroll-reveal">
-                <div class="portfolio-layout flex flex-col md:flex-row items-center bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
-                    <!-- Image - PATH FOR YOUR IMAGE -->
-                    <div class="md:w-1/2">
-                        <img src="images/digital-products-composite.png" alt="Digital Content Management Projects" class="object-cover w-full h-64 md:h-96">
-                    </div>
-                    <!-- Text -->
-                    <div class="md:w-1/2 p-10 md:p-16">
-                        <h3 class="text-sm font-bold uppercase text-gray-500 mb-2 tracking-wider">Pillar 3: Modern Initiative</h3>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-5">Digital Content & E-Learning</h2>
-                        <p class="text-gray-600 mb-8 text-lg">
-                           This case study shows my self-taught digital transformation. These projects are the live results: a GitHub e-learning site and a WordPress research blog.
-                        </p>
-                        <!-- UPDATED: Three links now -->
-                        <div class="flex flex-col gap-4">
-                            <!-- Link 1: The Case Study PDF (Main Button) -->
-                            <a href="PDF/case-study-digital.pdf" target="_blank" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-6 rounded-lg transition duration-300 inline-flex items-center justify-center text-lg">
-                                Read Case Study &nbsp; <i class="fas fa-arrow-right"></i>
-                            </a>
-                            
-                            <!-- Links 2 & 3: The Live Blogs (Secondary Buttons) -->
-                            <div class="flex flex-wrap gap-4">
-                                <a href="https://laaraklaak.github.io/learn-jamaican" target="_blank" class="brand-outline-btn-sm">
-                                    Language Blog (GitHub) &nbsp; <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                 <a href="https://hairskinhaven.wordpress.com" target="_blank" class="brand-outline-btn-sm">
-                                    Wellness Blog (WP) &nbsp; <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             
         </div>
     </section>
@@ -256,7 +216,7 @@
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
             <p class="text-xl text-gray-300 mb-10 max-w-xl mx-auto">
-                I am available for project-based contracts in operations, administration, and project coordination.
+                I am available for project-based contracts in operations and administrative management.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
                 <!-- Refined "Glass" Button Style -->
@@ -296,10 +256,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
