@@ -360,7 +360,6 @@
     <!-- Footer -->
     <footer id="contact" class="brand-dark-green-bg text-white py-20">
         <div class="container mx-auto px-6 text-center">
-            <!-- Private Toggle Button (REMOVED: No Audit Log to view) -->
             
             <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
             <p class="text-xl text-gray-300 mb-10 max-w-xl mx-auto">
@@ -457,25 +456,27 @@ AGREED: Yes (Click-Wrap)
             // 3. Trigger Mailto Link
             const mailtoLink = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             
-            // This opens the user's default email client
+            // 4. Update UI with Clear Instruction BEFORE triggering the mailto
+            submitButton.textContent = "ATTENTION: Click SEND in your email app!";
+            submitButton.classList.remove('brand-green-bg');
+            submitButton.classList.add('bg-red-500');
+            submitButton.disabled = false; // Re-enable for the reset delay
+
+            // 5. Trigger Mailto (This opens the user's default email client)
+            // It is placed here so the user sees the red message first.
             window.location.href = mailtoLink;
 
-            // 4. Update UI for User Feedback
-            submitButton.textContent = "Email Client Opened (Check your email app!)";
-            submitButton.classList.remove('brand-green-bg');
-            submitButton.classList.add('bg-gray-500');
-
-            // Reset form visually after the action is triggered
+            // 6. Reset form visually after the action is triggered
             setTimeout(() => {
                 form.reset();
                 submitButton.textContent = "Submit Project Request (Consent Required)";
-                submitButton.classList.remove('bg-gray-500');
+                submitButton.classList.remove('bg-red-500');
                 submitButton.classList.add('brand-green-bg');
                 hasScrolledToBottom = false;
                 consentCheckbox.disabled = true;
                 consentCheckbox.checked = false;
                 updateSubmitButtonState();
-            }, 3000); 
+            }, 5000); // 5 seconds wait to ensure the client has time to see the instruction
         });
 
         // --- Event Listeners ---
