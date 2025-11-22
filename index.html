@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOCU-HUB OPERATIONS SERVICES | Laura Clarke</title>
+    <title>DOCU-HUB SERVICES | Laura Clarke</title>
     <!-- 1. Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 2. Font Awesome Icons -->
@@ -127,7 +127,6 @@
                 <a href="#services" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Solutions</a>
                 <a href="#portfolio" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Experience</a>
                 <a href="#request-form" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Request Project</a>
-                <!-- The Audit Log link is REMOVED from public navigation for security -->
             </div>
             <div class="md:hidden">
                 <button class="text-gray-600 hover:text-gray-900">
@@ -137,7 +136,7 @@
         </nav>
     </header>
 
-    <!-- Hero Section (Existing Content) -->
+    <!-- Hero Section -->
     <section id="about" class="hero-bg py-24 md:py-32 overflow-hidden">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
             <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0">
@@ -161,7 +160,7 @@
         </div>
     </section>
 
-    <!-- Services Section (Existing Content) -->
+    <!-- Services Section -->
     <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -350,19 +349,19 @@
                  <p class="text-lg text-gray-600 max-w-2xl mx-auto">See how I eliminate confusion and deliver guaranteed administrative peace of mind.</p>
              </div>
              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto scroll-reveal">
-                 <!-- Placeholder 1 (UPDATED REVIEW) -->
+                 <!-- Review 1 (Danielle) -->
                  <div class="review-card p-6 rounded-lg">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Thanks for simplifying the passport application process, it's my first one and I didn't know where to start."</p>
                      <p class="font-bold text-gray-800">- Danielle</p>
                  </div>
-                 <!-- Placeholder 2 (EXISTING REVIEW) -->
+                 <!-- Review 2 (Claude) -->
                  <div class="review-card p-6 rounded-lg">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Laura helped renew my motor vehicle license online, which took the hassle out of joining long lines. I will certainly spread the word to my friends."</p>
                      <p class="font-bold text-gray-800">- Claude, Private Client</p>
                  </div>
-                 <!-- Placeholder 3 -->
+                 <!-- Review 3 (S. Williams) -->
                  <div class="review-card p-6 rounded-lg">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Outstanding. Navigated the online portal for me and avoided a major error. Highly recommend for any complex form submission."</p>
@@ -372,7 +371,7 @@
         </div>
     </section>
     
-    <!-- Footer (Existing Content) -->
+    <!-- Footer -->
     <footer id="contact" class="brand-dark-green-bg text-white py-20">
         <div class="container mx-auto px-6 text-center">
             <!-- Private Toggle Button -->
@@ -432,8 +431,10 @@
 
                 // Sign in using provided custom token or anonymously
                 if (initialAuthToken) {
+                    // This is the preferred sign-in method for the platform
                     await signInWithCustomToken(auth, initialAuthToken);
                 } else {
+                    // Fallback to anonymous sign-in if token is missing
                     await signInAnonymously(auth);
                 }
 
@@ -460,7 +461,9 @@
         async function saveComplianceLog(logData) {
             if (!db || !userId || userId === 'anonymous') {
                 console.error("Database or User ID is not ready. Cannot save log.");
-                return;
+                // Simulate success instantly if DB is not ready, BUT IT SHOULD BE READY
+                // We return failure here to reflect the real-world error
+                return false; 
             }
 
             // Define the collection path for private compliance logs
@@ -474,8 +477,10 @@
                 console.log(`DPA Compliance Log saved successfully to Firestore. Document ID: ${docId}`);
                 return true; // Return success status
             } catch (error) {
-                console.error("Error saving compliance log to Firestore:", error);
-                return false; // Return failure status
+                // THIS ERROR IS THE SECURITY RULE VIOLATION (PERMISSION DENIED)
+                console.error("Error saving compliance log (PERMISSION DENIED expected if rules not set):", error);
+                // The form is stuck processing because of this failure.
+                return false; 
             }
         }
 
@@ -507,7 +512,7 @@
             submitButton.disabled = !isReadyToSubmit;
             if (!isReadyToSubmit && hasScrolledToBottom) {
                  statusMessage.classList.remove('hidden');
-                 statusMessage.textContent = "Please read the terms and agree to proceed.";
+                 statusMessage.textContent = "Please check the box to agree to the Terms of Service.";
             } else {
                 statusMessage.classList.add('hidden');
             }
@@ -535,36 +540,34 @@
             submitButton.disabled = true; // Disable button immediately
             submitButton.textContent = "Processing...";
 
-            if (!submitButton.disabled) {
-                // Mock IP address since the actual client IP is inaccessible in an iframe environment
-                const clientIp = '10.0.0.1'; 
-                
-                const complianceLog = {
-                    consent_datetime: new Date().toISOString(),
-                    method: SUBMISSION_METHOD,
-                    service_version: SERVICE_AGREEMENT_VERSION,
-                    client_ip: clientIp,
-                    client_name: document.getElementById('name').value,
-                    client_email: document.getElementById('email').value,
-                    service_requested: document.getElementById('service').value,
-                    // Store the UID of the account storing the log for audit trail purposes
-                    admin_user_id: userId 
-                };
+            // We proceed with submission even if auth is not fully ready, but the save function will fail
+            const clientIp = '10.0.0.1'; 
+            
+            const complianceLog = {
+                consent_datetime: new Date().toISOString(),
+                method: SUBMISSION_METHOD,
+                service_version: SERVICE_AGREEMENT_VERSION,
+                client_ip: clientIp,
+                client_name: document.getElementById('name').value,
+                client_email: document.getElementById('email').value,
+                service_requested: document.getElementById('service').value,
+                admin_user_id: userId 
+            };
 
-                const saveSuccess = await saveComplianceLog(complianceLog);
+            const saveSuccess = await saveComplianceLog(complianceLog);
 
-                // --- User Feedback ---
-                if (saveSuccess) {
-                    submitButton.textContent = "Request Sent & Consent Logged Successfully!";
-                    submitButton.classList.remove('brand-green-bg', 'bg-red-500');
-                    submitButton.classList.add('bg-green-600', 'status-success');
-                    form.reset(); // Clear the form after success
-                } else {
-                    submitButton.textContent = "Error: Could not log consent. Try again.";
-                    submitButton.classList.remove('brand-green-bg');
-                    submitButton.classList.add('bg-red-500');
-                    submitButton.disabled = false; // Re-enable if failed
-                }
+            // --- User Feedback ---
+            if (saveSuccess) {
+                submitButton.textContent = "Request Sent & Consent Logged Successfully!";
+                submitButton.classList.remove('brand-green-bg', 'bg-red-500');
+                submitButton.classList.add('bg-green-600', 'status-success');
+                form.reset(); // Clear the form after success
+            } else {
+                // If the save fails (due to security rule), display the error clearly
+                submitButton.textContent = "ERROR: Submission Failed (Check Admin Login & Rules)";
+                submitButton.classList.remove('brand-green-bg', 'bg-green-600');
+                submitButton.classList.add('bg-red-500');
+                submitButton.disabled = false; // Re-enable for troubleshooting
             }
         });
 
