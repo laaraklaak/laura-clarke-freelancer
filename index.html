@@ -216,7 +216,7 @@
         </div>
     </section>
 
-    <!-- DPA Compliant Project Request Form -->
+    <!-- DPA Compliant Project Request Form (Operational, Email-Based Submission) -->
     <section id="request-form" class="py-20 bg-gray-50 border-t border-gray-200">
         <div class="container mx-auto px-6 max-w-2xl">
             <div class="text-center mb-10 scroll-reveal">
@@ -289,22 +289,8 @@
             </form>
         </div>
     </section>
-
-    <!-- DPA Audit Log Section (Internal Only - Must be hidden from clients) -->
-    <!-- The 'hidden' class is removed by JS when the authenticated user (you) clicks the toggle button -->
-    <section id="audit-log" class="py-20 bg-gray-100 border-t border-gray-300 hidden">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-gray-900 mb-6 brand-dark-green">DPA Consent & Project Inbox (Internal Log)</h2>
-            <p class="text-sm text-red-700 bg-red-100 p-3 rounded-lg mb-4 font-semibold">
-                WARNING: This section displays client data and is for the business owner's audit purposes only.
-            </p>
-            <div id="audit-log-data">
-                <p class="text-center py-10 text-gray-500">Awaiting authenticated access...</p>
-            </div>
-        </div>
-    </section>
     
-    <!-- Experience, Reviews, Footer (Existing Content) -->
+    <!-- Experience, Reviews, Footer -->
     <section id="portfolio" class="py-24 bg-gray-50">
         <!-- ... Existing Experience and Review Content ... -->
         <div class="container mx-auto px-6">
@@ -343,7 +329,7 @@
                 </div>
             </div>
 
-            <!-- Client Testimonials (Future Proofing) -->
+            <!-- Client Testimonials -->
             <div class="text-center mb-10 mt-16 scroll-reveal">
                  <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
                  <p class="text-lg text-gray-600 max-w-2xl mx-auto">See how I eliminate confusion and deliver guaranteed administrative peace of mind.</p>
@@ -374,10 +360,7 @@
     <!-- Footer -->
     <footer id="contact" class="brand-dark-green-bg text-white py-20">
         <div class="container mx-auto px-6 text-center">
-            <!-- Private Toggle Button -->
-            <button id="toggle-audit-btn" class="text-sm text-gray-400 hover:text-white mb-8 transition-colors duration-300 hidden">
-                [Access Internal Project Inbox]
-            </button>
+            <!-- Private Toggle Button (REMOVED: No Audit Log to view) -->
             
             <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
             <p class="text-xl text-gray-300 mb-10 max-w-xl mx-auto">
@@ -397,97 +380,13 @@
         </div>
     </footer>
 
-    <!-- 8. Firebase & JavaScript for DPA Compliance and Animations -->
+    <!-- 8. JavaScript for DPA Compliance and Submission (Simplified) -->
     <script type="module">
-        // --- FIREBASE IMPORTS ---
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, doc, setDoc, setLogLevel, collection, onSnapshot, query, orderBy, limit } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-        
-        // Disable verbose logging for production environment, but keep 'Debug' here for setup verification
-        setLogLevel('Debug');
-
-        // Global Canvas Variables (Required)
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
-        const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
-
-        let db;
-        let auth;
-        let userId = 'anonymous'; // Will be updated on sign-in
-        const toggleAuditBtn = document.getElementById('toggle-audit-btn');
-
-
-        // --- FIREBASE INITIALIZATION & AUTHENTICATION ---
-        async function initializeFirebase() {
-            try {
-                if (Object.keys(firebaseConfig).length === 0) {
-                    console.error("Firebase config is missing.");
-                    return;
-                }
-                const app = initializeApp(firebaseConfig);
-                db = getFirestore(app);
-                auth = getAuth(app);
-
-                // Sign in using provided custom token or anonymously
-                if (initialAuthToken) {
-                    // This is the preferred sign-in method for the platform
-                    await signInWithCustomToken(auth, initialAuthToken);
-                } else {
-                    // Fallback to anonymous sign-in if token is missing
-                    await signInAnonymously(auth);
-                }
-
-                onAuthStateChanged(auth, (user) => {
-                    if (user) {
-                        userId = user.uid;
-                        console.log(`Firebase authenticated. User ID: ${userId}`);
-                        // Show the private access button
-                        toggleAuditBtn.classList.remove('hidden'); 
-                        // Start listening to the log once authenticated
-                        startAuditLogListener(); 
-                    } else {
-                        console.log("User signed out or anonymous.");
-                        toggleAuditBtn.classList.add('hidden'); 
-                    }
-                });
-
-            } catch (error) {
-                console.error("Error initializing Firebase or signing in:", error);
-            }
-        }
-        
-        // --- DPA COMPLIANCE LOG STORAGE FUNCTION ---
-        async function saveComplianceLog(logData) {
-            if (!db || !userId || userId === 'anonymous') {
-                console.error("Database or User ID is not ready. Cannot save log.");
-                // Simulate success instantly if DB is not ready, BUT IT SHOULD BE READY
-                // We return failure here to reflect the real-world error
-                return false; 
-            }
-
-            // Define the collection path for private compliance logs
-            // Path: /artifacts/{appId}/users/{userId}/dpa_compliance_logs/{timestamp}
-            const collectionPath = `/artifacts/${appId}/users/${userId}/dpa_compliance_logs`;
-            const docId = new Date().getTime().toString(); // Use timestamp as unique Document ID
-
-            try {
-                const docRef = doc(db, collectionPath, docId);
-                await setDoc(docRef, logData);
-                console.log(`DPA Compliance Log saved successfully to Firestore. Document ID: ${docId}`);
-                return true; // Return success status
-            } catch (error) {
-                // THIS ERROR IS THE SECURITY RULE VIOLATION (PERMISSION DENIED)
-                console.error("Error saving compliance log (PERMISSION DENIED expected if rules not set):", error);
-                // The form is stuck processing because of this failure.
-                return false; 
-            }
-        }
-
-        // --- MAIN FORM LOGIC ---
+        // --- CONSTANTS ---
         const SERVICE_AGREEMENT_VERSION = "1.0";
-        const SUBMISSION_METHOD = "Click-wrap acceptance via form checkbox";
-
+        const RECIPIENT_EMAIL = "lauraclarke.jw@gmail.com"; 
+        
+        // --- DOM Elements ---
         const form = document.getElementById('dpa-compliance-form');
         const termsBox = document.getElementById('legal-terms-box');
         const consentCheckbox = document.getElementById('dpa-consent-checkbox');
@@ -496,11 +395,12 @@
         
         let hasScrolledToBottom = false;
 
+        // --- DPA COMPLIANCE CHECK: Scroll-to-Agree ---
         function checkScroll() {
             if (termsBox.scrollHeight - termsBox.clientHeight <= termsBox.scrollTop + 1) {
                 if (!hasScrolledToBottom) {
                     hasScrolledToBottom = true;
-                    consentCheckbox.disabled = false;
+                    consentCheckbox.disabled = false; // Enable checkbox after scrolling
                     statusMessage.classList.add('hidden');
                     updateSubmitButtonState();
                 }
@@ -518,63 +418,69 @@
             }
         }
 
+        // --- Form Submission (Mailto Protocol) ---
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+
+            // 1. Log DPA Consent to Console (Audit Trail Simulation)
+            const logTimestamp = new Date().toISOString();
+            console.log("--- DPA COMPLIANCE LOG (Local/Unsecured) ---");
+            console.log("Timestamp:", logTimestamp);
+            console.log("Consent Method:", "Click-wrap acceptance via form checkbox");
+            console.log("Service Version:", SERVICE_AGREEMENT_VERSION);
+            console.log("Client Name:", name);
+            console.log("Client Email:", email);
+            console.log("Service Requested:", service);
+            console.log("-----------------------------------------");
+
+
+            // 2. Prepare Email Body for Mailto
+            const subject = `NEW PROJECT REQUEST: ${service.substring(0, 40)}...`;
+            const body = `
+Client Name: ${name}
+Client Email: ${email}
+---
+Service Requested:
+${service}
+
+---
+[DPA Consent Log]
+TIME: ${logTimestamp}
+VERSION: V${SERVICE_AGREEMENT_VERSION}
+AGREED: Yes (Click-Wrap)
+`;
+
+            // 3. Trigger Mailto Link
+            const mailtoLink = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // This opens the user's default email client
+            window.location.href = mailtoLink;
+
+            // 4. Update UI for User Feedback
+            submitButton.textContent = "Email Client Opened (Check your email app!)";
+            submitButton.classList.remove('brand-green-bg');
+            submitButton.classList.add('bg-gray-500');
+
+            // Reset form visually after the action is triggered
+            setTimeout(() => {
+                form.reset();
+                submitButton.textContent = "Submit Project Request (Consent Required)";
+                submitButton.classList.remove('bg-gray-500');
+                submitButton.classList.add('brand-green-bg');
+                hasScrolledToBottom = false;
+                consentCheckbox.disabled = true;
+                consentCheckbox.checked = false;
+                updateSubmitButtonState();
+            }, 3000); 
+        });
+
         // --- Event Listeners ---
         termsBox.addEventListener('scroll', checkScroll);
         consentCheckbox.addEventListener('change', updateSubmitButtonState);
-        
-        // Listener for the private access button
-        toggleAuditBtn.addEventListener('click', function() {
-            const auditLogSection = document.getElementById('audit-log');
-            if (auditLogSection.classList.contains('hidden')) {
-                auditLogSection.classList.remove('hidden');
-                toggleAuditBtn.textContent = "[Hide Project Inbox]";
-            } else {
-                auditLogSection.classList.add('hidden');
-                toggleAuditBtn.textContent = "[Access Internal Project Inbox]";
-            }
-        });
-
-
-        form.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            submitButton.disabled = true; // Disable button immediately
-            submitButton.textContent = "Processing...";
-
-            // We proceed with submission even if auth is not fully ready, but the save function will fail
-            const clientIp = '10.0.0.1'; 
-            
-            const complianceLog = {
-                consent_datetime: new Date().toISOString(),
-                method: SUBMISSION_METHOD,
-                service_version: SERVICE_AGREEMENT_VERSION,
-                client_ip: clientIp,
-                client_name: document.getElementById('name').value,
-                client_email: document.getElementById('email').value,
-                service_requested: document.getElementById('service').value,
-                admin_user_id: userId 
-            };
-
-            const saveSuccess = await saveComplianceLog(complianceLog);
-
-            // --- User Feedback ---
-            if (saveSuccess) {
-                submitButton.textContent = "Request Sent & Consent Logged Successfully!";
-                submitButton.classList.remove('brand-green-bg', 'bg-red-500');
-                submitButton.classList.add('bg-green-600', 'status-success');
-                form.reset(); // Clear the form after success
-            } else {
-                // If the save fails (due to security rule), display the error clearly
-                submitButton.textContent = "ERROR: Submission Failed (Check Admin Login & Rules)";
-                submitButton.classList.remove('brand-green-bg', 'bg-green-600');
-                submitButton.classList.add('bg-red-500');
-                submitButton.disabled = false; // Re-enable for troubleshooting
-            }
-        });
-
-        // Initialize Firebase and the form state
-        initializeFirebase();
-        updateSubmitButtonState();
-
 
         // --- Existing JavaScript for Animations ---
         document.addEventListener('DOMContentLoaded', () => {
@@ -595,69 +501,8 @@
             });
         });
 
-        // --- Added: LIVE AUDIT LOG VIEWER ---
-        const auditLogContainer = document.getElementById('audit-log-data');
-
-        function renderComplianceLogs(logs) {
-            if (!auditLogContainer) return;
-            
-            let html = '<table class="min-w-full divide-y divide-gray-200 shadow-md rounded-lg overflow-hidden">';
-            html += '<thead class="bg-gray-100">';
-            html += '<tr><th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date/Time</th>';
-            html += '<th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Client/Service</th>';
-            html += '<th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Consent Ver.</th></tr>';
-            html += '</thead><tbody class="bg-white divide-y divide-gray-200">';
-
-            if (logs.length === 0) {
-                html += '<tr><td colspan="3" class="px-3 py-4 text-center text-gray-500">No consent agreements logged yet.</td></tr>';
-            } else {
-                logs.forEach(log => {
-                    const date = new Date(log.consent_datetime).toLocaleString('en-JM', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
-                    html += `<tr>
-                        <td class="px-3 py-2 whitespace-nowrap text-sm font-medium text-gray-900">${date}</td>
-                        <td class="px-3 py-2 whitespace-nowrap text-xs text-gray-600">
-                            <div class="font-bold">${log.client_name} (${log.client_email})</div>
-                            <div>Needs: ${log.service_requested.substring(0, 30)}...</div>
-                        </td>
-                        <td class="px-3 py-2 whitespace-nowrap text-sm text-green-600 font-bold">V${log.service_version}</td>
-                    </tr>`;
-                });
-            }
-
-            html += '</tbody></table>';
-            auditLogContainer.innerHTML = html;
-        }
-
-        // --- Data Retrieval for Live Audit Log (Operational View) ---
-        function startAuditLogListener() {
-            // Check if Firestore is initialized and authenticated
-            if (!db || !userId || userId === 'anonymous') {
-                 // Try again in 500ms if not ready
-                 setTimeout(startAuditLogListener, 500); 
-                 return;
-            }
-            
-            const collectionPath = `/artifacts/${appId}/users/${userId}/dpa_compliance_logs`;
-            const logsCollection = collection(db, collectionPath);
-            
-            // Create a query to get the 10 most recent logs
-            const q = query(logsCollection, orderBy("consent_datetime", "desc"), limit(10));
-            
-            // Set up the real-time listener
-            onSnapshot(q, (snapshot) => {
-                const logs = [];
-                snapshot.forEach(doc => {
-                    logs.push(doc.data());
-                });
-                renderComplianceLogs(logs); // Render the data to the UI
-            }, (error) => {
-                console.error("Error listening to compliance logs:", error);
-                auditLogContainer.innerHTML = '<p class="text-red-500 text-center">Error loading audit logs.</p>';
-            });
-        }
-        
-        // Start the listener after Firebase initialization
-        initializeFirebase();
+        // Initialize form state
+        updateSubmitButtonState();
 
     </script>
 
