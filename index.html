@@ -14,124 +14,107 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* 4. Use the "Inter" font for a sleek, modern look */
+        /* 4. Base Styles and Font */
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1F2937; /* Dark Gray for text */
         }
         
-        /* 5. Custom Color Palette */
+        /* 5. Custom Color Palette & Backgrounds */
         .hero-bg {
             background-color: #F8F9FA;
-            background-image: linear-gradient(to bottom right, #F8F9FA, #F1F5F9);
+            background-image: linear-gradient(to bottom right, #F8F9FA, #E5E7EB);
         }
         .brand-green {
-            color: #16A34A; /* Primary Accent Color */
+            color: #16A34A; /* Accent: Green */
         }
         .brand-green-bg {
             background-color: #16A34A;
         }
-        .brand-green-bg-hover:hover {
-            background-color: #148C40;
-        }
         .brand-dark-green {
-            color: #2F4F4F; /* Professional Anchor Color */
+            color: #2F4F4F; /* Anchor: Dark Slate Gray */
         }
         .brand-dark-green-bg {
             background-color: #2F4F4F;
         }
+
+        /* 6. Button and Card Styling */
         .brand-outline-btn {
             border: 2px solid #16A34A;
             color: #16A34A;
-            transition: all 0.3s ease;
         }
         .brand-outline-btn:hover {
             background-color: #16A34A;
             color: #FFFFFF;
         }
-        /* Review and Solution Card Styling */
-        .review-card, .solution-card {
-            background-color: #ffffff;
-            border: 1px solid #e5e7eb;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
         .solution-card {
             position: relative;
             padding-left: 5rem;
+            background-color: #ffffff;
+            border: 1px solid #E5E7EB;
         }
         .solution-card:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
             border-color: #16A34A;
         }
         .step-number {
             position: absolute;
-            left: 1rem;
+            left: 1.25rem;
             top: 1.5rem;
-            height: 2.5rem;
-            width: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background-color: #16A34A;
-            color: white;
+            height: 2.2rem;
+            width: 2.2rem;
             font-weight: 800;
-            font-size: 1.25rem;
+            background-color: #16A34A;
         }
-        /* Animation Classes */
+
+        /* 7. Testimonial Card Styling */
+        .review-card {
+            background-color: #FFFFFF;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #16A34A;
+        }
+
+        /* 8. Utility Overrides for Embed */
+        .google-form-embed iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 800px;
+            border: none;
+            border-radius: 0.75rem; /* Match container rounding */
+        }
+        .dpa-compliance-note {
+             background-color: #FDF9E5; 
+             border: 1px solid #FFC107; 
+             color: #6C757D;
+        }
+        
+        /* 9. Animation Classes */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         .scroll-reveal-visible {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        /* Styling for the Scroll-to-Agree box */
-        #legal-terms-box {
-            height: 12rem; /* Fixed height for scrolling */
-            overflow-y: scroll;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-            padding: 1rem;
-            font-size: 0.875rem;
-            line-height: 1.4;
-            color: #4b5563;
-        }
-        /* Custom disabled state for button */
-        #submit-request-btn:disabled {
-            background-color: #9CA3AF;
-            cursor: not-allowed;
-            box-shadow: none;
-        }
-        .status-success {
-            background-color: #d1fae5;
-            color: #065F46;
-            padding: 0.5rem;
-            border-radius: 0.375rem;
-            font-weight: bold;
         }
     </style>
 </head>
 <body class="text-gray-800 antialiased bg-gray-50">
 
     <!-- Header / Navigation -->
-    <header class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+    <header class="bg-white/95 backdrop-blur-sm shadow sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold brand-dark-green">DOCU-HUB SERVICES</div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">About</a>
-                <a href="#services" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Solutions</a>
-                <a href="#portfolio" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Experience</a>
-                <a href="#request-form" class="text-gray-600 hover:text-gray-900 font-medium transition-colors duration-300">Request Project</a>
+            <div class="text-2xl font-extrabold brand-dark-green tracking-wide">DOCU-HUB SERVICES</div>
+            <div class="hidden md:flex space-x-8 text-sm">
+                <a href="#about" class="text-gray-600 hover:text-gray-900 font-semibold transition">About</a>
+                <a href="#services" class="text-gray-600 hover:text-gray-900 font-semibold transition">Solutions</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-gray-900 font-semibold transition">Experience</a>
+                <a href="#request-form" class="brand-green hover:text-green-700 font-extrabold transition">Request Project</a>
             </div>
             <div class="md:hidden">
-                <button class="text-gray-600 hover:text-gray-900">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
+                <button class="text-gray-600"><i class="fas fa-bars text-xl"></i></button>
             </div>
         </nav>
     </header>
@@ -139,23 +122,24 @@
     <!-- Hero Section -->
     <section id="about" class="hero-bg py-24 md:py-32 overflow-hidden">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0">
+            <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0 scroll-reveal">
                 <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">Laura Clarke</h1>
                 <h2 class="text-2xl md:text-3xl font-light brand-dark-green mb-8">DOCU-HUB OPERATIONS SERVICES | Compliance & Systems Expert</h2>
                 <p class="text-lg text-gray-600 mb-10 max-w-xl">
                     I offer dedicated, project-based administrative solutions. I leverage 15+ years of high-compliance experience to eliminate administrative risk, **bringing you peace of mind** knowing your complex documents and statutory submissions are handled with absolute authority and accuracy.
                 </p>
                 <div class="flex justify-center md:justify-start space-x-4">
-                    <a href="#services" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <a href="#services" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-8 rounded-lg shadow-xl transform hover:scale-105 transition duration-300">
                         View Solutions
                     </a>
-                    <a href="laura-clarke-cv-public.pdf" target="_blank" class="brand-outline-btn font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300">
+                    <a href="PDF/laura-clarke-cv-public.pdf" target="_blank" class="brand-outline-btn font-bold py-3 px-8 rounded-lg shadow-xl transform hover:scale-105 transition duration-300">
                         Download CV (PDF)
                     </a>
                 </div>
             </div>
-            <div class="md:w-2/5 flex justify-center">
-                <img src="images/profile_photo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/384x384/2F4F4F/FFFFFF?text=LC+Photo'" alt="Laura Clarke" class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white shadow-lg" style="box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.1), 0 10px 10px -5px rgba(22, 163, 74, 0.04);">
+            <div class="md:w-2/5 flex justify-center scroll-reveal">
+                <!-- Using a professional background for the image placeholder -->
+                <img src="images/profile-picture.png" onerror="this.onerror=null; this.src='https://placehold.co/384x384/2F4F4F/FFFFFF?text=LC+Expert'" alt="Laura Clarke" class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white shadow-2xl">
             </div>
         </div>
     </section>
@@ -163,136 +147,69 @@
     <!-- Services Section -->
     <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 scroll-reveal">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How I Deliver Peace of Mind</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">I specialize in **Digital Compliance & Submission**—solving your most frustrating administrative challenges.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                 
                 <!-- 1. TAJ & Long Line Solution (STEP 1) -->
-                <div class="solution-card p-6 rounded-xl">
-                    <div class="step-number">1</div>
-                    <div class="flex items-center mb-3 ml-4">
-                        <i class="fas fa-file-invoice text-2xl brand-green mr-3"></i>
-                        <h3 class="text-xl font-bold text-gray-900">TAJ & Tax Portal Submissions</h3>
+                <div class="solution-card p-6 rounded-xl shadow-lg scroll-reveal">
+                    <div class="step-number rounded-full flex items-center justify-center">1</div>
+                    <div class="ml-4">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-file-invoice text-2xl brand-green mr-3"></i>
+                            <h3 class="text-xl font-extrabold text-gray-900">TAJ & Tax Portal Submissions</h3>
+                        </div>
+                        <p class="text-gray-700 mb-2">**THE PAIN:** Spending hours in line or getting rejected due to online errors on tax payments or filings.</p>
+                        <p class="font-semibold text-gray-800">**THE SOLUTION:** Guaranteed error-free filing and timely payment of Property Tax and other statutory obligations via the TAJ portal.</p>
                     </div>
-                    <p class="text-gray-700 mb-2 ml-4">**THE PAIN:** Spending hours in line or getting rejected due to online errors on tax payments or filings.</p>
-                    <p class="font-semibold text-gray-800 ml-4">**THE SOLUTION:** Guaranteed error-free filing and timely payment of Property Tax and other statutory obligations via the TAJ portal.</p>
                 </div>
 
                 <!-- 2. PICA Passport & Citizenship Applications (STEP 2) -->
-                <div class="solution-card p-6 rounded-xl">
-                    <div class="step-number">2</div>
-                    <div class="flex items-center mb-3 ml-4">
-                        <i class="fas fa-passport text-2xl brand-green mr-3"></i>
-                        <h3 class="text-xl font-bold text-gray-900">PICA Passport & Citizenship Applications</h3>
+                <div class="solution-card p-6 rounded-xl shadow-lg scroll-reveal">
+                    <div class="step-number rounded-full flex items-center justify-center">2</div>
+                    <div class="ml-4">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-passport text-2xl brand-green mr-3"></i>
+                            <h3 class="text-xl font-extrabold text-gray-900">PICA Passport & Citizenship Applications</h3>
+                        </div>
+                        <p class="text-gray-700 mb-2">**THE PAIN:** The PICA online application process is notoriously complex, leading to delays and costly rejections.</p>
+                        <p class="font-semibold text-gray-800">**THE SOLUTION:** Meticulous completion and submission of all PICA applications, ensuring 100% document compliance to secure approval the first time.</p>
                     </div>
-                    <p class="text-gray-700 mb-2 ml-4">**THE PAIN:** The PICA online application process is notoriously complex, leading to delays and costly rejections on passports or citizenship forms.</p>
-                    <p class="font-semibold text-gray-800 ml-4">**THE SOLUTION:** Meticulous completion and submission of all PICA applications, ensuring 100% document compliance to secure approval the first time.</p>
                 </div>
 
                 <!-- 3. Motor Vehicle & Licensing Solution (STEP 3) -->
-                <div class="solution-card p-6 rounded-xl">
-                    <div class="step-number">3</div>
-                    <div class="flex items-center mb-3 ml-4">
-                        <i class="fas fa-car-side text-2xl brand-green mr-3"></i>
-                        <h3 class="text-xl font-bold text-gray-900">Motor Vehicle License & Renewal</h3>
+                <div class="solution-card p-6 rounded-xl shadow-lg scroll-reveal">
+                    <div class="step-number rounded-full flex items-center justify-center">3</div>
+                    <div class="ml-4">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-car-side text-2xl brand-green mr-3"></i>
+                            <h3 class="text-xl font-extrabold text-gray-900">Motor Vehicle License & Renewal</h3>
+                        </div>
+                        <p class="text-gray-700 mb-2">**THE PAIN:** Hassle and lost time renewing licenses, paying traffic tickets, or completing other motor vehicle payments online.</p>
+                        <p class="font-semibold text-gray-800">**THE SOLUTION:** Fast, accurate, and completely online handling of all necessary motor vehicle payments and licensing procedures.</p>
                     </div>
-                    <p class="text-gray-700 mb-2 ml-4">**THE PAIN:** Hassle and lost time renewing licenses, paying traffic tickets, or completing other motor vehicle payments online.</p>
-                    <p class="font-semibold text-gray-800 ml-4">**THE SOLUTION:** Fast, accurate, and completely online handling of all necessary motor vehicle payments and licensing procedures.</p>
                 </div>
 
                 <!-- 4. Online Banking & Complex Apps Solution (STEP 4) -->
-                <div class="solution-card p-6 rounded-xl">
-                    <div class="step-number">4</div>
-                    <div class="flex items-center mb-3 ml-4">
-                        <i class="fas fa-lock text-2xl brand-green mr-3"></i>
-                        <h3 class="text-xl font-bold text-gray-900">Sensitive Financial Applications</h3>
-                    </h3>
-                    <p class="text-gray-700 mb-2 ml-4">**THE PAIN:** Older family members or individuals struggle with new online banking, loan, or complex visa applications.</p>
-                    <p class="font-semibold text-gray-800 ml-4">**THE SOLUTION:** Secure, error-free completion of complex banking, loan, or visa applications, ensuring all supporting documents are correctly compiled and vetted for submission.</p>
+                <div class="solution-card p-6 rounded-xl shadow-lg scroll-reveal">
+                    <div class="step-number rounded-full flex items-center justify-center">4</div>
+                    <div class="ml-4">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-lock text-2xl brand-green mr-3"></i>
+                            <h3 class="text-xl font-extrabold text-gray-900">Sensitive Financial Applications</h3>
+                        </div>
+                        <p class="text-gray-700 mb-2">**THE PAIN:** Individuals struggle with new online banking, loan, or complex visa applications due to fear of error.</p>
+                        <p class="font-semibold text-gray-800">**THE SOLUTION:** Secure, error-free completion of complex banking, loan, or visa applications, ensuring all supporting documents are vetted.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DPA Compliant Project Request Form (Operational, Email-Based Submission) -->
-    <section id="request-form" class="py-20 bg-gray-50 border-t border-gray-200">
-        <div class="container mx-auto px-6 max-w-2xl">
-            <div class="text-center mb-10 scroll-reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Request Your Project Quote</h2>
-                <p class="text-lg text-gray-600">Start the process by telling me about the administrative challenge you need solved.</p>
-            </div>
-
-            <form id="dpa-compliance-form" class="bg-white p-8 rounded-xl shadow-xl scroll-reveal">
-                <div class="space-y-6">
-                    <!-- Basic Contact Fields -->
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700">Your Full Name</label>
-                        <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-brand-green focus:border-brand-green">
-                    </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
-                        <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-brand-green focus:border-brand-green">
-                    </div>
-                    <div>
-                        <label for="service" class="block text-sm font-medium text-gray-700">Type of Service Needed (e.g., PICA, MV Renewal, Tax Filing)</label>
-                        <textarea id="service" name="service" rows="3" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:ring-brand-green focus:border-brand-green"></textarea>
-                    </div>
-
-                    <!-- DPA Compliance Section (Critical) -->
-                    <div class="pt-6 border-t border-gray-200">
-                        <h3 class="text-lg font-bold brand-dark-green mb-3">Data Protection Agreement (DPA) Consent</h3>
-                        
-                        <!-- Layer 1: Progressive Disclosure Summary -->
-                        <div class="bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 mb-4" role="alert">
-                            <p class="font-semibold text-sm">Mandatory DPA Consent Summary</p>
-                            <p class="text-xs mt-1">
-                                I authorize DOCU-HUB SERVICES to collect, process, and securely use my submitted personal data (TRN, ID #, Address) **only for the sole purpose of completing the specific administrative service requested in this form.**
-                            </p>
-                        </div>
-
-                        <!-- Layer 2: Scroll-to-Agree Mechanism -->
-                        <p class="text-xs font-semibold text-gray-600 mb-2">Review Full Terms (Scroll to bottom to enable consent)</p>
-                        <div id="legal-terms-box" class="mb-4">
-                            <!-- Full Legal Terms (Simulated Content) -->
-                            <p class="font-bold mb-1">DOCU-HUB SERVICES Full Terms of Service (Version 1.0 - Nov 2025)</p>
-                            <p>This Service Agreement governs the relationship between Laura Clarke (DOCU-HUB SERVICES) and the Client. By consenting, the Client agrees to the terms outlined below, affirming compliance with the Jamaica Data Protection Act (DPA).</p>
-                            
-                            <ol class="list-decimal ml-4 mt-2 space-y-2">
-                                <li>**Data Processing Consent (DPA):** The Client grants explicit, unequivocal consent for DOCU-HUB SERVICES to act as a data processor for the sole purpose of fulfilling the contracted service (e.g., submitting a PICA application or paying a specific tax). No data will be shared with unauthorized third parties.</li>
-                                <li>**Data Security:** All personal data (TRN, ID, banking info) will be handled in a secure, encrypted environment and purged from internal systems within 90 days of project completion, unless legally required otherwise.</li>
-                                <li>**Bearer Authorization:** The Client confirms they are legally authorized to grant DOCU-HUB SERVICES (Laura Clarke) access to the required government/financial portal for submission.</li>
-                                <li>**Liability & Guarantee:** DOCU-HUB SERVICES guarantees the accuracy of data entry and timely submission. Liability is limited to the cost of the service fee. The client is responsible for providing accurate source documentation.</li>
-                                <li>**Fee Structure:** All projects are quoted on a fixed-fee basis, payable in JMD via bank transfer prior to submission.</li>
-                                <!-- This is the very bottom line to prove scrolling -->
-                                <li><span id="end-of-terms" class="font-bold text-red-600">END OF TERMS V1.0 - Scroll complete.</span></li>
-                            </ol>
-                            <!-- END Full Legal Terms -->
-                        </div>
-
-                        <!-- Mandatory Checkbox (Click-Wrap Agreement) -->
-                        <div class="flex items-start">
-                            <input id="dpa-consent-checkbox" type="checkbox" required class="mt-1 h-5 w-5 text-brand-green border-gray-300 rounded focus:ring-brand-green" disabled>
-                            <label for="dpa-consent-checkbox" class="ml-3 text-sm text-gray-700">
-                                **I confirm I have read, understand, and agree to the Terms of Service and the mandatory Data Protection Consent** for this specific service.
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Submission Button -->
-                    <button id="submit-request-btn" type="submit" disabled class="w-full brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-8 rounded-lg shadow-xl transform transition duration-300 mt-6">
-                        Submit Project Request (Consent Required)
-                    </button>
-                    <p id="status-message" class="text-center text-sm text-red-500 mt-3 hidden">Please read the terms and agree to proceed.</p>
-                </div>
-            </form>
-        </div>
-    </section>
-    
     <!-- Experience, Reviews, Footer -->
     <section id="portfolio" class="py-24 bg-gray-50">
-        <!-- ... Existing Experience and Review Content ... -->
         <div class="container mx-auto px-6">
             
             <!-- Section Heading -->
@@ -307,10 +224,10 @@
             <div class="max-w-4xl mx-auto space-y-12 mb-20 scroll-reveal">
                 
                 <!-- Pillar 1: Financial Integrity & Auditing (NCB Focus) -->
-                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-md border-l-4 border-yellow-600">
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-lg border-l-4 border-yellow-600">
                     <div class="flex-shrink-0 text-3xl text-yellow-600 mt-1"><i class="fas fa-sack-dollar"></i></div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2">Financial Integrity & Audit Readiness</h3>
+                        <h3 class="text-xl font-bold mb-2">Financial Integrity & Audit Readiness (NCB Background)</h3>
                         <p class="text-gray-600">
                             My background as a Team Leader and Financial Officer at **NCB** instilled a non-negotiable standard for accurate financial processing and regulatory balancing. This expertise is applied to every client project, ensuring your personal or small business records are **clean, verified, and 100% ready for tax filing or external review**, protecting you from future audit complications.
                         </p>
@@ -318,10 +235,10 @@
                 </div>
 
                 <!-- Pillar 2: Operational Systems & Compliance (OEC Focus) -->
-                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-md border-l-4 border-blue-600">
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-lg border-l-4 border-blue-600">
                     <div class="flex-shrink-0 text-3xl text-blue-600 mt-1"><i class="fas fa-tasks"></i></div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2">Operational Systems & Compliance Management</h3>
+                        <h3 class="text-xl font-bold mb-2">Operational Systems & Compliance Management (OEC Background)</h3>
                         <p class="text-gray-600">
                             The successful administration of complex, simultaneous exams at the **OEC** required strategic planning, meticulous logistical coordination, and absolute compliance enforcement. I use this operational mindset to design simple, scalable administrative systems for your home or business, guaranteeing that documentation is correctly organized from the start, avoiding clutter and compliance gaps.
                         </p>
@@ -334,26 +251,55 @@
                  <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
                  <p class="text-lg text-gray-600 max-w-2xl mx-auto">See how I eliminate confusion and deliver guaranteed administrative peace of mind.</p>
              </div>
-             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto scroll-reveal">
-                 <!-- Review 1 (Danielle) -->
-                 <div class="review-card p-6 rounded-lg">
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto scroll-reveal">
+                 <!-- Review 1 (Danielle - PICA) -->
+                 <div class="review-card p-6 rounded-xl">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Thanks for simplifying the passport application process, it's my first one and I didn't know where to start."</p>
-                     <p class="font-bold text-gray-800">- Danielle</p>
+                     <p class="font-bold text-gray-800">- Danielle, Private client</p>
                  </div>
-                 <!-- Review 2 (Claude) -->
-                 <div class="review-card p-6 rounded-lg">
+                 <!-- Review 2 (Claude - MV Renewal) -->
+                 <div class="review-card p-6 rounded-xl">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Laura helped renew my motor vehicle license online, which took the hassle out of joining long lines. I will certainly spread the word to my friends."</p>
                      <p class="font-bold text-gray-800">- Claude, Private Client</p>
                  </div>
-                 <!-- Review 3 (S. Williams) -->
-                 <div class="review-card p-6 rounded-lg">
+                 <!-- Review 3 (S. Williams - Complex Form) -->
+                 <div class="review-card p-6 rounded-xl">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Outstanding. Navigated the online portal for me and avoided a major error. Highly recommend for any complex form submission."</p>
-                     <p class="font-bold text-gray-800">- S. Williams, Individual Client</p>
+                     <p class="font-bold text-gray-800">- U. Clarke, Individual Client</p>
                  </div>
              </div>
+        </div>
+    </section>
+
+    <!-- DPA Compliant Project Request Form (OPERATIONAL: GOOGLE FORMS EMBED) -->
+    <section id="request-form" class="py-20 bg-gray-100 border-t border-gray-200">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-10 scroll-reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Request Your Project Quote</h2>
+                <p class="text-lg text-gray-600">Start the process by telling me about the administrative challenge you need solved. Data is collected securely via Google Forms and delivered to a spreadsheet for quick response.</p>
+            </div>
+            
+            <!-- DPA Compliance Note: Must Be Read By Client -->
+            <div class="dpa-compliance-note text-center scroll-reveal">
+                <p class="font-bold text-gray-900 mb-2">MANDATORY DATA PROTECTION CONSENT</p>
+                <p class="text-sm">By submitting the form below, you grant explicit consent for DOCU-HUB SERVICES to collect and process the submitted personal data **only for the sole purpose of fulfilling the requested service** (e.g., PICA or MV Renewal). You agree that this form acts as the legal consent for data processing.</p>
+                <!-- NOTE: Update the '#' with the URL to your hosted PDF -->
+                <p class="text-xs mt-2"><a href="DOCU-HUB SERVICES_Full Terms of Service & Data Protection Consent (Version 1.pdf" target="_blank" class="brand-green hover:underline font-bold">Read Full Terms of Service and Data Protection Consent (Linked PDF)</a></p>
+            </div>
+
+            <div class="google-form-embed bg-white rounded-xl shadow-2xl p-0 scroll-reveal">
+                <!-- 
+                    *** ACTION REQUIRED ***
+                    1. Create your Google Form with the required fields (Name, Email, Service Needed, and a MANDATORY DPA checkbox question).
+                    2. Go to File -> Embed HTML.
+                    3. PASTE THE IFRAME CODE BELOW, replacing the placeholder iframe.
+                -->
+                <iframe src="https://forms.gle/BqDuTGSkeKvGkfng7" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+
+            </div>
         </div>
     </section>
     
@@ -374,116 +320,13 @@
                 </a>
             </div>
             <p class="text-gray-400 mt-16 text-sm">
-                &copy; 2025 Laura Clarke. All rights reserved.
+                &copy; 2025 Laura Clarke. All rights reserved. DOCU-HUB SERVICES.
             </p>
         </div>
     </footer>
 
-    <!-- 8. JavaScript for DPA Compliance and Submission (Simplified) -->
-    <script type="module">
-        // --- CONSTANTS ---
-        const SERVICE_AGREEMENT_VERSION = "1.0";
-        const RECIPIENT_EMAIL = "lauraclarke.jw@gmail.com"; 
-        
-        // --- DOM Elements ---
-        const form = document.getElementById('dpa-compliance-form');
-        const termsBox = document.getElementById('legal-terms-box');
-        const consentCheckbox = document.getElementById('dpa-consent-checkbox');
-        const submitButton = document.getElementById('submit-request-btn');
-        const statusMessage = document.getElementById('status-message');
-        
-        let hasScrolledToBottom = false;
-
-        // --- DPA COMPLIANCE CHECK: Scroll-to-Agree ---
-        function checkScroll() {
-            if (termsBox.scrollHeight - termsBox.clientHeight <= termsBox.scrollTop + 1) {
-                if (!hasScrolledToBottom) {
-                    hasScrolledToBottom = true;
-                    consentCheckbox.disabled = false; // Enable checkbox after scrolling
-                    statusMessage.classList.add('hidden');
-                    updateSubmitButtonState();
-                }
-            }
-        }
-        
-        function updateSubmitButtonState() {
-            const isReadyToSubmit = hasScrolledToBottom && consentCheckbox.checked;
-            submitButton.disabled = !isReadyToSubmit;
-            if (!isReadyToSubmit && hasScrolledToBottom) {
-                 statusMessage.classList.remove('hidden');
-                 statusMessage.textContent = "Please check the box to agree to the Terms of Service.";
-            } else {
-                statusMessage.classList.add('hidden');
-            }
-        }
-
-        // --- Form Submission (Mailto Protocol) ---
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const service = document.getElementById('service').value;
-
-            // 1. Log DPA Consent to Console (Audit Trail Simulation)
-            const logTimestamp = new Date().toISOString();
-            console.log("--- DPA COMPLIANCE LOG (Local/Unsecured) ---");
-            console.log("Timestamp:", logTimestamp);
-            console.log("Consent Method:", "Click-wrap acceptance via form checkbox");
-            console.log("Service Version:", SERVICE_AGREEMENT_VERSION);
-            console.log("Client Name:", name);
-            console.log("Client Email:", email);
-            console.log("Service Requested:", service);
-            console.log("-----------------------------------------");
-
-
-            // 2. Prepare Email Body for Mailto
-            const subject = `NEW PROJECT REQUEST: ${service.substring(0, 40)}...`;
-            const body = `
-Client Name: ${name}
-Client Email: ${email}
----
-Service Requested:
-${service}
-
----
-[DPA Consent Log]
-TIME: ${logTimestamp}
-VERSION: V${SERVICE_AGREEMENT_VERSION}
-AGREED: Yes (Click-Wrap)
-`;
-
-            // 3. Trigger Mailto Link
-            const mailtoLink = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            // 4. Update UI with Clear Instruction BEFORE triggering the mailto
-            submitButton.textContent = "ATTENTION: Click SEND in your email app!";
-            submitButton.classList.remove('brand-green-bg');
-            submitButton.classList.add('bg-red-500');
-            submitButton.disabled = false; // Re-enable for the reset delay
-
-            // 5. Trigger Mailto (This opens the user's default email client)
-            // It is placed here so the user sees the red message first.
-            window.location.href = mailtoLink;
-
-            // 6. Reset form visually after the action is triggered
-            setTimeout(() => {
-                form.reset();
-                submitButton.textContent = "Submit Project Request (Consent Required)";
-                submitButton.classList.remove('bg-red-500');
-                submitButton.classList.add('brand-green-bg');
-                hasScrolledToBottom = false;
-                consentCheckbox.disabled = true;
-                consentCheckbox.checked = false;
-                updateSubmitButtonState();
-            }, 5000); // 5 seconds wait to ensure the client has time to see the instruction
-        });
-
-        // --- Event Listeners ---
-        termsBox.addEventListener('scroll', checkScroll);
-        consentCheckbox.addEventListener('change', updateSubmitButtonState);
-
-        // --- Existing JavaScript for Animations ---
+    <!-- 9. JavaScript for Animations -->
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -501,10 +344,6 @@ AGREED: Yes (Click-Wrap)
                 observer.observe(el);
             });
         });
-
-        // Initialize form state
-        updateSubmitButtonState();
-
     </script>
 
 </body>
