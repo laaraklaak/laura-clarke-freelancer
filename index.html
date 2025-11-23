@@ -47,27 +47,21 @@
             background-color: #16A34A;
             color: #FFFFFF;
         }
+        /* ENHANCED SOLUTION CARD STYLES */
         .solution-card {
-            position: relative;
-            padding-left: 5rem;
+            /* Removed position: relative */
+            padding: 1.5rem; /* Simplified padding */
             background-color: #ffffff;
             border: 1px solid #E5E7EB;
+            transition: all 0.3s ease; /* Added transition for hover effect */
         }
         .solution-card:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(47, 79, 79, 0.1); /* Subtle shadow based on brand color */
             transform: translateY(-5px);
             border-color: #16A34A;
         }
-        .step-number {
-            position: absolute;
-            left: 1.25rem;
-            top: 1.5rem;
-            height: 2.2rem;
-            width: 2.2rem;
-            font-weight: 800;
-            background-color: #16A34A;
-        }
-
+        /* REMOVED .step-number CSS ENTIRELY */
+        
         /* 7. Testimonial Card Styling */
         .review-card {
             background-color: #FFFFFF;
@@ -75,14 +69,7 @@
             border-top: 5px solid #16A34A;
         }
 
-        /* 8. Utility Overrides for Embed */
-        .google-form-embed iframe {
-            width: 100%;
-            height: 100%;
-            min-height: 800px;
-            border: none;
-            border-radius: 0.75rem; /* Match container rounding */
-        }
+        /* 8. Utility Overrides (Embed styles removed as form is removed) */
         .dpa-compliance-note {
              background-color: #FDF9E5; 
              border: 1px solid #FFC107; 
@@ -106,12 +93,14 @@
     <!-- Header / Navigation -->
     <header class="bg-white/95 backdrop-blur-sm shadow sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-extrabold brand-dark-green tracking-wide">DOCU-HUB SERVICES</div>
+            <!-- UPDATED: Business Name is now a clickable link back to #hero -->
+            <a href="#hero" class="text-2xl font-extrabold brand-dark-green tracking-wide hover:text-gray-900 transition duration-150">DOCU-HUB SERVICES</a>
+            <!-- UPDATED NAVIGATION LINKS -->
             <div class="hidden md:flex space-x-8 text-sm">
-                <a href="#about" class="text-gray-600 hover:text-gray-900 font-semibold transition">About</a>
                 <a href="#services" class="text-gray-600 hover:text-gray-900 font-semibold transition">Solutions</a>
-                <a href="#portfolio" class="text-gray-600 hover:text-gray-900 font-semibold transition">Experience</a>
-                <a href="#request-form" class="brand-green hover:text-green-700 font-extrabold transition">Request Project</a>
+                <a href="#about-me" class="text-gray-600 hover:text-gray-900 font-semibold transition">About Me</a>
+                <!-- Contact link now points directly to the footer -->
+                <a href="#footer" class="brand-green hover:text-green-700 font-extrabold transition">Contact</a>
             </div>
             <div class="md:hidden">
                 <button class="text-gray-600"><i class="fas fa-bars text-xl"></i></button>
@@ -119,8 +108,8 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="about" class="hero-bg py-24 md:py-32 overflow-hidden">
+    <!-- 1. HOME/HERO SECTION -->
+    <section id="hero" class="hero-bg py-24 md:py-32 overflow-hidden">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
             <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0 scroll-reveal">
                 <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">Laura Clarke</h1>
@@ -132,9 +121,6 @@
                     <a href="#services" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-8 rounded-lg shadow-xl transform hover:scale-105 transition duration-300">
                         View Solutions
                     </a>
-                    <a href="PDF/laura-clarke-cv-public.pdf" target="_blank" class="brand-outline-btn font-bold py-3 px-8 rounded-lg shadow-xl transform hover:scale-105 transition duration-300">
-                        Download CV (PDF)
-                    </a>
                 </div>
             </div>
             <div class="md:w-2/5 flex justify-center scroll-reveal">
@@ -144,19 +130,18 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- 2. SOLUTIONS/SERVICES SECTION (The core offering) -->
     <section id="services" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How I Deliver Peace of Mind</h2>
+                <h2 class="text-3xl md:text-4xl font-bold brand-dark-green mb-4">How I Deliver Peace of Mind</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">I specialize in **Digital Compliance & Submission**—solving your most frustrating administrative challenges.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                 
-                <!-- 1. TAJ & Long Line Solution (STEP 1) -->
+                <!-- 1. TAJ & Tax Portal Submissions -->
                 <div class="solution-card p-6 rounded-xl shadow-lg scroll-reveal">
-                    <div class="step-number rounded-full flex items-center justify-center">1</div>
-                    <div class="ml-4">
+                    <div>
                         <div class="flex items-center mb-3">
                             <i class="fas fa-file-invoice text-2xl brand-green mr-3"></i>
                             <h3 class="text-xl font-extrabold text-gray-900">TAJ & Tax Portal Submissions</h3>
@@ -166,10 +151,9 @@
                     </div>
                 </div>
 
-                <!-- 2. PICA Passport & Citizenship Applications (STEP 2) -->
+                <!-- 2. PICA Passport & Citizenship Applications -->
                 <div class="solution-card p-6 rounded-xl shadow-lg scroll-reveal">
-                    <div class="step-number rounded-full flex items-center justify-center">2</div>
-                    <div class="ml-4">
+                    <div>
                         <div class="flex items-center mb-3">
                             <i class="fas fa-passport text-2xl brand-green mr-3"></i>
                             <h3 class="text-xl font-extrabold text-gray-900">PICA Passport & Citizenship Applications</h3>
@@ -179,10 +163,9 @@
                     </div>
                 </div>
 
-                <!-- 3. Motor Vehicle & Licensing Solution (STEP 3) -->
+                <!-- 3. Motor Vehicle & Licensing Solution -->
                 <div class="solution-card p-6 rounded-xl shadow-lg scroll-reveal">
-                    <div class="step-number rounded-full flex items-center justify-center">3</div>
-                    <div class="ml-4">
+                    <div>
                         <div class="flex items-center mb-3">
                             <i class="fas fa-car-side text-2xl brand-green mr-3"></i>
                             <h3 class="text-xl font-extrabold text-gray-900">Motor Vehicle License & Renewal</h3>
@@ -192,10 +175,9 @@
                     </div>
                 </div>
 
-                <!-- 4. Online Banking & Complex Apps Solution (STEP 4) -->
+                <!-- 4. Online Banking & Complex Apps Solution -->
                 <div class="solution-card p-6 rounded-xl shadow-lg scroll-reveal">
-                    <div class="step-number rounded-full flex items-center justify-center">4</div>
-                    <div class="ml-4">
+                    <div>
                         <div class="flex items-center mb-3">
                             <i class="fas fa-lock text-2xl brand-green mr-3"></i>
                             <h3 class="text-xl font-extrabold text-gray-900">Sensitive Financial Applications</h3>
@@ -208,13 +190,13 @@
         </div>
     </section>
 
-    <!-- Experience, Reviews, Footer -->
-    <section id="portfolio" class="py-24 bg-gray-50">
+    <!-- 3. ABOUT ME SECTION (Experience & Reviews) -->
+    <section id="about-me" class="py-24 bg-gray-50 border-t border-gray-200">
         <div class="container mx-auto px-6">
             
             <!-- Section Heading -->
             <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">Experience & Proof of Competence</h2>
+                <h2 class="text-4xl md:text-5xl font-extrabold brand-dark-green mb-4 tracking-tight">My Expertise & Proof of Competence</h2>
                 <p class="text-xl text-gray-600 max-w-2xl mx-auto">
                     My service is backed by institutional experience in high-compliance, audited environments.
                 </p>
@@ -224,10 +206,10 @@
             <div class="max-w-4xl mx-auto space-y-12 mb-20 scroll-reveal">
                 
                 <!-- Pillar 1: Financial Integrity & Auditing (NCB Focus) -->
-                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-lg border-l-4 border-yellow-600">
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-2xl border-l-4 border-yellow-600">
                     <div class="flex-shrink-0 text-3xl text-yellow-600 mt-1"><i class="fas fa-sack-dollar"></i></div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2">Financial Integrity & Audit Readiness (NCB Background)</h3>
+                        <h3 class="text-xl font-bold mb-2">Financial Integrity & Audit Readiness</h3>
                         <p class="text-gray-600">
                             My background as a Team Leader and Financial Officer at **NCB** instilled a non-negotiable standard for accurate financial processing and regulatory balancing. This expertise is applied to every client project, ensuring your personal or small business records are **clean, verified, and 100% ready for tax filing or external review**, protecting you from future audit complications.
                         </p>
@@ -235,10 +217,10 @@
                 </div>
 
                 <!-- Pillar 2: Operational Systems & Compliance (OEC Focus) -->
-                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-lg border-l-4 border-blue-600">
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-2xl border-l-4 border-blue-600">
                     <div class="flex-shrink-0 text-3xl text-blue-600 mt-1"><i class="fas fa-tasks"></i></div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2">Operational Systems & Compliance Management (OEC Background)</h3>
+                        <h3 class="text-xl font-bold mb-2">Operational Systems & Compliance Management</h3>
                         <p class="text-gray-600">
                             The successful administration of complex, simultaneous exams at the **OEC** required strategic planning, meticulous logistical coordination, and absolute compliance enforcement. I use this operational mindset to design simple, scalable administrative systems for your home or business, guaranteeing that documentation is correctly organized from the start, avoiding clutter and compliance gaps.
                         </p>
@@ -248,15 +230,15 @@
 
             <!-- Client Testimonials -->
             <div class="text-center mb-10 mt-16 scroll-reveal">
-                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
+                 <h2 class="text-3xl md:text-4xl font-bold brand-dark-green mb-4">Client Success Stories</h2>
                  <p class="text-lg text-gray-600 max-w-2xl mx-auto">See how I eliminate confusion and deliver guaranteed administrative peace of mind.</p>
              </div>
              <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto scroll-reveal">
                  <!-- Review 1 (Danielle - PICA) -->
                  <div class="review-card p-6 rounded-xl">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
-                     <p class="text-gray-700 italic mb-4">"Thanks for simplifying the passport application process, it's my first one and I didn't know where to start."</p>
-                     <p class="font-bold text-gray-800">- Danielle, Private client</p>
+                     <p class="text-gray-700 italic mb-4">"Thanks for simplifying the passport application process, it's my first one and i didn't know where to start."</p>
+                     <p class="font-bold text-gray-800">- Danielle</p>
                  </div>
                  <!-- Review 2 (Claude - MV Renewal) -->
                  <div class="review-card p-6 rounded-xl">
@@ -268,55 +250,30 @@
                  <div class="review-card p-6 rounded-xl">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Outstanding. Navigated the online portal for me and avoided a major error. Highly recommend for any complex form submission."</p>
-                     <p class="font-bold text-gray-800">- U. Clarke, Individual Client</p>
+                     <p class="font-bold text-gray-800">- S. Williams, Individual Client</p>
                  </div>
              </div>
         </div>
     </section>
-
-    <!-- DPA Compliant Project Request Form (OPERATIONAL: GOOGLE FORMS EMBED) -->
-    <section id="request-form" class="py-20 bg-gray-100 border-t border-gray-200">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="text-center mb-10 scroll-reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Request Your Project Quote</h2>
-                <p class="text-lg text-gray-600">Start the process by telling me about the administrative challenge you need solved. Data is collected securely via Google Forms and delivered to a spreadsheet for quick response.</p>
-            </div>
-            
-            <!-- DPA Compliance Note: Must Be Read By Client -->
-            <div class="dpa-compliance-note text-center scroll-reveal">
-                <p class="font-bold text-gray-900 mb-2">MANDATORY DATA PROTECTION CONSENT</p>
-                <p class="text-sm">By submitting the form below, you grant explicit consent for DOCU-HUB SERVICES to collect and process the submitted personal data **only for the sole purpose of fulfilling the requested service** (e.g., PICA or MV Renewal). You agree that this form acts as the legal consent for data processing.</p>
-                <!-- NOTE: Update the '#' with the URL to your hosted PDF -->
-                <p class="text-xs mt-2"><a href="PDF/DOCU-HUB SERVICES_ Full Terms of Service & Data Protection Consent (Version 1.pdf" target="_blank" class="brand-green hover:underline font-bold">Read Full Terms of Service and Data Protection Consent (Linked PDF)</a></p>
-            </div>
-
-            <div class="google-form-embed bg-white rounded-xl shadow-2xl p-0 scroll-reveal">
-                <!-- 
-                    *** ACTION REQUIRED ***
-                    1. Create your Google Form with the required fields (Name, Email, Service Needed, and a MANDATORY DPA checkbox question).
-                    2. Go to File -> Embed HTML.
-                    3. PASTE THE IFRAME CODE BELOW, replacing the placeholder iframe.
-                -->
-                <iframe src="https://forms.gle/48SfrdTrbggVN9Ti6" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-
-            </div>
-        </div>
-    </section>
     
-    <!-- Footer -->
-    <footer id="contact" class="brand-dark-green-bg text-white py-20">
+    <!-- 4. CONTACT SECTION (Footer with Direct Links) -->
+    <footer id="footer" class="brand-dark-green-bg text-white py-20">
         <div class="container mx-auto px-6 text-center">
             
-            <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
+            <h2 class="text-4xl font-bold mb-4">Ready to Resolve Your Challenge?</h2>
             <p class="text-xl text-gray-300 mb-10 max-w-xl mx-auto">
-                I am available for project-based contracts in operations and administrative management.
+                For a quick, error-free solution, contact me directly via WhatsApp or Email.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <!-- Direct WhatsApp Link (Replace XXXXXXX with your number) -->
+                <a href="https://wa.me/18769902406" target="_blank" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-3"></i> Message on WhatsApp
+                </a>
                 <a href="mailto:lauraclarke.jw@gmail.com" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
                     <i class="fas fa-envelope mr-3"></i> Email Me
                 </a>
                 <a href="https://www.linkedin.com/in/lauraclarke-freelancer/" target="_blank" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
-                    <i class="fab fa-linkedin mr-3"></i> LinkedIn
+                    <i class="fab fa-linkedin mr-3"></i> LinkedIn Profile
                 </a>
             </div>
             <p class="text-gray-400 mt-16 text-sm">
@@ -348,6 +305,3 @@
 
 </body>
 </html>
-
-
-
