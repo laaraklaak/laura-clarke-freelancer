@@ -60,20 +60,12 @@
             transform: translateY(-5px);
             border-color: #16A34A;
         }
-        /* REMOVED .step-number CSS ENTIRELY */
         
         /* 7. Testimonial Card Styling */
         .review-card {
             background-color: #FFFFFF;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             border-top: 5px solid #16A34A;
-        }
-
-        /* 8. Utility Overrides (Embed styles removed as form is removed) */
-        .dpa-compliance-note {
-             background-color: #FDF9E5; 
-             border: 1px solid #FFC107; 
-             color: #6C757D;
         }
         
         /* 9. Animation Classes */
@@ -255,7 +247,7 @@
                  <div class="review-card p-6 rounded-xl">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Thanks for simplifying the passport application process, it's my first one and i didn't know where to start."</p>
-                     <p class="font-bold text-gray-800">- Danielle</p>
+                     <p class="font-bold text-gray-800">- Danielle, Private Client</p>
                  </div>
                  <!-- Review 2 (Claude - MV Renewal) -->
                  <div class="review-card p-6 rounded-xl">
@@ -267,7 +259,7 @@
                  <div class="review-card p-6 rounded-xl">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Outstanding. Navigated the online portal for me and avoided a major error. Highly recommend for any complex form submission."</p>
-                     <p class="font-bold text-gray-800">- S. Williams, Individual Client</p>
+                     <p class="font-bold text-gray-800">- U. Clarke, Individual Client</p>
                  </div>
              </div>
         </div>
@@ -330,8 +322,8 @@
             
                 // Clear message and restore original content after 3 seconds
                 setTimeout(() => {
-                    // This is the correct logic for the footer, but for the CTA, it needs to be the specific message.
-                    container.innerHTML = originalContent; // Keep original content
+                    // Restore original content
+                    container.innerHTML = originalContent; 
                 }, 3000);
             }
             
@@ -347,13 +339,14 @@
             copyEmailToClipboard(email, 'email-feedback-container');
         });
         
-        // 2. Services CTA Email Link (ID: email-link-services)
-        // This button now only smooth scrolls to the footer
-        document.getElementById('email-link-services').addEventListener('click', function(e) {
-            e.preventDefault(); 
+        // 2. Services CTA Contact Now Link (No ID needed, links to #footer)
+        // This button only smooth scrolls to the footer and does NOT copy email
+        document.querySelector('.bg-gray-100 .inline-flex.items-center.justify-center').addEventListener('click', function(e) {
+             // The HTML anchor tag already handles the scroll to #footer, no need for extra JS unless preventing default
+             // e.preventDefault(); // Uncomment this if the smooth scroll is ever broken by the anchor tag default behavior
             
-            // Smooth scroll to the footer
-            document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
+            // Note: The HTML anchor tag on this button is: href="#footer"
+            // The scroll-smooth class on the <html> tag handles the animation.
         });
 
 
