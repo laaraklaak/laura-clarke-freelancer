@@ -209,7 +209,7 @@
                 <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-2xl border-l-4 border-yellow-600">
                     <div class="flex-shrink-0 text-3xl text-yellow-600 mt-1"><i class="fas fa-sack-dollar"></i></div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2">Financial Integrity & Audit Readiness</h3>
+                        <h3 class="text-xl font-bold mb-2">Financial Integrity & Audit Readiness (NCB Background)</h3>
                         <p class="text-gray-600">
                             My background as a Team Leader and Financial Officer at **NCB** instilled a non-negotiable standard for accurate financial processing and regulatory balancing. This expertise is applied to every client project, ensuring your personal or small business records are **clean, verified, and 100% ready for tax filing or external review**, protecting you from future audit complications.
                         </p>
@@ -220,7 +220,7 @@
                 <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-2xl border-l-4 border-blue-600">
                     <div class="flex-shrink-0 text-3xl text-blue-600 mt-1"><i class="fas fa-tasks"></i></div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2">Operational Systems & Compliance Management</h3>
+                        <h3 class="text-xl font-bold mb-2">Operational Systems & Compliance Management (OEC Background)</h3>
                         <p class="text-gray-600">
                             The successful administration of complex, simultaneous exams at the **OEC** required strategic planning, meticulous logistical coordination, and absolute compliance enforcement. I use this operational mindset to design simple, scalable administrative systems for your home or business, guaranteeing that documentation is correctly organized from the start, avoiding clutter and compliance gaps.
                         </p>
@@ -238,7 +238,7 @@
                  <div class="review-card p-6 rounded-xl">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Thanks for simplifying the passport application process, it's my first one and i didn't know where to start."</p>
-                     <p class="font-bold text-gray-800">- Danielle, Private Client</p>
+                     <p class="font-bold text-gray-800">- Danielle</p>
                  </div>
                  <!-- Review 2 (Claude - MV Renewal) -->
                  <div class="review-card p-6 rounded-xl">
@@ -250,7 +250,7 @@
                  <div class="review-card p-6 rounded-xl">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Outstanding. Navigated the online portal for me and avoided a major error. Highly recommend for any complex form submission."</p>
-                     <p class="font-bold text-gray-800">- U. Clarke, Individual Client</p>
+                     <p class="font-bold text-gray-800">- S. Williams, Individual Client</p>
                  </div>
              </div>
         </div>
@@ -261,15 +261,15 @@
         <div class="container mx-auto px-6 text-center">
             
             <h2 class="text-4xl font-bold mb-4">Ready to Resolve Your Challenge?</h2>
-            <p class="text-xl text-gray-300 mb-10 max-w-xl mx-auto">
+            <p class="text-xl text-gray-300 mb-10 max-w-xl mx-auto" id="email-feedback-container">
                 For a quick, error-free solution, contact me directly via WhatsApp or Email.
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
                 <!-- Direct WhatsApp Link (Replace XXXXXXX with your number) -->
-                <a href="https://wa.me/18769902406" target="_blank" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
+                <a href="https://wa.me/1876XXXXXXX?text=Hello%2C%20I%20need%20assistance%20with%20a%20compliance%20submission." target="_blank" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
                     <i class="fab fa-whatsapp mr-3"></i> Message on WhatsApp
                 </a>
-                <a href="mailto:lauraclarke.jw@gmail.com" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
+                <a href="#" id="email-link" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
                     <i class="fas fa-envelope mr-3"></i> Email Me
                 </a>
                 <a href="https://www.linkedin.com/in/lauraclarke-freelancer/" target="_blank" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
@@ -282,7 +282,291 @@
         </div>
     </footer>
 
-  <!-- 9. JavaScript for Animations & Email Fix -->
+    <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCU-HUB SERVICES | Laura Clarke</title>
+    <!-- 1. Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 2. Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 3. Premium Google Font ("Inter") -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 4. Base Styles and Font */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #1F2937; /* Dark Gray for text */
+        }
+        
+        /* 5. Custom Color Palette & Backgrounds */
+        .hero-bg {
+            background-color: #F8F9FA;
+            background-image: linear-gradient(to bottom right, #F8F9FA, #E5E7EB);
+        }
+        .brand-green {
+            color: #16A34A; /* Accent: Green */
+        }
+        .brand-green-bg {
+            background-color: #16A34A;
+        }
+        .brand-dark-green {
+            color: #2F4F4F; /* Anchor: Dark Slate Gray */
+        }
+        .brand-dark-green-bg {
+            background-color: #2F4F4F;
+        }
+
+        /* 6. Button and Card Styling */
+        .brand-outline-btn {
+            border: 2px solid #16A34A;
+            color: #16A34A;
+        }
+        .brand-outline-btn:hover {
+            background-color: #16A34A;
+            color: #FFFFFF;
+        }
+        /* ENHANCED SOLUTION CARD STYLES */
+        .solution-card {
+            /* Removed position: relative */
+            padding: 1.5rem; /* Simplified padding */
+            background-color: #ffffff;
+            border: 1px solid #E5E7EB;
+            transition: all 0.3s ease; /* Added transition for hover effect */
+        }
+        .solution-card:hover {
+            box-shadow: 0 10px 30px rgba(47, 79, 79, 0.1); /* Subtle shadow based on brand color */
+            transform: translateY(-5px);
+            border-color: #16A34A;
+        }
+        /* REMOVED .step-number CSS ENTIRELY */
+        
+        /* 7. Testimonial Card Styling */
+        .review-card {
+            background-color: #FFFFFF;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #16A34A;
+        }
+
+        /* 8. Utility Overrides (Embed styles removed as form is removed) */
+        .dpa-compliance-note {
+             background-color: #FDF9E5; 
+             border: 1px solid #FFC107; 
+             color: #6C757D;
+        }
+        
+        /* 9. Animation Classes */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .scroll-reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased bg-gray-50">
+
+    <!-- Header / Navigation -->
+    <header class="bg-white/95 backdrop-blur-sm shadow sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- UPDATED: Business Name is now a clickable link back to #hero -->
+            <a href="#hero" class="text-2xl font-extrabold brand-dark-green tracking-wide hover:text-gray-900 transition duration-150">DOCU-HUB SERVICES</a>
+            <!-- UPDATED NAVIGATION LINKS -->
+            <div class="hidden md:flex space-x-8 text-sm">
+                <a href="#services" class="text-gray-600 hover:text-gray-900 font-semibold transition">Solutions</a>
+                <a href="#about-me" class="text-gray-600 hover:text-gray-900 font-semibold transition">About Me</a>
+                <!-- Contact link now points directly to the footer -->
+                <a href="#footer" class="brand-green hover:text-green-700 font-extrabold transition">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button class="text-gray-600"><i class="fas fa-bars text-xl"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 1. HOME/HERO SECTION -->
+    <section id="hero" class="hero-bg py-24 md:py-32 overflow-hidden">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0 scroll-reveal">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">Laura Clarke</h1>
+                <h2 class="text-2xl md:text-3xl font-light brand-dark-green mb-8">DOCU-HUB OPERATIONS SERVICES | Compliance & Systems Expert</h2>
+                <p class="text-lg text-gray-600 mb-10 max-w-xl">
+                    I offer dedicated, project-based administrative solutions. I leverage 15+ years of high-compliance experience to eliminate administrative risk, **bringing you peace of mind** knowing your complex documents and statutory submissions are handled with absolute authority and accuracy.
+                </p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#services" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-8 rounded-lg shadow-xl transform hover:scale-105 transition duration-300">
+                        View Solutions
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-2/5 flex justify-center scroll-reveal">
+                <!-- Using a professional background for the image placeholder -->
+                <img src="images/profile_photo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/384x384/2F4F4F/FFFFFF?text=LC+Expert'" alt="Laura Clarke" class="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover border-8 border-white shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. SOLUTIONS/SERVICES SECTION (The core offering) -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-3xl md:text-4xl font-bold brand-dark-green mb-4">How I Deliver Peace of Mind</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">I specialize in **Digital Compliance & Submission**—solving your most frustrating administrative challenges.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                
+                <!-- 1. TAJ & Tax Portal Submissions -->
+                <div class="solution-card p-6 rounded-xl shadow-lg scroll-reveal">
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-file-invoice text-2xl brand-green mr-3"></i>
+                            <h3 class="text-xl font-extrabold text-gray-900">TAJ & Tax Portal Submissions</h3>
+                        </div>
+                        <p class="text-gray-700 mb-2">**THE PAIN:** Spending hours in line or getting rejected due to online errors on tax payments or filings.</p>
+                        <p class="font-semibold text-gray-800">**THE SOLUTION:** Guaranteed error-free filing and timely payment of Property Tax and other statutory obligations via the TAJ portal.</p>
+                    </div>
+                </div>
+
+                <!-- 2. PICA Passport & Citizenship Applications -->
+                <div class="solution-card p-6 rounded-xl shadow-lg scroll-reveal">
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-passport text-2xl brand-green mr-3"></i>
+                            <h3 class="text-xl font-extrabold text-gray-900">PICA Passport & Citizenship Applications</h3>
+                        </div>
+                        <p class="text-gray-700 mb-2">**THE PAIN:** The PICA online application process is notoriously complex, leading to delays and costly rejections.</p>
+                        <p class="font-semibold text-gray-800">**THE SOLUTION:** Meticulous completion and submission of all PICA applications, ensuring 100% document compliance to secure approval the first time.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Motor Vehicle & Licensing Solution -->
+                <div class="solution-card p-6 rounded-xl shadow-lg scroll-reveal">
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-car-side text-2xl brand-green mr-3"></i>
+                            <h3 class="text-xl font-extrabold text-gray-900">Motor Vehicle License & Renewal</h3>
+                        </div>
+                        <p class="text-gray-700 mb-2">**THE PAIN:** Hassle and lost time renewing licenses, paying traffic tickets, or completing other motor vehicle payments online.</p>
+                        <p class="font-semibold text-gray-800">**THE SOLUTION:** Fast, accurate, and completely online handling of all necessary motor vehicle payments and licensing procedures.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Online Banking & Complex Apps Solution -->
+                <div class="solution-card p-6 rounded-xl shadow-lg scroll-reveal">
+                    <div>
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-lock text-2xl brand-green mr-3"></i>
+                            <h3 class="text-xl font-extrabold text-gray-900">Sensitive Financial Applications</h3>
+                        </div>
+                        <p class="text-gray-700 mb-2">**THE PAIN:** Individuals struggle with new online banking, loan, or complex visa applications due to fear of error.</p>
+                        <p class="font-semibold text-gray-800">**THE SOLUTION:** Secure, error-free completion of complex banking, loan, or visa applications, ensuring all supporting documents are vetted.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ABOUT ME SECTION (Experience & Reviews) -->
+    <section id="about-me" class="py-24 bg-gray-50 border-t border-gray-200">
+        <div class="container mx-auto px-6">
+            
+            <!-- Section Heading -->
+            <div class="text-center mb-16 scroll-reveal">
+                <h2 class="text-4xl md:text-5xl font-extrabold brand-dark-green mb-4 tracking-tight">My Expertise & Proof of Competence</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    My service is backed by institutional experience in high-compliance, audited environments.
+                </p>
+            </div>
+
+            <!-- Experience Content -->
+            <div class="max-w-4xl mx-auto space-y-12 mb-20 scroll-reveal">
+                
+                <!-- Pillar 1: Financial Integrity & Auditing (NCB Focus) -->
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-2xl border-l-4 border-yellow-600">
+                    <div class="flex-shrink-0 text-3xl text-yellow-600 mt-1"><i class="fas fa-sack-dollar"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Financial Integrity & Audit Readiness (NCB Background)</h3>
+                        <p class="text-gray-600">
+                            My background as a Team Leader and Financial Officer at **NCB** instilled a non-negotiable standard for accurate financial processing and regulatory balancing. This expertise is applied to every client project, ensuring your personal or small business records are **clean, verified, and 100% ready for tax filing or external review**, protecting you from future audit complications.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pillar 2: Operational Systems & Compliance (OEC Focus) -->
+                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-2xl border-l-4 border-blue-600">
+                    <div class="flex-shrink-0 text-3xl text-blue-600 mt-1"><i class="fas fa-tasks"></i></div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Operational Systems & Compliance Management (OEC Background)</h3>
+                        <p class="text-gray-600">
+                            The successful administration of complex, simultaneous exams at the **OEC** required strategic planning, meticulous logistical coordination, and absolute compliance enforcement. I use this operational mindset to design simple, scalable administrative systems for your home or business, guaranteeing that documentation is correctly organized from the start, avoiding clutter and compliance gaps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Testimonials -->
+            <div class="text-center mb-10 mt-16 scroll-reveal">
+                 <h2 class="text-3xl md:text-4xl font-bold brand-dark-green mb-4">Client Success Stories</h2>
+                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">See how I eliminate confusion and deliver guaranteed administrative peace of mind.</p>
+             </div>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto scroll-reveal">
+                 <!-- Review 1 (Danielle - PICA) -->
+                 <div class="review-card p-6 rounded-xl">
+                     <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
+                     <p class="text-gray-700 italic mb-4">"Thanks for simplifying the passport application process, it's my first one and i didn't know where to start."</p>
+                     <p class="font-bold text-gray-800">- Danielle</p>
+                 </div>
+                 <!-- Review 2 (Claude - MV Renewal) -->
+                 <div class="review-card p-6 rounded-xl">
+                     <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
+                     <p class="text-gray-700 italic mb-4">"Laura helped renew my motor vehicle license online, which took the hassle out of joining long lines. I will certainly spread the word to my friends."</p>
+                     <p class="font-bold text-gray-800">- Claude, Private Client</p>
+                 </div>
+                 <!-- Review 3 (S. Williams - Complex Form) -->
+                 <div class="review-card p-6 rounded-xl">
+                     <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
+                     <p class="text-gray-700 italic mb-4">"Outstanding. Navigated the online portal for me and avoided a major error. Highly recommend for any complex form submission."</p>
+                     <p class="font-bold text-gray-800">- S. Williams, Individual Client</p>
+                 </div>
+             </div>
+        </div>
+    </section>
+    
+    <!-- 4. CONTACT SECTION (Footer with Direct Links) -->
+    <footer id="footer" class="brand-dark-green-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            
+            <h2 class="text-4xl font-bold mb-4">Ready to Resolve Your Challenge?</h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-xl mx-auto" id="email-feedback-container">
+                For a quick, error-free solution, contact me directly via WhatsApp or Email.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <!-- Direct WhatsApp Link (Replace XXXXXXX with your number) -->
+                <a href="https://wa.me/18769902406" target="_blank" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-3"></i> Message on WhatsApp
+                </a>
+                <a href="#" id="email-link" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
+                    <i class="fas fa-envelope mr-3"></i> Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/lauraclarke-freelancer/" target="_blank" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
+                    <i class="fab fa-linkedin mr-3"></i> LinkedIn Profile
+                </a>
+            </div>
+            <p class="text-gray-400 mt-16 text-sm">
+                &copy; 2025 Laura Clarke. All rights reserved. DOCU-HUB SERVICES.
+            </p>
+        </div>
+    </footer>
+
+    <!-- 9. JavaScript for Animations & Email Fix -->
     <script>
         // Function to copy email address to clipboard
         function copyEmailToClipboard(email) {
@@ -351,31 +635,9 @@
                 observer.observe(el);
             });
         });
-    
-        
-        // Existing JavaScript for Animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('scroll-reveal-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            const elements = document.querySelectorAll('.scroll-reveal');
-            elements.forEach(el => {
-                observer.observe(el);
-            });
-        });
     </script>
-
 
 </body>
 </html>
-
-
-
+</body>
+</html>
