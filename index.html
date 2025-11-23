@@ -197,13 +197,9 @@
                 <h3 class="text-3xl font-extrabold brand-dark-green mb-4">Ready to Resolve Your Challenge?</h3>
                 <p class="text-lg text-gray-700 mb-8">Stop worrying about errors and delays. Contact me now for a guaranteed, error-free submission process.</p>
                 <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
-                    <!-- Direct WhatsApp Link (from Footer) -->
-                    <a href="https://wa.me/1876XXXXXXX?text=Hello%2C%20I%20need%20assistance%20with%20a%20compliance%20submission." target="_blank" class="text-lg brand-green-bg text-white font-bold py-3 px-8 rounded-lg shadow-xl transform hover:scale-105 transition duration-300 inline-flex items-center justify-center">
-                        <i class="fab fa-whatsapp mr-3"></i> Message on WhatsApp
-                    </a>
-                    <!-- UPDATED: Email Copy Link now links to the footer contact section -->
-                    <a href="#footer" id="email-link-services" class="text-lg brand-outline-btn font-bold py-3 px-8 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 inline-flex items-center justify-center">
-                        <i class="fas fa-envelope mr-3"></i> Email Me
+                    <!-- FINAL CTA: Single button linking to footer for all contact options -->
+                    <a href="#footer" class="text-lg brand-green-bg text-white font-bold py-3 px-8 rounded-lg shadow-xl transform hover:scale-105 transition duration-300 inline-flex items-center justify-center">
+                        <i class="fas fa-phone mr-3"></i> Contact Now
                     </a>
                 </div>
             </div>
@@ -230,7 +226,7 @@
                 <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-2xl border-l-4 border-yellow-600">
                     <div class="flex-shrink-0 text-3xl text-yellow-600 mt-1"><i class="fas fa-sack-dollar"></i></div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2">Financial Integrity & Audit Readiness (NCB Background)</h3>
+                        <h3 class="text-xl font-bold mb-2">Financial Integrity & Audit Readiness</h3>
                         <p class="text-gray-600">
                             My background as a Team Leader and Financial Officer at **NCB** instilled a non-negotiable standard for accurate financial processing and regulatory balancing. This expertise is applied to every client project, ensuring your personal or small business records are **clean, verified, and 100% ready for tax filing or external review**, protecting you from future audit complications.
                         </p>
@@ -241,7 +237,7 @@
                 <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-2xl border-l-4 border-blue-600">
                     <div class="flex-shrink-0 text-3xl text-blue-600 mt-1"><i class="fas fa-tasks"></i></div>
                     <div>
-                        <h3 class="text-xl font-bold mb-2">Operational Systems & Compliance Management (OEC Background)</h3>
+                        <h3 class="text-xl font-bold mb-2">Operational Systems & Compliance Management</h3>
                         <p class="text-gray-600">
                             The successful administration of complex, simultaneous exams at the **OEC** required strategic planning, meticulous logistical coordination, and absolute compliance enforcement. I use this operational mindset to design simple, scalable administrative systems for your home or business, guaranteeing that documentation is correctly organized from the start, avoiding clutter and compliance gaps.
                         </p>
@@ -259,7 +255,7 @@
                  <div class="review-card p-6 rounded-xl">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Thanks for simplifying the passport application process, it's my first one and i didn't know where to start."</p>
-                     <p class="font-bold text-gray-800">- Danielle, Private Client</p>
+                     <p class="font-bold text-gray-800">- Danielle</p>
                  </div>
                  <!-- Review 2 (Claude - MV Renewal) -->
                  <div class="review-card p-6 rounded-xl">
@@ -271,7 +267,7 @@
                  <div class="review-card p-6 rounded-xl">
                      <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
                      <p class="text-gray-700 italic mb-4">"Outstanding. Navigated the online portal for me and avoided a major error. Highly recommend for any complex form submission."</p>
-                     <p class="font-bold text-gray-800">- U. Clarke, Individual Client</p>
+                     <p class="font-bold text-gray-800">- S. Williams, Individual Client</p>
                  </div>
              </div>
         </div>
@@ -352,15 +348,12 @@
         });
         
         // 2. Services CTA Email Link (ID: email-link-services)
+        // This button now only smooth scrolls to the footer
         document.getElementById('email-link-services').addEventListener('click', function(e) {
-            e.preventDefault(); // Remove prevention to allow smooth scroll
-            const email = "lauraclarke.jw@gmail.com";
+            e.preventDefault(); 
             
-            // Execute copy operation (this happens instantly)
-            copyEmailToClipboard(email, 'email-feedback-container');
-            
-            // Remove prevention after the copy function is executed to allow the smooth scroll
-            window.location.href = "#footer"; 
+            // Smooth scroll to the footer
+            document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
         });
 
 
