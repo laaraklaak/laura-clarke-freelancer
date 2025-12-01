@@ -1,435 +1,280 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
+    <!-- Optimized Title: Concise and SEO-friendly -->
+    <title>Docu-Hub Operations Services | Clerical Compliance & Data Integrity</title>
+    <!-- Essential Meta Description for SEO and Sharing -->
+    <meta name="description" content="Expert administrative compliance facilitation for PICA, RGD, and TAJ documentation in Jamaica. Registered Sole Proprietorship with PII and DPA compliance.">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOCU-HUB SERVICES | Laura Clarke</title>
-    <!-- 1. Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 2. Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- 3. Premium Google Font ("Inter") -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     
-    <style>
-        /* 4. Base Styles and Font */
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: #1F2937; /* Dark Gray for text */
-        }
-        
-        /* 5. Custom Color Palette & Backgrounds (Defined for consistency) */
-        .hero-bg {
-            background-color: #F8F9FA;
-            background-image: linear-gradient(to bottom right, #F8F9FA, #E5E7EB);
-        }
-        .brand-green {
-            color: #16A34A; /* Accent: Green */
-        }
-        .brand-green-bg {
-            background-color: #16A34A;
-        }
-        .brand-dark-green {
-            color: #2F4F4F; /* Anchor: Dark Slate Gray */
-        }
-        .brand-dark-green-bg {
-            background-color: #2F4F4F;
-        }
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for professional look -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-        /* 6. ENHANCED SOLUTION CARD STYLES */
-        .solution-card {
-            padding: 1.5rem; /* Simplified padding */
-            background-color: #ffffff;
-            border: 1px solid #E5E7EB;
-            transition: all 0.3s ease; 
+    <style>
+        :root {
+            /* NEW PALETTE: Deep Slate Blue & Muted Gold/Ochre */
+            --color-primary-dark: #1E293B; /* Deep Slate Blue */
+            --color-accent-muted: #E0B841; /* Muted, rich Gold/Ochre */
         }
-        .solution-card:hover {
-            box-shadow: 0 10px 30px rgba(47, 79, 79, 0.1); 
-            transform: translateY(-5px);
-            border-color: #16A34A;
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Light Gray Background */
         }
+        /* Update CSS classes to use new variables */
+        .text-navy { color: var(--color-primary-dark); }
+        .bg-navy { background-color: var(--color-primary-dark); }
+        .text-gold { color: var(--color-accent-muted); }
+        .border-gold { border-color: var(--color-accent-muted); }
         
-        /* 7. Testimonial Card Styling (Mobile Scroll Fix) */
-        .review-card-container {
-            /* Enable horizontal scrolling only on small screens */
-            display: flex;
-            overflow-x: auto;
-            gap: 1.5rem; /* Equivalent to gap-6 */
-            padding-bottom: 1rem; /* Space for scrollbar */
-            scroll-snap-type: x mandatory; /* Snap to card edges */
+        .btn-primary {
+            background-color: var(--color-accent-muted);
+            color: var(--color-primary-dark);
+            transition: all 0.3s;
+            @apply font-semibold;
         }
-        .review-card {
-            min-width: 85vw; /* Make cards take up most of the screen width */
-            scroll-snap-align: start;
-            background-color: #FFFFFF;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-            border-top: 5px solid #16A34A;
+        .btn-primary:hover {
+            background-color: #cc9f3a; /* Slightly darker shade for hover effect */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-        @media (min-width: 768px) {
-             /* Restore grid layout for desktop/tablet */
-            .review-card-container {
-                display: grid;
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                overflow-x: hidden;
-                padding-bottom: 0;
-            }
-            .review-card {
-                min-width: auto;
-            }
-        }
-        
-        /* 9. Animation Classes (Kept here as they modify Tailwind utilities) */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .scroll-reveal-visible {
-            opacity: 1;
-            transform: translateY(0);
+        .nav-link:hover {
+            color: var(--color-accent-muted);
         }
     </style>
 </head>
-<body class="text-gray-800 antialiased bg-gray-50">
+<body class="focus-visible">
 
-    <!-- Header / Navigation -->
-    <header class="bg-white/95 backdrop-blur-sm shadow sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- UPDATED: Business Name is now a clickable link back to #hero -->
-            <a href="#hero" class="text-2xl font-extrabold brand-dark-green tracking-wide hover:text-gray-900 transition duration-150">DOCU-HUB SERVICES</a>
-            <!-- UPDATED NAVIGATION LINKS - Reflecting Agency-Focused Menu -->
-            <div class="hidden md:flex space-x-8 text-sm">
-                <a href="#services" class="text-gray-600 hover:text-gray-900 font-semibold transition">Service Packages</a>
-                <a href="#how-it-works" class="text-gray-600 hover:text-gray-900 font-semibold transition">Compliance Flow</a>
-                <a href="#about-me" class="text-gray-600 hover:text-gray-900 font-semibold transition">Expertise</a>
-                <!-- Contact link now points directly to the footer -->
-                <a href="#footer" class="brand-green hover:text-green-700 font-extrabold transition">Start Submission</a>
-            </div>
-            <div class="md:hidden">
-                <button class="text-gray-600"><i class="fas fa-bars text-xl"></i></button>
-            </div>
-        </nav>
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-navy flex items-center tracking-tight" aria-label="Docu-Hub Home">
+                <span class="text-4xl mr-2 text-gold">✓</span>
+                DOCU-HUB OPERATIONS SERVICES
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8 text-navy font-medium">
+                <a href="#services" class="nav-link transition duration-150 p-2 rounded-lg">Services & Fees</a>
+                <a href="#compliance" class="nav-link transition duration-150 p-2 rounded-lg">Compliance Shield</a>
+                <a href="#about" class="nav-link transition duration-150 p-2 rounded-lg">About Laura</a>
+            </nav>
+            
+            <!-- Primary Action Button (Desktop) -->
+            <a href="https://wa.me/XXXXXXXXXX" target="_blank" class="btn-primary px-4 py-2 rounded-xl text-sm hidden md:inline-block shadow-md" aria-label="WhatsApp Us for quick assistance">
+                <i data-lucide="message-square-text" class="inline-block w-4 h-4 mr-1 -mt-0.5"></i>
+                WhatsApp Us
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-toggle" class="md:hidden text-navy p-2 rounded-lg hover:bg-gray-100 transition duration-150" aria-label="Toggle mobile menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
     </header>
 
-    <!-- 1. HOME/HERO SECTION - LEAD WITH PAIN POINT -->
-    <section id="hero" class="hero-bg py-24 md:py-32 overflow-hidden">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-            <div class="md:w-3/5 text-center md:text-left mb-12 md:mb-0 scroll-reveal">
-                <!-- UPDATED HEADLINE: Lead with the Pain Point -->
-                <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">
-                    Tired of Lines at the TAJ? Confused by the PICA Portal?
-                </h1>
-                <h2 class="text-2xl md:text-3xl font-light brand-dark-green mb-8">
-                    Get Your Complex Documents Submitted **Correctly the First Time.**
-                </h2>
-                <p class="text-lg text-gray-600 mb-10 max-w-xl">
-                    I leverage 15+ years of high-compliance experience to eliminate administrative risk, **bringing you peace of mind** knowing your statutory submissions are handled with absolute authority and accuracy.
-                </p>
-                <div class="flex justify-center md:justify-start space-x-4">
-                    <a href="#services" class="brand-green-bg brand-green-bg-hover text-white font-bold py-3 px-8 rounded-lg shadow-xl transform hover:scale-105 transition duration-300">
-                        View Secure Solutions
-                    </a>
-                </div>
-            </div>
-            <!-- FIX: Reduced image size and added top margin for mobile layout -->
-            <div class="md:w-2/5 flex justify-center scroll-reveal mt-8 md:mt-0">
-                <img src="images/profile-picture.png" onerror="this.onerror=null; this.src='https://placehold.co/384x384/2F4F4F/FFFFFF?text=LC+Expert'" 
-                     alt="Laura Clarke" 
-                     class="rounded-full w-48 h-48 md:w-96 md:h-96 object-cover border-8 border-white shadow-2xl">
-            </div>
-        </div>
-    </section>
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-navy bg-opacity-95 z-40 p-6 pt-20">
+        <nav class="flex flex-col space-y-4 text-white text-xl font-bold">
+            <a href="#services" class="hover:text-gold transition duration-150 py-2 border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services & Fees</a>
+            <a href="#compliance" class="hover:text-gold transition duration-150 py-2 border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Compliance Shield</a>
+            <a href="#about" class="hover:text-gold transition duration-150 py-2 border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About Laura</a>
+            <a href="https://wa.me/XXXXXXXXXX" target="_blank" class="btn-primary px-4 py-3 rounded-xl text-lg mt-4 text-center" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+                Contact via WhatsApp
+            </a>
+        </nav>
+        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.add('hidden')" aria-label="Close mobile menu">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+    </div>
 
-    <!-- 2. COMPLIANCE FLOW (HOW IT WORKS) SECTION -->
-    <section id="how-it-works" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-3xl md:text-4xl font-bold brand-dark-green mb-4">Our Compliant Submission Process</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">This simple, 3-step flow ensures security, compliance, and guaranteed accuracy for every project.</p>
-            </div>
-            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Step 1: Secure Contact -->
-                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-md border-t-4 border-yellow-600 scroll-reveal">
-                    <div class="text-4xl text-yellow-600 mb-4 font-extrabold">1</div>
-                    <i class="fas fa-handshake text-3xl mb-3 brand-dark-green"></i>
-                    <h3 class="text-xl font-bold mb-2">Secure Contact</h3>
-                    <p class="text-gray-600 text-sm">Client initiates contact via WhatsApp or Email to outline the specific submission challenge (PICA, TAJ, etc.).</p>
-                </div>
-
-                <!-- Step 2: DPA Consent & Vetting -->
-                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-md border-t-4 border-yellow-600 scroll-reveal">
-                    <div class="text-4xl text-yellow-600 mb-4 font-extrabold">2</div>
-                    <i class="fas fa-clipboard-check text-3xl mb-3 brand-dark-green"></i>
-                    <h3 class="text-xl font-bold mb-2">DPA Consent & Vetting</h3>
-                    <p class="text-gray-600 text-sm">Client reviews and agrees to the mandatory **DPA Consent & Terms of Service**. Documents are vetted for 100% compliance *before* entry.</p>
-                </div>
-
-                <!-- Step 3: Submission & Confirmation -->
-                <div class="text-center p-6 bg-gray-50 rounded-xl shadow-md border-t-4 border-yellow-600 scroll-reveal">
-                    <div class="text-4xl text-yellow-600 mb-4 font-extrabold">3</div>
-                    <i class="fas fa-receipt text-3xl mb-3 brand-dark-green"></i>
-                    <h3 class="text-xl font-bold mb-2">Submission & Confirmation</h3>
-                    <p class="text-gray-600 text-sm">We submit the application on your behalf and immediately send you the official receipt, confirmation code, and proof of payment.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. TIERED PRODUCTIZED SERVICE LIST (SOLUTIONS) - IMPLEMENTS TIERED PRICING -->
-    <section id="services" class="py-20 bg-gray-50 border-t border-gray-200">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-3xl md:text-4xl font-bold brand-dark-green mb-4">Select Your Compliance Package</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Choose the tier that matches the complexity and urgency of your statutory submission.</p>
-            </div>
-            
-            <!-- FIX: Grid changed to 2 columns and removed 3rd card -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                
-                <!-- TIER 1: QUICK COMPLIANCE (Starter) - FIXED LOW FEE -->
-                <div class="bg-white p-8 rounded-xl shadow-2xl transition duration-300 hover:shadow-2xl hover:border-b-4 hover:border-green-500 scroll-reveal">
-                    <h3 class="text-2xl font-extrabold brand-dark-green mb-2">Quick Compliance</h3>
-                    <p class="text-gray-500 mb-6">Simple Payments & Renewals (Under 1 Hour)</p>
-                    <!-- UPDATED: Price to 'Starting at JMD $1,000' -->
-                    <div class="text-4xl font-extrabold brand-green mb-6">Starting at JMD $1,000</div>
-                    
-                    <ul class="text-left text-gray-700 space-y-3 mb-8">
-                        <li class="flex items-center"><i class="fas fa-check-circle brand-green mr-3"></i>Simple Payments (Tickets, Defined TAJ)</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle brand-green mr-3"></i>Motor Vehicle License Renewal</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle brand-green mr-3"></i>24-Hour Verification & Submission</li>
-                        <li class="flex items-center text-gray-500"><i class="fas fa-times-circle text-gray-400 mr-3"></i>Complex Application Vetting (PICA/RGD)</li>
-                        <li class="flex items-center text-gray-500"><i class="fas fa-times-circle text-gray-400 mr-3"></i>In-Depth Consultation</li>
-                    </ul>
-                    <a href="#footer" class="brand-green-bg text-white font-bold py-3 w-full block text-center rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300">
-                        Start Quick Submission
-                    </a>
-                </div>
-
-                <!-- TIER 2: CORE SUBMISSION (Professional) - CONSULTATION REQUIRED -->
-                <div class="bg-white p-8 rounded-xl shadow-2xl ring-4 ring-green-500 transition duration-300 hover:scale-[1.03] scroll-reveal">
-                    <h3 class="text-2xl font-extrabold brand-dark-green mb-2">Core Submission</h3>
-                    <p class="text-gray-500 mb-6">Complex Applications & Statutory Obligations</p>
-                    <!-- UPDATED TO REFLECT CONSULTATION PRICING -->
-                    <div class="text-4xl font-extrabold brand-green mb-6">Price Per Client</div>
-                    
-                    <ul class="text-left text-gray-700 space-y-3 mb-8">
-                        <!-- NEW HIGH-VALUE SERVICE ADDED -->
-                        <li class="flex items-center"><i class="fas fa-check-circle brand-green mr-3"></i>**PICA / RGD Applications & Submission**</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle brand-green mr-3"></i>**Complex File Submissions & Service Requests**</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle brand-green mr-3"></i>Meticulous Document Vetting (High Risk)</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle brand-green mr-3"></i>30-Minute Compliance Consultation</li>
-                        <li class="flex items-center text-gray-500"><i class="fas fa-times-circle text-gray-400 mr-3"></i>Dedicated Client Portal</li>
-                    </ul>
-                    <a href="#footer" class="brand-dark-green-bg text-white font-bold py-3 w-full block text-center rounded-lg shadow-md transform hover:scale-[1.02] transition duration-300">
-                        Request Price Quote
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- CALL TO ACTION: Subtle and Gentle Nudge -->
-        <div class="bg-gray-100 py-12 border-t border-gray-200 mt-16 scroll-reveal">
-            <div class="container mx-auto px-6 text-center">
-                <!-- Message is gentle and inviting -->
-                <h3 class="text-3xl font-extrabold brand-dark-green mb-4">Ready to Move Forward with Confidence?</h3>
-                <p class="text-lg text-gray-700 mb-8">If you have a complex document or submission deadline looming, let's schedule a brief, confidential review of your situation.</p>
-                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
-                    <!-- FINAL CTA: Single button linking to footer for all contact options -->
-                    <a href="#footer" class="text-lg brand-green-bg text-white font-bold py-3 px-8 rounded-lg shadow-xl transform hover:scale-105 transition duration-300 inline-flex items-center justify-center">
-                        <i class="fas fa-phone mr-3"></i> Contact Now
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- END CTA BLOCK -->
-    </section>
-
-    <!-- 4. ABOUT ME SECTION (Expertise & Reviews) -->
-    <section id="about-me" class="py-24 bg-gray-50 border-t border-gray-200">
-        <div class="container mx-auto px-6">
-            
-            <!-- Section Heading -->
-            <div class="text-center mb-16 scroll-reveal">
-                <h2 class="text-4xl md:text-5xl font-extrabold brand-dark-green mb-4 tracking-tight">My Expertise & Proof of Competence</h2>
-                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-                    My service is backed by institutional experience in high-compliance, audited environments.
-                </p>
-            </div>
-
-            <!-- Experience Content (MERGED & CONDENSED) -->
-            <div class="max-w-4xl mx-auto space-y-12 mb-20 scroll-reveal">
-                
-                <!-- Pillar 1: Financial Integrity & Auditing (NCB Focus) -->
-                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-2xl border-l-4 border-yellow-600">
-                    <div class="flex-shrink-0 text-3xl text-yellow-600 mt-1"><i class="fas fa-sack-dollar"></i></div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2">Financial Integrity & Audit Readiness</h3>
-                        <p class="text-gray-600">
-                            My background at **NCB** instilled a non-negotiable standard for accurate financial processing. This expertise ensures your personal or small business records are **clean, verified, and 100% ready for tax filing or external review**, protecting you from future audit complications.
-                        </p>
-                        <!-- Moved Trust Anchor here -->
-                        <div class="flex items-center text-sm mt-3 pt-2 border-t border-gray-100">
-                            <i class="fas fa-shield-alt text-lg brand-green mr-2"></i>
-                            <p class="font-semibold text-gray-700">Strict Jamaica DPA Compliance is our foundation.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pillar 2: Operational Systems & Compliance (OEC Focus) -->
-                <div class="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-8 p-6 bg-white rounded-xl shadow-2xl border-l-4 border-blue-600">
-                    <div class="flex-shrink-0 text-3xl text-blue-600 mt-1"><i class="fas fa-tasks"></i></div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2">Operational Systems & Compliance Management</h3>
-                        <p class="text-gray-600">
-                            Experience managing complex, simultaneous exams at the **OEC** proves my ability to enforce **absolute compliance and meticulous logistical coordination**. This ensures your administrative systems are **correctly organized from the start**, avoiding clutter and compliance gaps.
-                        </p>
-                        <!-- Moved Trust Anchor here -->
-                         <div class="flex items-center text-sm mt-3 pt-2 border-t border-gray-100">
-                            <i class="fas fa-gavel text-lg brand-green mr-2"></i>
-                            <p class="font-semibold text-gray-700">15+ Years in Audited Environments is your guarantee.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Client Testimonials (MOBILE SCROLLING FIX APPLIED) -->
-            <div class="text-center mb-10 mt-16 scroll-reveal">
-                 <h2 class="text-3xl md:text-4xl font-bold brand-dark-green mb-4">Client Success Stories</h2>
-                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">See how I eliminate confusion and deliver guaranteed administrative peace of mind.</p>
-             </div>
-             <!-- Container for mobile horizontal scroll -->
-             <div class="review-card-container max-w-5xl mx-auto scroll-reveal md:gap-8">
-                 <!-- Review 1 (Danielle - PICA) -->
-                 <div class="review-card p-6 rounded-xl shadow-lg border-t-4 border-green-500">
-                     <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
-                     <p class="text-gray-700 italic mb-4">"Thanks for simplifying the passport application process, it's my first one and i didn't know where to start."</p>
-                     <p class="font-bold text-gray-800">- Danielle, Private Client</p>
-                 </div>
-                 <!-- Review 2 (Claude - MV Renewal) -->
-                 <div class="review-card p-6 rounded-xl shadow-lg border-t-4 border-green-500">
-                     <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
-                     <p class="text-gray-700 italic mb-4">"Laura helped renew my motor vehicle license online, which took the hassle out of joining long lines. I will certainly spread the word to my friends."</p>
-                     <p class="font-bold text-gray-800">- Claude, Private Client</p>
-                 </div>
-                 <!-- Review 3 (U. Clarke - Complex Form) -->
-                 <div class="review-card p-6 rounded-xl shadow-lg border-t-4 border-green-500">
-                     <p class="text-4xl mb-4 text-green-500"><i class="fas fa-quote-left"></i></p>
-                     <p class="text-gray-700 italic mb-4">"Outstanding. Navigated the online portal for me and avoided a major error. Highly recommend for any complex form submission."</p>
-                     <p class="font-bold text-gray-800">- U. Clarke, Individual Client</p>
-                 </div>
-             </div>
-        </div>
-    </section>
-    
-    <!-- 5. CONTACT SECTION (Footer with Direct Links) -->
-    <footer id="footer" class="brand-dark-green-bg text-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            
-            <h2 class="text-4xl font-bold mb-4">Ready to Resolve Your Challenge?</h2>
-            <p class="text-xl text-gray-300 mb-10 max-w-xl mx-auto" id="email-feedback-container">
-                For a quick, error-free solution, contact me directly via WhatsApp or Email.
+    <!-- Hero Section -->
+    <section class="bg-navy text-white pt-16 pb-20 sm:pt-24 sm:pb-32 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight drop-shadow-lg">
+                End the Paper Chase. <span class="text-gold block sm:inline-block mt-2">Gain Digital Certainty.</span>
+            </h1>
+            <p class="text-lg sm:text-2xl font-light mb-8 max-w-4xl mx-auto opacity-90">
+                Expert Administrative Compliance Facilitation for PICA, RGD, and TAJ Filings.
             </p>
-            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
-                <!-- Direct WhatsApp Link (Replace XXXXXXX with your number) -->
-                <a href="https://wa.me/18768027876?text=Hello%2C%20I%20need%20assistance%20with%20a%20compliance%20submission." target="_blank" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
-                    <i class="fab fa-whatsapp mr-3"></i> Message on WhatsApp
-                </a>
-                <a href="#" id="email-link" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
-                    <i class="fas fa-envelope mr-3"></i> Email Me
-                </a>
-                <a href="https://www.linkedin.com/in/lauraclarke-freelancer/" target="_blank" class="text-lg bg-white/10 border border-white/20 font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-white/20 transition duration-300 inline-flex items-center justify-center">
-                    <i class="fab fa-linkedin mr-3"></i> LinkedIn Profile
-                </a>
+            <div class="bg-gray-900 inline-block px-6 py-3 rounded-xl shadow-lg mb-10 border border-gold">
+                <p class="text-sm font-bold text-gold uppercase tracking-widest">
+                    REGISTERED SOLE PROPRIETORSHIP. CLERICAL ASSISTANCE ONLY.
+                </p>
             </div>
-            <p class="text-gray-400 mt-16 text-sm">
-                &copy; 2025 Laura Clarke. All rights reserved. DOCU-HUB SERVICES.
+            <a href="#services" class="btn-primary px-8 py-4 text-lg rounded-full font-bold inline-block shadow-2xl hover:shadow-gold transition duration-300">
+                View Our Fixed Prices Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Services (The Legal Pillars) -->
+    <section id="services" class="py-16 sm:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-navy mb-14">The DOCU-HUB Service Pillars</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Pillar 1: Digital Education (DCC) -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-xl border-t-4 border-gold transition hover:shadow-2xl hover:scale-[1.02]">
+                    <i data-lucide="laptop" class="text-gold w-8 h-8 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-navy mb-3">Digital Confidence Coaching (DCC)</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        **Educational Focus:** Conquer **Digital Anxiety** by mastering secure portal usage, two-factor authentication (2FA), and resilient cloud file management. Pure skill transfer.
+                    </p>
+                    <div class="mt-6">
+                        <span class="text-xl font-extrabold text-navy block">JMD 5,000</span>
+                        <span class="text-sm text-gray-500">(Fixed Rate for 60-min Virtual Session)</span>
+                    </div>
+                    <p class="text-sm text-blue-700 font-bold mt-4 p-2 bg-blue-100 rounded-lg">
+                        **Legal Boundary:** We provide training; the client executes the action and retains responsibility for their digital security.
+                    </p>
+                </div>
+
+                <!-- Pillar 2: Core Form Preparation (Clerical) -->
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-xl border-t-4 border-gold transition hover:shadow-2xl hover:scale-[1.02]">
+                    <i data-lucide="file-text" class="text-gold w-8 h-8 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-navy mb-3">Core Form Preparation (PICA, RGD, COJ)</h3>
+                    <p class="text-gray-700 mb-4 leading-relaxed">
+                        **Administrative Focus:** Accurate data entry and document formatting into a submission-ready draft PDF. We ensure data integrity based on your source documents.
+                    </p>
+                    <div class="mt-6">
+                         <span class="text-xl font-extrabold text-navy block">JMD 2,500</span>
+                        <span class="text-sm text-gray-500">(Fixed Rate per Form)</span>
+                    </div>
+                    <p class="text-sm text-red-700 font-bold mt-4 p-2 bg-red-100 rounded-lg">
+                        **CRITICAL LIMITATION:** Client is solely responsible for final signature, JP/Notary vetting, and physical/digital submission.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Shield (Legal Defense) -->
+    <section id="compliance" class="py-16 sm:py-24 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gold mb-14">The DOCU-HUB Compliance Shield</h2>
+            <div class="flex flex-col md:flex-row items-stretch justify-between gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-3xl font-bold mb-6 border-b pb-2 border-gold/50">Statutory and Personal Protection</h3>
+                    <p class="mb-6 text-lg font-light">
+                        As a registered Sole Proprietorship, we maintain integrity through strict adherence to Jamaican legal and financial guidelines. Your protection relies on auditable compliance.
+                    </p>
+                    <ul class="space-y-5">
+                        <li class="flex items-start">
+                            <i data-lucide="lock" class="text-gold w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
+                            <div class="flex-grow">
+                                <strong class="text-lg">DPA Compliance (OIC Registered):</strong> We are a Registered Data Controller (JMD 7,500 fee paid) and strictly enforce the DPA's eight Data Standards for security and confidentiality.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="shield-check" class="text-gold w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
+                            <div class="flex-grow">
+                                <strong class="text-lg">Personal Protection (PII):</strong> We hold **Professional Indemnity Insurance (PII)** coverage to financially protect against clerical errors and omissions, mitigating the risk of the Sole Proprietorship structure.
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="scan" class="text-gold w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
+                            <div class="flex-grow">
+                                <strong class="text-lg">KYC/POCA Adherence:</strong> We adhere to foundational CDD/KYC protocols for identity verification, demonstrating responsible governance.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- CRITICAL LEGAL DISCLAIMER BOX -->
+                <div class="md:w-1/2 bg-gray-900 p-8 rounded-2xl shadow-2xl flex flex-col justify-center border border-gold/30">
+                    <h4 class="text-xl font-extrabold text-gold mb-4 uppercase tracking-wider">CRITICAL LEGAL DISCLAIMER: Administrative Role & Liability</h4>
+                    <p class="text-sm italic mb-4 text-gray-300">
+                        By engaging our services, the Client acknowledges and agrees to the following:
+                    </p>
+                    <p class="text-xl font-bold leading-relaxed border-l-4 pl-4 border-red-500 bg-gray-800 p-4 rounded-lg">
+                        **Administrative Assistance Only:** DOCU-HUB OPERATIONS SERVICES provides strictly clerical assistance and administrative facilitation. The Proprietor is **not an attorney-at-law**, nor do we provide legal advice.
+                        
+                        **Limitation of Damages:** Liability for any error or omission in our clerical services is **strictly limited to the amount of the professional fee paid** by the Client for that specific service.
+                    </p>
+                    <p class="text-xs mt-4 text-gray-400">
+                        The Client is solely responsible for final review, verification, legal certification, and the submission of all documents.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Laura (Professionalizing the persona) -->
+    <section id="about" class="py-16 sm:py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-navy mb-14">Meet Laura Clarke: Your Administrative Expert</h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12 bg-white p-8 rounded-2xl shadow-xl">
+                <div class="md:w-1/3 flex justify-center">
+                    <!-- Placeholder for a professional profile image (important for trust) -->
+                    <img src="images/profile-picture.png" alt="Professional profile of Laura Clarke" class="rounded-full border-4 border-gold shadow-lg w-48 h-48 object-cover">
+                </div>
+                <div class="md:w-2/3 text-gray-700">
+                    <p class="text-lg mb-4 leading-relaxed">
+                        Laura Clarke founded Docu-Hub Operations Services to bridge the gap between complex Jamaican administrative processes and the average citizen. With a high-stakes background in **Banking Sector Compliance (KYC/AML Vetting)** and **Statutory Data Auditing (OEC)**, Laura recognized the necessity of applying these rigorous standards to private document preparation.
+                    </p>
+                    <p class="text-lg mb-4 leading-relaxed font-semibold text-navy">
+                        "Mi know seh the process can feel overwhelming. My goal is simple: to provide reliable, low-cost clerical support and digital coaching so you can walk into the government office confident that your paperwork is done right the first time."
+                    </p>
+                    <a href="https://wa.me/XXXXXXXXXX" target="_blank" class="btn-primary px-6 py-3 rounded-full mt-4 inline-block shadow-lg text-lg">
+                        <i data-lucide="briefcase" class="inline-block w-5 h-5 mr-2 -mt-0.5"></i>
+                        Connect with Laura Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-2xl font-bold mb-4 text-gold">DOCU-HUB OPERATIONS SERVICES</div>
+            <p class="text-sm mb-2">Proprietor: Laura Clarke. Verifiable Address: [Insert Address Placeholder].</p>
+            <p class="text-sm mb-6 text-gray-400">
+                Email: admin@dochubservices.com | Phone: (876) 561 2614
+            </p>
+            
+            <!-- Mandatory Legal Links -->
+            <div class="flex justify-center space-x-6 text-sm font-semibold mb-6">
+                <a href="#privacy-policy" class="hover:text-gold transition duration-150 p-1">Privacy Policy</a>
+                <a href="#terms-of-service" class="hover:text-gold transition duration-150 p-1">Terms of Service</a>
+                <a href="#legal-notice" class="hover:text-gold transition duration-150 p-1">Legal Notice</a>
+            </div>
+
+            <p class="text-xs mt-4 text-gray-500">
+                &copy; 2025 Docu-Hub Operations Services. All Rights Reserved. Data Controller ID [OIC ID Placeholder].
             </p>
         </div>
     </footer>
-
-    <!-- 9. JavaScript for Animations & Email Fix -->
+    
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/8765612614" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition duration-300 transform hover:scale-110" aria-label="Chat with us on WhatsApp">
+        <i data-lucide="whatsapp" class="w-7 h-7"></i>
+    </a>
+    
     <script>
-        // Function to copy email address to clipboard and handle feedback
-        function copyEmailToClipboard(email, containerId) {
-            const tempInput = document.createElement('input');
-            tempInput.value = email;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            
-            let success = false;
-            try {
-                success = document.execCommand('copy');
-            } catch (err) {
-                console.error('Could not copy text: ', err);
-            }
-            
-            document.body.removeChild(tempInput);
-            
-            const message = success ? 'Email copied to clipboard! (dochubservices.com)' : 'Failed to copy. Please manually copy the email.';
-            
-            // Handle feedback in the specified container
-            const container = document.getElementById(containerId);
-            if (container) {
-                // Store original content
-                const originalContent = container.innerHTML;
+        // Initialize Lucide icons
+        lucide.createIcons();
 
-                // Display confirmation message temporarily within the container
-                container.innerHTML = `<span class="text-base font-bold text-yellow-300 transition-opacity duration-500">${message}</span>`;
-            
-                // Clear message and restore original content after 3 seconds
-                setTimeout(() => {
-                    // Restore original content
-                    container.innerHTML = originalContent; 
-                }, 3000);
-            }
-            
-            return success;
-        }
+        // Mobile Menu Toggling Logic
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-        // --- Event Listeners ---
-        
-        // 1. Footer Email Link (ID: email-link)
-        document.getElementById('email-link').addEventListener('click', function(e) {
-            e.preventDefault(); 
-            const email = "lauraclarke.jw@gmail.com";
-            copyEmailToClipboard(email, 'email-feedback-container');
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
         
-        // 2. Services CTA Contact Now Link (No ID needed, links to #footer)
-        // This button only smooth scrolls to the footer and does NOT copy email
-        document.querySelector('.bg-gray-100 .inline-flex.items-center.justify-center').addEventListener('click', function(e) {
-             // The HTML anchor tag already handles the scroll to #footer, no need for extra JS unless preventing default
-             // e.preventDefault(); // Uncomment this if the smooth scroll is ever broken by the anchor tag default behavior
-            
-            // Note: The HTML anchor tag on this button is: href="#footer"
-            // The scroll-smooth class on the <html> tag handles the animation.
-        });
-
-
-        // Existing JavaScript for Animations
-        document.addEventListener('DOMContentLoaded', () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('scroll-reveal-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            const elements = document.querySelectorAll('.scroll-reveal');
-            elements.forEach(el => {
-                observer.observe(el);
+        // Hide mobile menu on anchor click for single-page UX
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
         });
+        
     </script>
-
 </body>
 </html>
-
-
