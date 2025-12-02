@@ -53,12 +53,12 @@
         }
     </style>
 </head>
-<body class="focus-visible">
+<body class="focus-visible" id="top"> <!-- Added id="top" here -->
 
     <!-- Header & Navigation -->
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-            <a href="#top" class="text-2xl font-extrabold text-navy flex items-center tracking-tight" aria-label="Docu-Hub Home">
+            <a href="#top" class="text-2xl font-extrabold text-navy flex items-center tracking-tight" aria-label="Docu-Hub Home"> <!-- Changed href="#" to href="#top" -->
                 <span class="text-4xl mr-2 text-gold">✓</span>
                 DOCU-HUB OPERATIONS SERVICES
             </a>
@@ -110,7 +110,7 @@
             </p>
             <div class="bg-gray-900 inline-block px-6 py-3 rounded-xl shadow-lg mb-10 border border-gold">
                 <p class="text-sm font-bold text-gold uppercase tracking-widest">
-                    REGISTERED SOLE PROPRIETORSHIP. CLERICAL ASSISTANCE ONLY.
+                    REGISTERED SOLE PROPRIETARIAN. CLERICAL ASSISTANCE ONLY.
                 </p>
             </div>
             <a href="#services" class="btn-primary px-8 py-4 text-lg rounded-full font-bold inline-block shadow-2xl hover:shadow-gold transition duration-300">
@@ -250,7 +250,7 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                         <!-- Left Box: Link to Full TOS -->
                         <div class="bg-red-100 p-3 rounded-lg text-center">
-                            <a href="PDF/terms-of-service.pdf" target="_blank" class="text-red-700 font-bold hover:underline flex items-center justify-center">
+                            <a href="PDF/terms-of-services" target="_blank" class="text-red-700 font-bold hover:underline flex items-center justify-center">
                                 <i data-lucide="file-text" class="w-5 h-5 mr-1 flex-shrink-0"></i>
                                 READ FULL TERMS OF SERVICE
                             </a>
@@ -444,19 +444,26 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                // Check if the link is the top anchor (#top)
+                const targetId = this.getAttribute('href');
+                if (targetId === '#top') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
         
         // Update the footer links to point to the correct file paths (since they are external files)
-        document.querySelector('a[href="#privacy-policy"]').setAttribute('href', 'privacy_policy.md');
-        document.querySelector('a[href="#terms-of-service"]').setAttribute('href', 'terms_of_service.md');
-        document.querySelector('a[href="#legal-notice"]').setAttribute('href', 'legal_notice.md');
+        document.querySelector('a[href="#privacy-policy"]').setAttribute('href', 'PDF/privacy-policy.pdf');
+        document.querySelector('a[href="#terms-of-service"]').setAttribute('href', 'PDF/terms-of-service.pdf');
+        document.querySelector('a[href="#legal-notice"]').setAttribute('href', 'PDF/legal-notice.pdf');
         
     </script>
 </body>
 </html>
-
-
