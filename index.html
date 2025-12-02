@@ -71,10 +71,10 @@
             </nav>
             
             <!-- Primary Action Button (Desktop) -->
-            <!-- Use dummy phone number 18765551234 -->
-            <a href="https://wa.me/18765551234" target="_blank" class="btn-primary px-4 py-2 rounded-xl text-sm hidden md:inline-block shadow-md" aria-label="WhatsApp Us for quick assistance">
-                <i data-lucide="message-square-text" class="inline-block w-4 h-4 mr-1 -mt-0.5"></i>
-                WhatsApp Us
+            <!-- Changed to Email for general contact -->
+            <a href="mailto:admin@dochubservices.com" class="btn-primary px-4 py-2 rounded-xl text-sm hidden md:inline-block shadow-md" aria-label="Email Us for quick assistance">
+                <i data-lucide="mail" class="inline-block w-4 h-4 mr-1 -mt-0.5"></i>
+                Email Us
             </a>
 
             <!-- Mobile Menu Button -->
@@ -90,8 +90,8 @@
             <a href="#services" class="hover:text-gold transition duration-150 py-2 border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
             <a href="#compliance" class="hover:text-gold transition duration-150 py-2 border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Compliance Shield</a>
             <a href="#about" class="hover:text-gold transition duration-150 py-2 border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About Laura</a>
-            <a href="https://wa.me/18765551234" target="_blank" class="btn-primary px-4 py-3 rounded-xl text-lg mt-4 text-center" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
-                Contact via WhatsApp
+            <a href="mailto:admin@dochubservices.com" class="btn-primary px-4 py-3 rounded-xl text-lg mt-4 text-center" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+                Contact via Email
             </a>
         </nav>
         <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.add('hidden')" aria-label="Close mobile menu">
@@ -215,7 +215,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <a href="#services" class="text-navy hover:text-gold font-medium mb-8 inline-block"><i data-lucide="arrow-left" class="inline-block w-4 h-4 mr-2 -mt-0.5"></i> Back to Services Overview</a>
             
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-6 border-b pb-4">Core Form Preparation</h2>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-6 border-b pb-4">Core Form Preparation: Breakdown & Terms</h2>
 
             <!-- Pain Point and Solution -->
             <div class="mb-8">
@@ -245,7 +245,41 @@
                     <p class="text-sm text-red-700 mt-1">
                         <strong>ADMINISTRATIVE ONLY:</strong> We do not provide legal advice or representation. Liability for clerical errors is strictly limited to the <strong>JMD 2,500 service fee paid.</strong>
                     </p>
+                    
+                    <!-- NEW: Two-Box Legal Gate for Core Form Preparation -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                        <!-- Left Box: Link to Full TOS -->
+                        <div class="bg-red-100 p-3 rounded-lg text-center">
+                            <a href="PDF/terms-of-service.pdf" target="_blank" class="text-red-700 font-bold hover:underline flex items-center justify-center">
+                                <i data-lucide="file-text" class="w-5 h-5 mr-1 flex-shrink-0"></i>
+                                READ FULL TERMS OF SERVICE
+                            </a>
+                            <p class="text-xs text-red-600 mt-1">
+                                (Opens in a new window)
+                            </p>
+                        </div>
+                        
+                        <!-- Right Box: Confirmation Checkbox -->
+                        <div class="flex items-center justify-center bg-red-100 p-3 rounded-lg">
+                            <input type="checkbox" id="core-consent" onchange="toggleCoreContact()" class="form-checkbox h-5 w-5 text-red-600 border-red-400 rounded-lg focus:ring-red-500 cursor-pointer">
+                            <label for="core-consent" class="ml-2 text-sm font-semibold text-red-800 cursor-pointer">
+                                I confirm I have read and agree.
+                            </label>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- NEW: GATED CONTACT (Initially hidden) -->
+                <div id="core-contact-gate" class="mt-6 text-center hidden">
+                    <p class="text-lg font-bold text-navy mb-3">
+                        READY TO START? CONTACT OUR DEDICATED INTAKE LINE:
+                    </p>
+                    <a href="https://wa.me/18765551234?text=I%20have%20read%20the%20TOS%20and%20need%20Core%20Form%20Prep" target="_blank" class="btn-primary px-8 py-4 text-lg rounded-full font-bold inline-block shadow-lg">
+                        <i data-lucide="whatsapp" class="inline-block w-6 h-6 mr-2 -mt-0.5"></i>
+                        Start Core Prep via WhatsApp
+                    </a>
+                </div>
+                
             </div>
             
         </div>
@@ -256,7 +290,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <a href="#services" class="text-navy hover:text-gold font-medium mb-8 inline-block"><i data-lucide="arrow-left" class="inline-block w-4 h-4 mr-2 -mt-0.5"></i> Back to Services Overview</a>
 
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-6 border-b pb-4">Digital Confidence Coaching</h2>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-6 border-b pb-4">Digital Confidence Coaching: Breakdown & Terms</h2>
 
             <!-- Pain Point and Solution -->
             <div class="mb-8">
@@ -286,8 +320,26 @@
                     <p class="text-sm text-blue-700 mt-1">
                         This is a <strong>skill-transfer service (coaching)</strong>. The Proprietor provides no legal advice. The client retains all responsibility for security measures and execution of all digital actions.
                     </p>
+                    
+                    <!-- DCC Gate (Optional to gate, but added for consistency. Can be removed if DCC doesn't need formal consent yet) -->
+                    <div class="mt-4 flex items-center">
+                        <input type="checkbox" id="dcc-consent" onchange="toggleDCCContact()" class="form-checkbox h-5 w-5 text-blue-600 border-blue-400 rounded-lg focus:ring-blue-500 cursor-pointer">
+                        <label for="dcc-consent" class="ml-2 text-sm font-semibold text-blue-800 cursor-pointer">
+                            I accept that this is an educational service only.
+                        </label>
+                    </div>
                 </div>
-            </div>
+                
+                 <!-- DCC GATED CONTACT (Initially hidden) -->
+                <div id="dcc-contact-gate" class="mt-6 text-center hidden">
+                    <p class="text-lg font-bold text-navy mb-3">
+                        READY TO BOOK? CONTACT OUR DEDICATED BOOKING LINE:
+                    </p>
+                    <a href="https://wa.me/18765551234?text=I%20have%20read%20the%20TOS%20and%20need%20DCC%20Coaching" target="_blank" class="btn-primary px-8 py-4 text-lg rounded-full font-bold inline-block shadow-lg">
+                        <i data-lucide="whatsapp" class="inline-block w-6 h-6 mr-2 -mt-0.5"></i>
+                        Book DCC via WhatsApp
+                    </a>
+                </div>
             
         </div>
     </section>
@@ -342,14 +394,36 @@
         </div>
     </footer>
     
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/18765551234" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition duration-300 transform hover:scale-110" aria-label="Chat with us on WhatsApp">
-        <i data-lucide="whatsapp" class="w-7 h-7"></i>
+    <!-- Floating Email Button (General Contact) -->
+    <a href="mailto:admin@dochubservices.com" class="fixed bottom-6 right-6 z-50 bg-gold hover:bg-cc9f3a text-navy p-4 rounded-full shadow-2xl transition duration-300 transform hover:scale-110" aria-label="Chat with us on WhatsApp">
+        <i data-lucide="mail" class="w-7 h-7"></i>
     </a>
     
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        // JS for Gating Contact Information
+        function toggleCoreContact() {
+            const consentChecked = document.getElementById('core-consent').checked;
+            const gateDiv = document.getElementById('core-contact-gate');
+            if (consentChecked) {
+                gateDiv.classList.remove('hidden');
+            } else {
+                gateDiv.classList.add('hidden');
+            }
+        }
+        
+        function toggleDCCContact() {
+            const consentChecked = document.getElementById('dcc-consent').checked;
+            const gateDiv = document.getElementById('dcc-contact-gate');
+            if (consentChecked) {
+                gateDiv.classList.remove('hidden');
+            } else {
+                gateDiv.classList.add('hidden');
+            }
+        }
+
 
         // Mobile Menu Toggling Logic
         const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
@@ -384,4 +458,3 @@
     </script>
 </body>
 </html>
-
