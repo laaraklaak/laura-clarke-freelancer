@@ -87,13 +87,15 @@
         </div>
     </header>
 
-    <!-- Mobile Menu (Hidden by default) -->
+   <!-- Mobile Menu (Hidden by default) -->
     <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-navy bg-opacity-95 z-40 p-6 pt-20">
         <nav class="flex flex-col space-y-4 text-white text-xl font-bold">
             <a href="#services" class="hover:text-gold transition duration-150 py-2 border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
             <a href="#compliance" class="hover:text-gold transition duration-150 py-2 border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Compliance Shield</a>
             <a href="#about" class="hover:text-gold transition duration-150 py-2 border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About Laura</a>
-            <a href="mailto:admin@dochubservices.com" class="btn-primary px-4 py-3 rounded-xl text-lg mt-4 text-center" onclick="document.getElementById('mobile-menu').classList.add('hidden')">
+            <a href="mailto:admin@dochubservices.com" 
+               class="btn-primary px-4 py-3 rounded-xl text-lg mt-4 text-center" 
+               onclick="document.getElementById('mobile-menu').classList.add('hidden'); copyEmailToClipboard(event, 'admin@dochubservices.com')">
                 Contact via Email
             </a>
         </nav>
@@ -470,4 +472,5 @@
     </script>
 </body>
 </html>
+
 
