@@ -71,8 +71,11 @@
             </nav>
             
             <!-- Primary Action Button (Desktop) -->
-            <!-- Changed to Email for general contact -->
-            <a href="mailto:admin@dochubservices.com" class="btn-primary px-4 py-2 rounded-xl text-sm hidden md:inline-block shadow-md" aria-label="Email Us for quick assistance">
+             <!-- General Contact via Email with Copy Functionality -->
+            <a href="mailto:admin@dochubservices.com" 
+               class="btn-primary px-4 py-2 rounded-xl text-sm hidden md:inline-block shadow-md" 
+               aria-label="Email Us for quick assistance"
+               onclick="copyEmailToClipboard(event, 'admin@dochubservices.com')">
                 <i data-lucide="mail" class="inline-block w-4 h-4 mr-1 -mt-0.5"></i>
                 Email Us
             </a>
@@ -467,3 +470,4 @@
     </script>
 </body>
 </html>
+
