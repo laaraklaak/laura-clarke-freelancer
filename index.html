@@ -9,6 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- FIX: Font Optimization (Section 3.3) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <!-- Lucide Icons for professional look -->
@@ -34,16 +38,25 @@
             background-color: var(--color-gold);
             color: var(--color-navy);
             transition: all 0.3s;
-            @apply font-semibold;
+            @apply font-semibold rounded-xl; /* Added rounded-xl here for consistency */
         }
         .btn-primary:hover {
             background-color: #cc9f3a; /* Slightly darker shade for hover effect */
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-        .nav-link:hover {
+        /* FIX: Accessibility (Section 5.2) - Apply focus ring only on keyboard use */
+        .nav-link:hover, .nav-link:focus-visible {
             color: var(--color-gold);
+            outline: 2px solid var(--color-gold);
+            outline-offset: 2px;
+            border-radius: 0.5rem;
         }
+        .btn-primary:focus-visible {
+            outline: 3px solid #6366f1; /* Tailwind blue-500 */
+            outline-offset: 3px;
+        }
+        
         /* Added for the detail sections */
         .detail-section {
             scroll-margin-top: 5rem;
@@ -108,10 +121,10 @@
     <section class="bg-navy text-white pt-16 pb-20 sm:pt-24 sm:pb-32 overflow-hidden relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight drop-shadow-lg">
-                End the Paper Chase. <span class="text-gold block sm:inline-block mt-2">Gain Digital Certainty.</span>
+                End the Runaround. <span class="text-gold block sm:inline-block mt-2">Gain True Confidence.</span>
             </h1>
             <p class="text-lg sm:text-2xl font-light mb-8 max-w-4xl mx-auto opacity-90">
-                Expert Administrative Compliance Facilitation for PICA, RGD, and TAJ Filings.
+                Expert clerical preparation for all high-stakes Jamaican documents including Passport, Birth Certificate, and Tax Forms. Zero errors guaranteed.
             </p>
             <div class="bg-gray-900 inline-block px-6 py-3 rounded-xl shadow-lg mb-10 border border-gold">
                 <p class="text-sm font-bold text-gold uppercase tracking-widest">
@@ -308,10 +321,10 @@
             <!-- Process Breakdown (Simplified) -->
             <h3 class="text-2xl font-bold text-navy mb-4">60-Minute Session Outline (Quick Skill Transfer)</h3>
             <ul class="list-disc list-outside space-y-3 text-gray-700 pl-8 mb-8">
-                <li><strong>Fraud-Proofing You:</strong> Learn what TAJ/Banks will <strong>never</strong> ask via email & secure your accounts.</li>
-                <li><strong>Digital Key Guard (2FA):</strong> Step-by-step setup of your two-factor authentication for maximum login protection.</li>
-                <li><strong>Portal Conquest:</strong> Master secure login and password management for TAJ/eGov platforms.</li>
-                <li><strong>The Digital Vault:</strong> Establish your encrypted storage for instant retrieval of PICA/RGD documents.</li>
+                <li><strong>Fraud-Proofing You:</strong> Learn what <strong>Government Agencies</strong> (like TAJ) / Banks will <strong>never</strong> ask via email, and secure your accounts.</li>
+                <li><strong>Digital Key Guard:</strong> Step-by-step setup of your two-factor security for maximum login protection.</li>
+                <li><strong>Portal Conquest:</strong> Master secure login and password management for <strong>all essential online platforms</strong>.</li>
+                <li><strong>The Digital Vault:</strong> Establish your encrypted storage for instant retrieval of <strong>key documents</strong> (like Passports, Birth Certificates, and Deeds).</li>
             </ul>
 
             <!-- Pricing and Legal Summary -->
@@ -367,7 +380,7 @@
                     <p class="text-lg mb-4 leading-relaxed font-semibold text-navy">
                         "Mi know seh the process can feel overwhelming. My goal is simple: to provide reliable, low-cost clerical support and digital coaching so you can walk into the government office confident that your paperwork is done right the first time."
                     </p>
-                    <a href="https://wa.me/18765551234" target="_blank" class="btn-primary px-6 py-3 rounded-full mt-4 inline-block shadow-lg text-lg">
+                    <a href="https://wa.me/18765612614" target="_blank" class="btn-primary px-6 py-3 rounded-full mt-4 inline-block shadow-lg text-lg">
                         <i data-lucide="briefcase" class="inline-block w-5 h-5 mr-2 -mt-0.5"></i>
                         Connect with Laura Now
                     </a>
@@ -504,9 +517,8 @@
         // NOTE: These links should point to the .md files you will host.
         document.querySelector('a[href="#privacy-policy"]').setAttribute('href', 'PDF/privacy-policy.pdf');
         document.querySelector('a[href="#terms-of-service"]').setAttribute('href', 'PDF/terms-of-service.pdf');
-        document.querySelector('a[href="#legal-notice"]').setAttribute('href', 'PDF/legal-notice.pdf);
+        document.querySelector('a[href="#legal-notice"]').setAttribute('href', 'PDF/legal-notice.pdf');
         
     </script>
 </body>
 </html>
-
