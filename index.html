@@ -75,7 +75,7 @@
     <!-- Header & Navigation -->
     <header class="bg-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-            <a href="#top" class="text-2xl font-extrabold text-navy flex items-center tracking-tight" aria-label="Docu-Hub Home"> <!-- Changed href="#" to href="#top" -->
+            <a href="#top" class="text-2xl font-extrabold text-navy flex items-center tracking-tight pr-4" aria-label="Docu-Hub Home"> <!-- Added pr-4 for spacing -->
                 
                 <!-- NEW LOGO IMPLEMENTATION -->
                 <img src="images/docuhub_logo.png" alt="DOCU-HUB Logo - Clerical Compliance" class="h-8 w-auto mr-2 inline-block">
@@ -93,7 +93,7 @@
             <!-- Primary Action Button (Desktop) -->
             <!-- General Contact via Email with Copy Functionality -->
             <a href="mailto:admin@dochubservices.com" 
-               class="btn-primary px-4 py-2 rounded-xl text-sm hidden md:inline-block shadow-md" 
+               class="btn-primary px-4 py-2 rounded-xl text-sm hidden md:inline-block shadow-md ml-4" 
                aria-label="Email Us for quick assistance"
                onclick="copyEmailToClipboard(event, 'admin@dochubservices.com')">
                 <i data-lucide="mail" class="inline-block w-4 h-4 mr-1 -mt-0.5"></i>
@@ -130,10 +130,10 @@
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg"> <!-- mb-6 for spacing -->
                 End the Runaround. <span class="text-gold block sm:inline-block mt-2">Gain True Confidence.</span>
             </h1>
-            <p class="text-lg sm:text-2xl font-light pb-8 max-w-4xl mx-auto opacity-90"> <!-- FIX: changed mb-10 to pb-8 -->
+            <p class="text-lg sm:text-2xl font-light mb-10 max-w-4xl mx-auto opacity-90"> <!-- FIX: mb-10 added -->
                 Expert clerical preparation for all high-stakes Jamaican documents including Passport, Birth Certificate, and Tax Forms. Zero errors guaranteed.
             </p>
-            <div class="bg-gray-900 inline-block px-6 py-3 rounded-xl shadow-lg pb-12 border border-gold"> <!-- FIX: changed mb-12 to pb-12 -->
+            <div class="bg-gray-900 inline-block px-6 py-3 rounded-xl shadow-lg mb-12 border border-gold"> <!-- FIX: mb-12 added -->
                 <p class="text-sm font-bold text-gold uppercase tracking-widest">
                     PROFESSIONAL ADMINISTRATIVE SERVICES. CLERICAL SCOPE ONLY.
                 </p>
@@ -154,7 +154,7 @@
                 <div class="bg-gray-50 p-8 rounded-2xl shadow-xl border-t-4 border-gold transition hover:shadow-2xl hover:scale-[1.02]">
                     <i data-lucide="shield-alert" class="text-gold w-8 h-8 mb-4"></i>
                     <h3 class="text-2xl font-bold text-navy mb-3">Digital Confidence Coaching (DCC)</h3>
-                    <p class="text-pain-point font-semibold mb-6"> <!-- Increased margin to mb-6 -->
+                    <p class="text-pain-point font-semibold mb-6"> <!-- Maintained mb-6 -->
                         <strong>Pain Point:</strong> You fear being scammed, locking yourself out of portals, or sharing private data unsafely.
                     </p>
                     <p class="text-gray-700 mb-4 leading-relaxed">
@@ -169,7 +169,7 @@
                 <div class="bg-gray-50 p-8 rounded-2xl shadow-xl border-t-4 border-gold transition hover:shadow-2xl hover:scale-[1.02]">
                     <i data-lucide="file-check" class="text-gold w-8 h-8 mb-4"></i>
                     <h3 class="text-2xl font-bold text-navy mb-3">Core Form Preparation (PICA, RGD, COJ)</h3>
-                    <p class="text-pain-point font-semibold mb-6"> <!-- Increased margin to mb-6 -->
+                    <p class="text-pain-point font-semibold mb-6"> <!-- Maintained mb-6 -->
                         <strong>Pain Point:</strong> You cannot afford delays due to a simple error on a critical application (Passport, Birth Certificate, etc.).
                     </p>
                     <p class="text-gray-700 mb-4 leading-relaxed">
@@ -264,11 +264,11 @@
                     </p>
                     
                     <!-- NEW: Two-Box Legal Gate for Core Form Preparation -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 mt-4"> <!-- FIX: Added gap-x-4 and gap-y-2 -->
                         <!-- Left Box: Link to Full TOS -->
-                        <div class="bg-red-100 p-3 rounded-lg text-center">
-                            <a href="PDF/terms-of-service.pdf" target="_blank" class="text-red-700 font-bold hover:underline flex items-center justify-center">
-                                <i data-lucide="file-text" class="w-5 h-5 mr-1 flex-shrink-0"></i>
+                        <div class="bg-red-100 p-2 rounded-lg text-center"> <!-- FIX: Reduced padding to p-2 -->
+                            <a href="PDF/terms-of-service.pdf" target="_blank" class="text-red-700 font-bold hover:underline flex items-center justify-center text-xs sm:text-sm"> <!-- FIX: Reduced text size -->
+                                <i data-lucide="file-text" class="w-4 h-4 mr-1 flex-shrink-0"></i>
                                 READ FULL TERMS OF SERVICE
                             </a>
                             <p class="text-xs text-red-600 mt-1">
@@ -277,9 +277,9 @@
                         </div>
                         
                         <!-- Right Box: Confirmation Checkbox -->
-                        <div class="flex items-center justify-center bg-red-100 p-3 rounded-lg">
+                        <div class="flex items-center justify-center bg-red-100 p-2 rounded-lg"> <!-- FIX: Reduced padding to p-2 -->
                             <input type="checkbox" id="core-consent" onchange="toggleCoreContact()" class="form-checkbox h-5 w-5 text-red-600 border-red-400 rounded-lg focus:ring-red-500 cursor-pointer">
-                            <label for="core-consent" class="ml-2 text-sm font-semibold text-red-800 cursor-pointer">
+                            <label for="core-consent" class="ml-2 text-xs sm:text-sm font-semibold text-red-800 cursor-pointer"> <!-- FIX: Reduced text size -->
                                 I confirm I have read and agree.
                             </label>
                         </div>
@@ -331,11 +331,25 @@
                     </p>
                     
                     <!-- DCC Gate Checkbox -->
-                    <div class="mt-4 flex items-center">
-                        <input type="checkbox" id="dcc-consent" onchange="toggleDCCContact()" class="form-checkbox h-5 w-5 text-blue-600 border-blue-400 rounded-lg focus:ring-blue-500 cursor-pointer">
-                        <label for="dcc-consent" class="ml-2 text-sm font-semibold text-blue-800 cursor-pointer">
-                            I accept that this is an educational service only.
-                        </label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 mt-4"> <!-- FIX: Added gap-x-4 and gap-y-2 -->
+                        <!-- Left Box: Link to Full TOS -->
+                        <div class="bg-blue-100 p-2 rounded-lg text-center"> <!-- FIX: Reduced padding to p-2 -->
+                            <a href="terms_of_service.md" target="_blank" class="text-blue-700 font-bold hover:underline flex items-center justify-center text-xs sm:text-sm"> <!-- FIX: Reduced text size -->
+                                <i data-lucide="file-text" class="w-4 h-4 mr-1 flex-shrink-0"></i>
+                                READ FULL TERMS OF SERVICE
+                            </a>
+                            <p class="text-xs text-blue-600 mt-1">
+                                (Opens in a new window)
+                            </p>
+                        </div>
+                        
+                        <!-- Right Box: Confirmation Checkbox -->
+                        <div class="flex items-center justify-center bg-blue-100 p-2 rounded-lg"> <!-- FIX: Reduced padding to p-2 -->
+                            <input type="checkbox" id="dcc-consent" onchange="toggleDCCContact()" class="form-checkbox h-5 w-5 text-blue-600 border-blue-400 rounded-lg focus:ring-blue-500 cursor-pointer">
+                            <label for="dcc-consent" class="ml-2 text-xs sm:text-sm font-semibold text-blue-800 cursor-pointer"> <!-- FIX: Reduced text size -->
+                                I accept this is educational only.
+                            </label>
+                        </div>
                     </div>
                 </div>
                 
