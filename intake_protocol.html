@@ -1,170 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intake Protocol - Docu-Hub Operations Services</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8;
-        }
-        .step-card {
-            background-color: #ffffff;
-            border-left: 6px solid #003366; /* Deep Navy Blue */
-            transition: all 0.3s ease-in-out;
-        }
-        .step-card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transform: translateY(-2px);
-        }
-        .section-header {
-            color: #003366; /* Deep Navy Blue */
-        }
-        .icon {
-            color: #4a90e2;
-        }
-        .warning {
-            border: 1px solid #e74c3c;
-            background-color: #fdeaea;
-            color: #c0392b;
-        }
-        .legal-links a {
-            color: #4a90e2;
-            text-decoration: underline;
-            font-weight: 600;
-        }
-    </style>
-</head>
-<body class="p-4 sm:p-8">
+    <title>Intake Protocol - Compliance Gate</title>
+    </head>
+<body class="bg-gray-100 text-navy">
+    <header class="bg-navy text-white p-4">
+        <nav class="container mx-auto flex justify-between items-center">
+            <div class="text-xl font-bold">DOCU-HUB Compliance Intake</div>
+            <a href="index.html" class="text-white hover:text-gold">← Back to Services</a>
+        </nav>
+    </header>
 
-    <div class="max-w-4xl mx-auto">
-        <!-- Header -->
-        <header class="text-center mb-8">
-            <h1 class="text-4xl sm:text-5xl font-extrabold section-header mb-2">
-                🚀 READY TO START?
-            </h1>
-            <p class="text-xl text-gray-600">
-                Your JDPA-Compliant Intake Protocol
-            </p>
-            <p class="mt-4 text-sm text-gray-500 font-semibold uppercase">
-                PROFESSIONAL ADMINISTRATIVE SERVICES. CLERICAL SCOPE ONLY.
-            </p>
-        </header>
+    <main class="container mx-auto p-8 max-w-4xl">
+        <h1 class="text-3xl font-bold text-center mb-8">Mandatory Compliance & Intake Protocol</h1>
+        <p class="text-lg text-center text-gray-700 mb-10">This one-time process ensures our compliance with the Jamaica Data Protection Act (JDPA) and POCA. We can only proceed once these steps are complete.</p>
 
-        <!-- Compliance & Security Notice -->
-        <div class="p-4 mb-8 rounded-lg warning shadow-md">
-            <h3 class="font-bold text-lg mb-1">
-                Security & Compliance Mandate
-            </h3>
-            <p class="text-sm">
-                We are a registered Jamaican Data Controller committed to secure, compliant administrative assistance. Your compliance with these steps protects both you and our business.
-            </p>
-        </div>
-        
-        <!-- Step 1: Contract Review -->
-        <div class="step-card p-6 mb-8 rounded-lg shadow-lg">
-            <div class="flex items-center mb-4">
-                <span class="text-3xl font-bold mr-4 icon">1</span>
-                <h2 class="text-2xl font-semibold section-header">REVIEW & AGREE TO MASTER TERMS</h2>
-            </div>
-            <p class="text-gray-700 mb-4">
-                Your service starts with legal clarity. Before we proceed, you must review and be ready to agree to our Master Client Engagement Contract.
-            </p>
-            <ul class="list-disc ml-6 text-gray-600 space-y-2">
-                <li><strong class="text-gray-800">Action:</strong> Locate the Master Contract link on our Terms of Service page.</li>
-                <li><strong class="text-gray-800">Key Terms:</strong> The contract contains our **Limitation of Liability** and our **90-Day Data Deletion Policy** (JDPA Standard 5).</li>
-            </ul>
-            <!-- Legal Links Holders -->
-            <div class="mt-4 legal-links text-sm">
-                <p>Access our legal documents here:</p>
-                <p><a href="[LINK TO TERMS OF SERVICE PDF]">Master Terms of Service</a></p>
-                <p><a href="[LINK TO PRIVACY POLICY PDF]">Official Privacy Policy (DPA Compliance)</a></p>
-            </div>
-        </div>
-
-        <!-- Step 2: KYC/CDD Compliance (Simplified) -->
-        <div class="step-card p-6 mb-8 rounded-lg shadow-lg">
-            <div class="flex items-center mb-4">
-                <span class="text-3xl font-bold mr-4 icon">2</span>
-                <h2 class="text-2xl font-semibold section-header">ONE-TIME IDENTITY VERIFICATION (KYC)</h2>
-            </div>
-            <p class="text-gray-700 mb-4">
-                This verification is mandatory to satisfy Jamaican POCA/AML regulations. **This is a one-time process.** Once completed, all future services will be fast-tracked!
-            </p>
-
-            <div class="overflow-x-auto">
-                <table class="min-w-full divide-y divide-gray-200">
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Required Document</th>
-                            <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Purpose</th>
-                        </tr>
-                    </thead>
-                    <tbody class="bg-white divide-y divide-gray-200 text-sm">
-                        <tr>
-                            <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-800">1. Photo Identification (ID)</td>
-                            <td class="px-3 py-3 text-gray-700">To verify your identity. (Passport, Driver's Licence, or National ID).</td>
-                        </tr>
-                        <tr>
-                            <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-800">2. Proof of Address</td>
-                            <td class="px-3 py-3 text-gray-700">To confirm residential address. (Utility Bill or Bank Statement, dated less than 6 months old).</td>
-                        </tr>
-                        <tr>
-                            <td class="px-3 py-3 whitespace-nowrap font-medium text-gray-800">3. Taxpayer Registration Number (TRN)</td>
-                            <td class="px-3 py-3 text-gray-700">To verify your identity for statutory filings.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <p class="mt-4 text-xs text-red-600 font-semibold">
-                *We will take a single secure copy for our 7-year POCA retention file.*
-            </p>
-        </div>
-
-        <!-- Step 3: Service Protocol Preparation -->
-        <div class="step-card p-6 mb-8 rounded-lg shadow-lg">
-            <div class="flex items-center mb-4">
-                <span class="text-3xl font-bold mr-4 icon">3</span>
-                <h2 class="text-2xl font-semibold section-header">PREPARE FOR YOUR SERVICE PROTOCOL</h2>
-            </div>
-            
-            <div class="mb-4 p-3 rounded-lg bg-indigo-50">
-                <h3 class="font-bold text-gray-800 text-lg mb-2">For Payment Agency Services (Vehicle/Tax)</h3>
-                <ul class="list-disc ml-6 text-gray-700 space-y-1 text-sm">
-                    <li><strong class="font-medium">Funds Ready:</strong> Ensure the total amount (Statutory Fee + Service Fee) is ready for local bank transfer from an account in your verified name.</li>
-                    <li><strong class="font-medium">Asset Proof:</strong> Bring original proof of ownership (Vehicle Registration Certificate or Certificate of Title).</li>
+        <div class="space-y-8">
+            <div class="bg-white p-6 rounded-lg shadow-xl border-t-4 border-red-600">
+                <h2 class="text-2xl font-bold mb-3 flex items-center"><span class="mr-3 text-red-600">1.</span> Master Terms Review & Consent</h2>
+                <p class="mb-4">You must agree to our **Master Client Engagement Contract** which covers all legal and data terms.</p>
+                <ul class="list-disc list-inside ml-4 text-gray-700">
+                    <li>The contract contains a **Limitation of Liability** clause (damages are capped at the service fee).</li>
+                    <li>We enforce a strict **30-Day Data Deletion Policy** for all service data.</li>
                 </ul>
+                <div class="mt-4 space-x-4">
+                    <a href="[LINK TO TERMS OF SERVICE PDF]" target="_blank" class="text-navy font-semibold underline hover:text-gold">Review Full Terms of Service</a>
+                    <a href="[LINK TO PRIVACY POLICY PDF]" target="_blank" class="text-navy font-semibold underline hover:text-gold">Review Full Privacy Policy</a>
+                </div>
             </div>
-            
-            <div class="mb-4 p-3 rounded-lg bg-yellow-50">
-                <h3 class="font-bold text-gray-800 text-lg mb-2">For Guidance Services (PICA, RGD, TRN/NIS)</h3>
-                <ul class="list-disc ml-6 text-gray-700 space-y-1 text-sm">
-                    <li><strong class="font-medium text-red-700">Zero Custody:</strong> DO NOT bring original Passports or Birth Certificates for us to keep. We will not scan or photocopy these.</li>
-                    <li><strong class="font-medium">Clerical Only:</strong> Our service is clerical guidance, not legal advice. We will provide the forms and instructions, but you are responsible for filling the form and clicking the final submission button.</li>
+
+            <div class="bg-white p-6 rounded-lg shadow-xl border-t-4 border-gold">
+                <h2 class="text-2xl font-bold mb-3 flex items-center"><span class="mr-3 text-gold">2.</span> POCA/AML Verification (In-Person KYC)</h2>
+                <p class="mb-4 font-semibold text-red-600">FOR ALL IN-PERSON SERVICES: You must bring the ORIGINAL documents below. We view originals and secure one copy for our 7-year POCA retention file.</p>
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div class="border p-4 rounded-lg bg-gray-50">Photo ID (Passport/Licence)</div>
+                    <div class="border p-4 rounded-lg bg-gray-50">Address Proof (Utility Bill < 6 months)</div>
+                    <div class="border p-4 rounded-lg bg-gray-50">Taxpayer Registration Number (TRN)</div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-xl border-t-4 border-navy">
+                <h2 class="text-2xl font-bold mb-3 flex items-center"><span class="mr-3 text-navy">3.</span> Final Service Preparation</h2>
+                <p class="mb-4">Ensure you are ready for the specific service protocol:</p>
+                <ul class="list-disc list-inside ml-4 text-gray-700">
+                    <li>**Guidance Services (PICA/RGD):** DO NOT bring original Passports or Birth Certificates for us to keep. Our role is guidance only.</li>
+                    <li>**Payment Agency:** Have the total statutory fee ready for local bank transfer from your verified account.</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Call to Action Footer -->
-        <footer class="text-center mt-10">
-            <div class="p-4 warning font-semibold text-lg rounded-lg shadow-inner mb-4">
-                🛑 PROCEED ONLY WHEN READY
-            </div>
-            <a href="https://docuhub.github.io/scheduling" 
-               class="inline-block px-8 py-4 bg-green-600 text-white text-xl font-bold rounded-full shadow-lg hover:bg-green-700 transition duration-150 transform hover:scale-105"
-               role="button">
-                Schedule Your Intake Meeting Now
-            </a>
-            <p class="mt-4 text-sm text-gray-500">
-                Clicking the link confirms you have reviewed and gathered all documents.
-            </p>
-        </footer>
+        <div class="text-center mt-10">
+            <h3 class="text-2xl font-semibold mb-4">I understand and am ready to book my intake meeting.</h3>
+            <a href="https://docuhub.github.io/scheduling" class="btn-primary py-3 px-10 text-xl rounded-full font-bold shadow-2xl">Schedule My Compliant Intake</a>
+        </div>
+    </main>
 
-    </div>
-
+    <footer class="bg-navy text-white p-6 mt-12">
+        <div class="container mx-auto text-center text-sm">
+            &copy; 2025 Docu-Hub Operations Services. | 
+            <a href="[LINK TO TERMS OF SERVICE PDF]" target="_blank" class="hover:text-gold underline">Terms of Service</a> | 
+            <a href="[LINK TO PRIVACY POLICY PDF]" target="_blank" class="hover:text-gold underline">Privacy Policy</a>
+        </div>
+    </footer>
 </body>
 </html>
