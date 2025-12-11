@@ -1,531 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Optimized Title: Concise and SEO-friendly -->
-    <title>Docu-Hub Operations Services | Clerical Compliance & Data Integrity</title>
-    <!-- Essential Meta Description for SEO and Sharing -->
-    <meta name="description" content="Expert administrative compliance facilitation for PICA, RGD, and TAJ documentation in Jamaica. Registered Sole Proprietorship with PII and DPA compliance.">
-    
+    <title>DOCU-HUB: End the Runaround - Start Your Compliant Intake</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- MANDATORY: FAVICON/LOGO IN LINK -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="shortcut icon" href="favicon.ico">
-    
-    <!-- FIX: Font Optimization (Section 3.3) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+    <!-- Using the standard Tailwind CDN for reliability -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <!-- Lucide Icons for professional look -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
+    
     <style>
         :root {
-            /* MODERN CORPORATE PALETTE: Deep Slate Blue & Muted Gold/Ochre */
-            --color-navy: #1E293B; /* Deep Slate Blue (Softer Primary) */
-            --color-gold: #E0B841; /* Muted Gold/Ochre (Richer Accent) */
+            --color-navy: #1E293B; /* Deep Slate Blue (Primary) */
+            --color-gold: #E0B841; /* Muted Gold/Ochre (Accent) */
         }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa; /* Light Gray Background */
-        }
-        /* Update CSS classes to use original variables */
-        .text-navy { color: var(--color-navy); }
+        body { font-family: 'Inter', sans-serif; }
+        /* Applying custom colors through utility classes */
         .bg-navy { background-color: var(--color-navy); }
+        .text-navy { color: var(--color-navy); }
         .text-gold { color: var(--color-gold); }
-        .border-gold { border-color: var(--color-gold); }
-        
-        .btn-primary {
-            background-color: var(--color-gold);
+        .btn-primary { 
+            background-color: var(--color-gold); 
             color: var(--color-navy);
-            transition: all 0.3s;
-            @apply font-semibold rounded-xl; /* Added rounded-xl here for consistency */
+            transition: background-color 0.3s;
         }
-        .btn-primary:hover {
-            background-color: #cc9f3a; /* Slightly darker shade for hover effect */
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        /* FIX: Accessibility (Section 5.2) - Apply focus ring only on keyboard use */
-        .nav-link:hover, .nav-link:focus-visible {
-            color: var(--color-gold);
-            outline: 2px solid var(--color-gold);
-            outline-offset: 2px;
-            border-radius: 0.5rem;
-        }
-        .btn-primary:focus-visible {
-            outline: 3px solid #6366f1; /* Tailwind blue-500 */
-            outline-offset: 3px;
-        }
-        
-        /* Added for the detail sections */
-        .detail-section {
-            scroll-margin-top: 5rem;
-        }
-        .text-pain-point {
-            color: #d946ef; /* Light Purple for emphasis */
-        }
+        .btn-primary:hover { background-color: #cc9f3a; }
+        .border-gold { border-color: var(--color-gold); }
     </style>
 </head>
-<body class="focus-visible" id="top"> <!-- Added id="top" here -->
-
-    <!-- Header & Navigation -->
-    <header class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
-            <a href="#top" class="text-2xl font-extrabold text-navy flex items-center tracking-tight pr-4" aria-label="Docu-Hub Home"> <!-- Added pr-4 for spacing -->
-                
-                <!-- NEW LOGO IMPLEMENTATION -->
-                <img src="images/docuhub_logo.png" alt="DOCU-HUB Logo - Clerical Compliance" class="h-8 w-auto mr-2 inline-block">
-                
-                DOCU-HUB OPERATIONS SERVICES
-            </a>
-            
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex space-x-8 text-navy font-medium">
-                <a href="#services" class="nav-link transition duration-150 p-2 rounded-lg">Services</a>
-                <a href="#compliance" class="nav-link transition duration-150 p-2 rounded-lg">Compliance Shield</a>
-                <a href="#about" class="nav-link transition duration-150 p-2 rounded-lg">About Laura</a>
-            </nav>
-            
-            <!-- Primary Action Button (Desktop) -->
-            <!-- General Contact via Email with Copy Functionality -->
-            <a href="mailto:admin@dochubservices.com" 
-               class="btn-primary px-4 py-2 rounded-xl text-sm hidden md:inline-block shadow-md ml-4" 
-               aria-label="Email Us for quick assistance"
-               onclick="copyEmailToClipboard(event, 'admin@dochubservices.com')">
-                <i data-lucide="mail" class="inline-block w-4 h-4 mr-1 -mt-0.5"></i>
-                Email Us
-            </a>
-
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-toggle" class="md:hidden text-navy p-2 rounded-lg hover:bg-gray-100 transition duration-150" aria-label="Toggle mobile menu">
-                <i data-lucide="menu" class="w-6 h-6"></i>
-            </button>
-        </div>
+<body class="bg-gray-50 text-navy">
+    <!-- Header with Unified Styling -->
+    <header class="bg-navy text-white p-4 shadow-lg sticky top-0 z-10">
+        <nav class="container mx-auto flex justify-between items-center">
+            <div class="text-xl font-extrabold text-white">DOCU-HUB OPS</div>
+            <div class="space-x-4 flex items-center">
+                <a href="about.html" class="hover:text-gold text-white font-medium transition duration-150 p-2 rounded-lg">About Us</a>
+                <a href="intake_protocol.html" class="btn-primary py-2 px-4 rounded-xl font-bold shadow-md">
+                    Start Intake
+                </a>
+            </div>
+        </nav>
     </header>
 
-    <!-- Mobile Menu (Hidden by default) -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-navy bg-opacity-95 z-40 p-6 pt-20">
-        <nav class="flex flex-col space-y-4 text-white text-xl font-bold">
-            <a href="#services" class="hover:text-gold transition duration-150 py-2 border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
-            <a href="#compliance" class="hover:text-gold transition duration-150 py-2 border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Compliance Shield</a>
-            <a href="#about" class="hover:text-gold transition duration-150 py-2 border-b border-gray-700" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About Laura</a>
-            <a href="mailto:admin@dochubservices.com" 
-               class="btn-primary px-4 py-3 rounded-xl text-lg mt-4 text-center" 
-               onclick="document.getElementById('mobile-menu').classList.add('hidden'); copyEmailToClipboard(event, 'admin@dochubservices.com')">
-                Contact via Email
-            </a>
-        </nav>
-        <button class="absolute top-4 right-4 text-white p-2" onclick="document.getElementById('mobile-menu').classList.add('hidden')" aria-label="Close mobile menu">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="bg-navy text-white pt-16 pb-20 sm:pt-24 sm:pb-32 overflow-hidden relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg"> <!-- mb-6 for spacing -->
-                End the Runaround. <span class="text-gold block sm:inline-block mt-2">Gain True Confidence.</span>
-            </h1>
-            <p class="text-lg sm:text-2xl font-light mb-10 max-w-4xl mx-auto opacity-90"> <!-- FIX: mb-10 added -->
-                Expert clerical preparation for all high-stakes Jamaican documents including Passport, Birth Certificate, and Tax Forms. Zero data errors guaranteed.
+    <main class="container mx-auto p-4 sm:p-8">
+        <!-- Hero Section -->
+        <section class="text-center py-16 sm:py-20 bg-white rounded-xl shadow-2xl mb-12 border-t-8 border-gold">
+            <p class="text-sm font-bold text-gray-600 mb-2 uppercase tracking-widest">PROFESSIONAL ADMINISTRATIVE SERVICES. CLERICAL SCOPE ONLY.</p>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-navy mb-4">End the Runaround. Gain True Confidence.</h1>
+            <p class="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+                Secure your statutory filings with expert clerical preparation. **Zero data entry errors guaranteed.**
             </p>
-            <div class="bg-gray-900 inline-block px-6 py-3 rounded-xl shadow-lg mb-12 border border-gold"> <!-- FIX: mb-12 added -->
-                <p class="text-sm font-bold text-gold uppercase tracking-widest">
-                    PROFESSIONAL ADMINISTRATIVE SERVICES. CLERICAL SCOPE ONLY.
-                </p>
-            </div>
-            <a href="#services" class="btn-primary px-8 py-4 text-lg rounded-full font-bold inline-block shadow-2xl hover:shadow-gold transition duration-300">
-                View Our Services Now
+            <a href="intake_protocol.html" class="btn-primary py-3 px-8 text-lg rounded-full font-bold transition duration-300 shadow-xl hover:shadow-gold">
+                Start Compliant Intake Now
             </a>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Overview (Now uncluttered and focusing on pain points) -->
-    <section id="services" class="py-16 sm:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-navy mb-14">The DOCU-HUB Solutions</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                <!-- Pillar 1: Digital Education (DCC) -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-xl border-t-4 border-gold transition hover:shadow-2xl hover:scale-[1.02]">
-                    <i data-lucide="shield-alert" class="text-gold w-8 h-8 mb-4"></i>
-                    <h3 class="text-2xl font-bold text-navy mb-3">Digital Confidence Coaching (DCC)</h3>
-                    <p class="text-pain-point font-semibold mb-6"> <!-- Maintained mb-6 -->
-                        <strong>Pain Point:</strong> You fear being scammed, locking yourself out of portals, or sharing private data unsafely.
-                    </p>
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        <strong>The Solution:</strong> Specialized, one-on-one virtual coaching (60 min) using our <strong>Fraud-Proofing</strong> protocol to secure your accounts, master 2FA, and manage your digital identity with confidence.
-                    </p>
-                    <a href="#details-dcc-coach" class="btn-primary px-6 py-3 rounded-xl mt-4 inline-block text-sm">
-                        Learn More & View Breakdown
-                    </a>
-                </div>
-
-                <!-- Pillar 2: Core Form Preparation (Clerical) -->
-                <div class="bg-gray-50 p-8 rounded-2xl shadow-xl border-t-4 border-gold transition hover:shadow-2xl hover:scale-[1.02]">
-                    <i data-lucide="file-check" class="text-gold w-8 h-8 mb-4"></i>
-                    <h3 class="text-2xl font-bold text-navy mb-3">Core Form Preparation (PICA, RGD, COJ)</h3>
-                    <p class="text-pain-point font-semibold mb-6"> <!-- Maintained mb-6 -->
-                        <strong>Pain Point:</strong> You cannot afford delays due to a simple error on a critical application (Passport, Birth Certificate, etc.).
-                    </p>
-                    <p class="text-gray-700 mb-4 leading-relaxed">
-                        <strong>The Solution:</strong> We apply our <strong>Clerical Vetting Standard</strong> to your data, ensuring accurate data entry and perfect formatting into a submission-ready draft PDF, minimizing rejection risk.
-                    </p>
-                    <a href="#details-core-form" class="btn-primary px-6 py-3 rounded-xl mt-4 inline-block text-sm">
-                        Learn More & View Breakdown
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    
-    <!-- Compliance Shield (Legal Defense - Unchanged and still crucial) -->
-    <section id="compliance" class="py-16 sm:py-24 bg-navy text-white">
-        <!-- ... (Content remains the same as previous version) ... -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gold mb-14">The DOCU-HUB Compliance Shield</h2>
-            <div class="flex flex-col md:flex-row items-stretch justify-between gap-12">
-                <div class="md:w-1/2">
-                    <h3 class="text-3xl font-bold mb-6 border-b pb-2 border-gold/50">Statutory and Personal Protection</h3>
-                    <p class="mb-6 text-lg font-light">
-                        As a registered Sole Proprietorship, we maintain integrity through strict adherence to Jamaican legal and financial guidelines. Your protection relies on auditable compliance.
-                    </p>
-                    <ul class="space-y-5">
-                        <li class="flex items-start">
-                            <i data-lucide="lock" class="text-gold w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
-                            <div class="flex-grow">
-                                <strong>DPA Compliance (OIC Registered):</strong> We are a Registered Data Controller (JMD 7,500 fee paid) and strictly enforce the DPA's eight Data Standards for security and confidentiality.
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="shield-check" class="text-gold w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
-                            <div class="flex-grow">
-                                <strong>Personal Protection (PII):</strong> We hold <strong>Professional Indemnity Insurance (PII)</strong> coverage to financially protect against clerical errors and omissions, mitigating the risk of the Sole Proprietorship structure.
-                            </div>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="scan" class="text-gold w-6 h-6 mr-3 mt-1 flex-shrink-0"></i>
-                            <div class="flex-grow">
-                                <strong>KYC/POCA Adherence:</strong> We adhere to foundational CDD/KYC protocols for identity verification, demonstrating responsible governance.
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- CRITICAL LEGAL DISCLAIMER BOX -->
-                <div class="md:w-1/2 bg-gray-900 p-8 rounded-2xl shadow-2xl flex flex-col justify-center border border-gold/30">
-                    <h4 class="text-xl font-extrabold text-gold mb-4 uppercase tracking-wider">CRITICAL LEGAL DISCLAIMER: Administrative Role & Liability</h4>
-                    <p class="text-sm italic mb-4 text-gray-300">
-                        By engaging our services, the Client acknowledges and agrees to the following:
-                    </p>
-                    <p class="text-xl font-bold leading-relaxed border-l-4 pl-4 border-red-500 bg-gray-800 p-4 rounded-lg">
-                        <strong>Administrative Assistance Only:</strong> DOCU-HUB OPERATIONS SERVICES provides strictly clerical assistance and administrative facilitation. The Proprietor is <strong>not an attorney-at-law</strong>, nor do we provide legal advice.
-                        
-                        <strong>Limitation of Damages:</strong> Liability for any error or omission in our clerical services is <strong>strictly limited to the amount of the professional fee paid</strong> by the Client for that specific service.
-                    </p>
-                    <p class="text-xs mt-4 text-gray-400">
-                        The Client is solely responsible for final review, verification, legal certification, and the submission of all documents.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- NEW DETAIL SECTION 1: Core Form Preparation Breakdown (SIMPLIFIED) -->
-    <section id="details-core-form" class="detail-section py-16 sm:py-24 bg-gray-100">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <a href="#services" class="text-navy hover:text-gold font-medium mb-8 inline-block"><i data-lucide="arrow-left" class="inline-block w-4 h-4 mr-2 -mt-0.5"></i> Back to Services Overview</a>
+        <!-- Services Section - Responsive 3-Column Layout -->
+        <section class="grid md:grid-cols-3 gap-8">
             
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-6 border-b pb-4">Core Form Preparation (CFP)</h2>
-
-            <!-- Process Breakdown (Simplified) -->
-            <h3 class="text-2xl font-bold text-navy mb-4">Service Step-by-Step (Quick & Secure)</h3>
-            <ol class="list-decimal list-inside space-y-4 text-gray-700 pl-4 mb-8 leading-relaxed"> <!-- Increased vertical space -->
-                <li><strong>Start & Agreement:</strong> Agree to terms and securely send your IDs and source documents.</li>
-                <li><strong>We Check & Type:</strong> We use our <strong>Clerical Standard</strong> to fill out the form, making sure your data is <strong>perfect</strong>.</li>
-                <li><strong>Final Draft Delivered:</strong> We send the typed, submission-ready draft to your secure email.</li>
-                <li><strong>Your Part to Finish:</strong> <strong>Our clerical work is finished here.</strong> You print, secure the JP/Notary signature, and submit the package yourself.</li>
-            </ol>
-
-            <!-- Pricing and Legal Summary -->
-            <div class="bg-white p-6 rounded-xl shadow-lg border border-gold">
-                <h4 class="text-2xl font-extrabold text-navy mb-3">FIXED FEE: <span class="text-gold">JMD 2,500</span></h4>
-                <p class="text-sm italic text-gray-600 mb-4">
-                    Fee is fixed and non-refundable once the final draft PDF is delivered. This fee covers our clerical time and expertise only.
-                </p>
-                <div class="mt-4 p-4 bg-red-50 border-l-4 border-red-500 rounded-lg">
-                    <p class="font-bold text-red-800">MANDATORY LEGAL TERM (UPL Defense):</p>
-                    <p class="text-sm text-red-700 mt-1">
-                        <strong>ADMINISTRATIVE ONLY:</strong> We do not provide legal advice or representation. Liability for clerical errors is strictly limited to the <strong>JMD 2,500 service fee paid.</strong>
-                    </p>
-                    
-                    <!-- NEW: Two-Box Legal Gate for Core Form Preparation -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 mt-4"> <!-- FIX: Added gap-x-4 and gap-y-2 -->
-                        <!-- Left Box: Link to Full TOS -->
-                        <div class="bg-red-100 p-2 rounded-lg text-center"> <!-- FIX: Reduced padding to p-2 -->
-                            <a href="PDF/terms-of-service.pdf" target="_blank" class="text-red-700 font-bold hover:underline flex items-center justify-center text-xs sm:text-sm"> <!-- FIX: Reduced text size -->
-                                <i data-lucide="file-text" class="w-4 h-4 mr-1 flex-shrink-0"></i>
-                                READ FULL TERMS OF SERVICE
-                            </a>
-                            <p class="text-xs text-red-600 mt-1">
-                                (Opens in a new window)
-                            </p>
-                        </div>
-                        
-                        <!-- Right Box: Confirmation Checkbox -->
-                        <div class="flex items-center justify-center bg-red-100 p-2 rounded-lg"> <!-- FIX: Reduced padding to p-2 -->
-                            <input type="checkbox" id="core-consent" onchange="toggleCoreContact()" class="form-checkbox h-5 w-5 text-red-600 border-red-400 rounded-lg focus:ring-red-500 cursor-pointer">
-                            <label for="core-consent" class="ml-2 text-xs sm:text-sm font-semibold text-red-800 cursor-pointer"> <!-- FIX: Reduced text size -->
-                                I confirm I have read and agree.
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- NEW: GATED CONTACT (Initially hidden) -->
-                <div id="core-contact-gate" class="mt-6 text-center hidden">
-                    <p class="text-lg font-bold text-navy mb-3">
-                        READY TO START? CONTACT OUR DEDICATED INTAKE LINE:
-                    </p>
-                    <a href="https://wa.me/18765612614?text=I%20have%20read%20the%20TOS%20and%20need%20Core%20Form%20Prep" target="_blank" class="btn-primary px-8 py-4 text-lg rounded-full font-bold inline-block shadow-lg">
-                        <i data-lucide="whatsapp" class="inline-block w-6 h-6 mr-2 -mt-0.5"></i>
-                        Start Core Prep via WhatsApp
-                    </a>
-                </div>
-                
+            <!-- Service 1: Digital Coaching (Virtual/Global) -->
+            <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-gold transition duration-300 hover:shadow-2xl">
+                <h2 class="text-2xl font-bold mb-3 flex items-center">
+                    <i data-lucide="monitor-check" class="w-6 h-6 mr-2 text-gold"></i>
+                    Digital Coaching
+                </h2>
+                <p class="text-gray-700 mb-4 leading-relaxed">Expert, one-on-one virtual guidance for secure navigation of complex online portals (PICA, RGD, TRN/NIS).</p>
+                <!-- Blue-toned background for digital services -->
+                <p class="text-sm font-extrabold text-blue-700 p-1 bg-blue-100 rounded-lg inline-block">VIRTUAL / GLOBAL</p>
             </div>
-            
-        </div>
-    </section>
 
-    <!-- NEW DETAIL SECTION 2: DCC Coaching Breakdown (SIMPLIFIED) -->
-    <section id="details-dcc-coach" class="detail-section py-16 sm:py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <a href="#services" class="text-navy hover:text-gold font-medium mb-8 inline-block"><i data-lucide="arrow-left" class="inline-block w-4 h-4 mr-2 -mt-0.5"></i> Back to Services Overview</a>
-
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-navy mb-6 border-b pb-4">Digital Confidence Coaching (DCC)</h2>
-
-            <!-- Process Breakdown (Simplified) -->
-            <h3 class="text-2xl font-bold text-navy mb-4">60-Minute Session Outline (Quick Skill Transfer)</h3>
-            <ul class="list-disc list-outside space-y-4 text-gray-700 pl-8 mb-8 leading-relaxed"> <!-- Increased vertical space -->
-                <li><strong>Fraud-Proofing You:</strong> Learn what <strong>Government Agencies</strong> (like TAJ) / Banks will <strong>never</strong> ask via email, and secure your accounts.</li>
-                <li><strong>Digital Key Guard:</strong> Step-by-step setup of your two-factor security for maximum login protection.</li>
-                <li><strong>Portal Conquest:</strong> Master secure login and password management for <strong>all essential online platforms</strong>.</li>
-                <li><strong>The Digital Vault:</strong> Establish your encrypted storage for instant retrieval of <strong>key documents</strong> (like Passports, Birth Certificates, and Deeds).</li>
-            </ul>
-
-            <!-- Pricing and Legal Summary -->
-            <div class="bg-gray-50 p-6 rounded-xl shadow-lg border border-gold">
-                <h4 class="text-2xl font-extrabold text-navy mb-3">FIXED FEE: <span class="text-gold">JMD 5,000</span></h4>
-                <p class="text-sm italic text-gray-600 mb-4">
-                    Fee is fixed and covers the 60-minute virtual consultation time and expertise.
-                </p>
-                <div class="mt-4 p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
-                    <p class="font-bold text-blue-800">MANDATORY LEGAL TERM (Educational Role):</p>
-                    <p class="text-sm text-blue-700 mt-1">
-                        This is a <strong>skill-transfer service (coaching)</strong>. The Proprietor provides no legal advice. The client retains all responsibility for security measures and execution of all digital actions.
-                    </p>
-                    
-                    <!-- DCC Gate Checkbox -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 mt-4"> <!-- FIX: Added gap-x-4 and gap-y-2 -->
-                        <!-- Left Box: Link to Full TOS -->
-                        <div class="bg-blue-100 p-2 rounded-lg text-center"> <!-- FIX: Reduced padding to p-2 -->
-                            <a href="PDF/terms-of-service.pdf" target="_blank" class="text-blue-700 font-bold hover:underline flex items-center justify-center text-xs sm:text-sm"> <!-- FIX: Reduced text size -->
-                                <i data-lucide="file-text" class="w-4 h-4 mr-1 flex-shrink-0"></i>
-                                READ FULL TERMS OF SERVICE
-                            </a>
-                            <p class="text-xs text-blue-600 mt-1">
-                                (Opens in a new window)
-                            </p>
-                        </div>
-                        
-                        <!-- Right Box: Confirmation Checkbox -->
-                        <div class="flex items-center justify-center bg-blue-100 p-2 rounded-lg"> <!-- FIX: Reduced padding to p-2 -->
-                            <input type="checkbox" id="dcc-consent" onchange="toggleDCCContact()" class="form-checkbox h-5 w-5 text-blue-600 border-blue-400 rounded-lg focus:ring-blue-500 cursor-pointer">
-                            <label for="dcc-consent" class="ml-2 text-xs sm:text-sm font-semibold text-blue-800 cursor-pointer"> <!-- FIX: Reduced text size -->
-                                I accept this is educational only.
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                
-                 <!-- DCC GATED CONTACT (Initially hidden) -->
-                <div id="dcc-contact-gate" class="mt-6 text-center hidden">
-                    <p class="text-lg font-bold text-navy mb-3">
-                        READY TO BOOK? CONTACT OUR DEDICATED BOOKING LINE:
-                    </p>
-                    <a href="https://wa.me/18765612614?text=I%20have%20read%20the%20TOS%20and%20need%20DCC%20Coaching" target="_blank" class="btn-primary px-8 py-4 text-lg rounded-full font-bold inline-block shadow-lg">
-                        <i data-lucide="whatsapp" class="inline-block w-6 h-6 mr-2 -mt-0.5"></i>
-                        Book DCC via WhatsApp
-                    </a>
-                </div>
-            
-        </div>
-    </section>
-
-
-    <!-- About Laura (Professionalizing the persona) -->
-    <section id="about" class="py-16 sm:py-24 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-navy mb-14">Meet Laura Clarke: Your Administrative Expert</h2>
-            
-            <div class="flex flex-col md:flex-row items-center gap-12 bg-white p-8 rounded-2xl shadow-xl">
-                <div class="md:w-1/3 flex justify-center">
-                    <!-- Placeholder for a professional profile image (important for trust) -->
-                    <img src="images/profile-picture.png" alt="Professional profile of Laura Clarke" class="rounded-full border-4 border-gold shadow-lg w-48 h-48 object-cover">
-                </div>
-                <div class="md:w-2/3 text-gray-700">
-                    <p class="text-lg mb-4 leading-relaxed">
-                        Laura Clarke founded Docu-Hub Operations Services to bridge the gap between complex Jamaican administrative processes and the average citizen. With a high-stakes background in <strong>Banking Sector Compliance (KYC/AML Vetting)</strong> and <strong>Statutory Data Auditing (OEC)</strong>, Laura recognized the necessity of applying these rigorous standards to private document preparation.
-                    </p>
-                    <p class="text-lg mb-4 leading-relaxed font-semibold text-navy">
-                        "Mi know seh the process can feel overwhelming. My goal is simple: to provide reliable, low-cost clerical support and digital coaching so you can walk into the government office confident that your paperwork is done right the first time."
-                    </p>
-                    <a href="https://wa.me/18765612614" target="_blank" class="btn-primary px-6 py-3 rounded-full mt-4 inline-block shadow-lg text-lg">
-                        <i data-lucide="briefcase" class="inline-block w-5 h-5 mr-2 -mt-0.5"></i>
-                        Connect with Laura Now
-                    </a>
-                </div>
+            <!-- Service 2: Core Form Preparation (In-Person) -->
+            <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-gold transition duration-300 hover:shadow-2xl">
+                <h2 class="text-2xl font-bold mb-3 flex items-center">
+                    <i data-lucide="file-text" class="w-6 h-6 mr-2 text-gold"></i>
+                    Core Form Preparation
+                </h2>
+                <p class="text-gray-700 mb-4 leading-relaxed">Accurate clerical input and drafting of complex forms into submission-ready PDFs. Minimizes rejection risk.</p>
+                <p class="text-sm font-extrabold text-red-600 p-1 bg-red-100 rounded-lg inline-block">IN-PERSON ONLY (KYC Required)</p>
             </div>
-        </div>
-    </section>
+
+            <!-- Service 3: Payment Agency Services (In-Person) -->
+            <div class="bg-white p-6 rounded-xl shadow-xl border-t-4 border-gold transition duration-300 hover:shadow-2xl">
+                <h2 class="text-2xl font-bold mb-3 flex items-center">
+                    <i data-lucide="receipt-text" class="w-6 h-6 mr-2 text-gold"></i>
+                    Payment Agency Services
+                </h2>
+                <p class="text-gray-700 mb-4 leading-relaxed">Compliant fund remittance for high-frequency transactions (Vehicle Renewal, Property Tax). Segregated account used.</p>
+                <p class="text-sm font-extrabold text-red-600 p-1 bg-red-100 rounded-lg inline-block">IN-PERSON ONLY (KYC Required)</p>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="text-2xl font-bold mb-4 text-gold">DOCU-HUB OPERATIONS SERVICES</div>
-            <p class="text-sm mb-2">Proprietor: Laura Clarke. Verifiable Address: Charlemont, Linstead, St. Catherine.</p>
-            <p class="text-sm mb-6 text-gray-400">
-                Email: admin@dochubservices.com | Phone: (876) 561-2614
-            </p>
-            
-            <!-- Mandatory Legal Links -->
-            <div class="flex justify-center space-x-6 text-sm font-semibold mb-6">
-                <!-- These links point to the separate Markdown files -->
-                <a href="PDF/privacy-policy.pdf" class="hover:text-gold transition duration-150 p-1">Privacy Policy</a>
-                <a href="PDF/terms-of-service.pdf" class="hover:text-gold transition duration-150 p-1">Terms of Service</a>
-                <a href="PDF/legal-notice.pdf" class="hover:text-gold transition duration-150 p-1">Legal Notice</a>
-            </div>
-
-            <p class="text-xs mt-4 text-gray-500">
-                &copy; 2025 Docu-Hub Operations Services. All Rights Reserved. Data Controller ID [OIC ID].
-            </p>
+    <footer class="bg-navy text-white p-6 mt-12">
+        <div class="container mx-auto text-center text-sm">
+            &copy; 2025 Docu-Hub Operations Services. | 
+            <a href="[LINK TO TERMS OF SERVICE PDF]" target="_blank" class="hover:text-gold underline font-medium">Terms of Service</a> | 
+            <a href="[LINK TO PRIVACY POLICY PDF]" target="_blank" class="hover:text-gold underline font-medium">Privacy Policy</a>
         </div>
     </footer>
-    
-    <!-- Floating Email Button (General Contact) -->
-    <a href="mailto:admin@dochubservices.com" class="fixed bottom-6 right-6 z-50 bg-gold hover:bg-cc9f3a text-navy p-4 rounded-full shadow-2xl transition duration-300 transform hover:scale-110" aria-label="Chat with us on WhatsApp">
-        <i data-lucide="mail" class="w-7 h-7"></i>
-    </a>
-    
     <script>
-        // Function to copy text to clipboard and provide visual feedback
-        function copyEmailToClipboard(event, email) {
-            // Prevent mailto from firing immediately if the copy is successful
-            event.preventDefault(); 
-            
-            // Use document.execCommand('copy') for better compatibility in iFrames/sandbox environments
-            const tempInput = document.createElement('input');
-            tempInput.value = email;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            
-            try {
-                const successful = document.execCommand('copy');
-                if (successful) {
-                    // Visual feedback for the client
-                    event.target.innerHTML = '<i data-lucide="check" class="w-5 h-5 mr-1 -mt-0.5"></i> COPIED!';
-                    setTimeout(() => {
-                        // Restore original text after 1.5 seconds
-                        event.target.innerHTML = '<i data-lucide="mail" class="w-5 h-5 mr-1 -mt-0.5"></i> Email Us';
-                        lucide.createIcons(); // Re-render icons after changing innerHTML
-                    }, 1500);
-                } else {
-                    console.error('Copy command was unsuccessful');
-                }
-            } catch (err) {
-                console.error('Error copying text:', err);
-            }
-            document.body.removeChild(tempInput);
-
-            // Fallback: If copy failed, still attempt to open the mailto link
-            if (!document.execCommand('copy')) {
-                 window.location.href = 'mailto:' + email;
-            }
-        }
-
-
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // JS for Gating Contact Information
-        function toggleCoreContact() {
-            const consentChecked = document.getElementById('core-consent').checked;
-            const gateDiv = document.getElementById('core-contact-gate');
-            if (consentChecked) {
-                gateDiv.classList.remove('hidden');
-            } else {
-                gateDiv.classList.add('hidden');
-            }
-        }
-        
-        function toggleDCCContact() {
-            const consentChecked = document.getElementById('dcc-consent').checked;
-            const gateDiv = document.getElementById('dcc-contact-gate');
-            if (consentChecked) {
-                gateDiv.classList.remove('hidden');
-            } else {
-                gateDiv.classList.add('hidden');
-            }
-        }
-
-
-        // Mobile Menu Toggling Logic
-        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Hide mobile menu on anchor click for single-page UX
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Smooth scroll for internal links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                // Check if the link is the top anchor (#top)
-                const targetId = this.getAttribute('href');
-                if (targetId === '#top') {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                } else {
-                    document.querySelector(targetId).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Update the footer links to point to the correct file paths (since they are external files)
-        // NOTE: These links should point to the .md files you will host.
-        document.querySelector('a[href="#privacy-policy"]').setAttribute('href', 'PDF/privacy-policy.pdf');
-        document.querySelector('a[href="#terms-of-service"]').setAttribute('href', 'PDF/terms-of-service.pdf');
-        document.querySelector('a[href="#legal-notice"]').setAttribute('href', 'PDF/legal-notice.pdf');
-        
+        // Initialize Lucide icons after they are loaded
+        window.onload = function() {
+            lucide.createIcons();
+        };
     </script>
 </body>
 </html>
-
-
